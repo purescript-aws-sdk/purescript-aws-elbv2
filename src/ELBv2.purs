@@ -20,177 +20,243 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "ELBv2" :: String
-
 
 -- | <p>Adds the specified certificate to the specified secure listener.</p> <p>If the certificate was already added, the call is successful but the certificate is not added again.</p> <p>To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from your listener, use <a>RemoveListenerCertificates</a>.</p>
 addListenerCertificates :: forall eff. AddListenerCertificatesInput -> Aff (exception :: EXCEPTION | eff) AddListenerCertificatesOutput
-addListenerCertificates = Request.request serviceName "addListenerCertificates" 
+addListenerCertificates = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "addListenerCertificates"
 
 
 -- | <p>Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load Balancers, Network Load Balancers, and your target groups.</p> <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, <code>AddTags</code> updates its value.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags from your resources, use <a>RemoveTags</a>.</p>
 addTags :: forall eff. AddTagsInput -> Aff (exception :: EXCEPTION | eff) AddTagsOutput
-addTags = Request.request serviceName "addTags" 
+addTags = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "addTags"
 
 
 -- | <p>Creates a listener for the specified Application Load Balancer or Network Load Balancer.</p> <p>To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.</p> <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple listeners with the same settings, each call succeeds.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p>
 createListener :: forall eff. CreateListenerInput -> Aff (exception :: EXCEPTION | eff) CreateListenerOutput
-createListener = Request.request serviceName "createListener" 
+createListener = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "createListener"
 
 
 -- | <p>Creates an Application Load Balancer or a Network Load Balancer.</p> <p>When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.</p> <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple load balancers with the same settings, each call succeeds.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p>
 createLoadBalancer :: forall eff. CreateLoadBalancerInput -> Aff (exception :: EXCEPTION | eff) CreateLoadBalancerOutput
-createLoadBalancer = Request.request serviceName "createLoadBalancer" 
+createLoadBalancer = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "createLoadBalancer"
 
 
 -- | <p>Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.</p> <p>Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
 createRule :: forall eff. CreateRuleInput -> Aff (exception :: EXCEPTION | eff) CreateRuleOutput
-createRule = Request.request serviceName "createRule" 
+createRule = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "createRule"
 
 
 -- | <p>Creates a target group.</p> <p>To register targets with the target group, use <a>RegisterTargets</a>. To update the health check settings for the target group, use <a>ModifyTargetGroup</a>. To monitor the health of targets in the target group, use <a>DescribeTargetHealth</a>.</p> <p>To route traffic to the targets in a target group, specify the target group in an action using <a>CreateListener</a> or <a>CreateRule</a>.</p> <p>To delete a target group, use <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple target groups with the same settings, each call succeeds.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p>
 createTargetGroup :: forall eff. CreateTargetGroupInput -> Aff (exception :: EXCEPTION | eff) CreateTargetGroupOutput
-createTargetGroup = Request.request serviceName "createTargetGroup" 
+createTargetGroup = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "createTargetGroup"
 
 
 -- | <p>Deletes the specified listener.</p> <p>Alternatively, your listener is deleted when you delete the load balancer it is attached to using <a>DeleteLoadBalancer</a>.</p>
 deleteListener :: forall eff. DeleteListenerInput -> Aff (exception :: EXCEPTION | eff) DeleteListenerOutput
-deleteListener = Request.request serviceName "deleteListener" 
+deleteListener = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "deleteListener"
 
 
 -- | <p>Deletes the specified Application Load Balancer or Network Load Balancer and its attached listeners.</p> <p>You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has already been deleted, the call succeeds.</p> <p>Deleting a load balancer does not affect its registered targets. For example, your EC2 instances continue to run and are still registered to their target groups. If you no longer need these EC2 instances, you can stop or terminate them.</p>
 deleteLoadBalancer :: forall eff. DeleteLoadBalancerInput -> Aff (exception :: EXCEPTION | eff) DeleteLoadBalancerOutput
-deleteLoadBalancer = Request.request serviceName "deleteLoadBalancer" 
+deleteLoadBalancer = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "deleteLoadBalancer"
 
 
 -- | <p>Deletes the specified rule.</p>
 deleteRule :: forall eff. DeleteRuleInput -> Aff (exception :: EXCEPTION | eff) DeleteRuleOutput
-deleteRule = Request.request serviceName "deleteRule" 
+deleteRule = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "deleteRule"
 
 
 -- | <p>Deletes the specified target group.</p> <p>You can delete a target group if it is not referenced by any actions. Deleting a target group also deletes any associated health checks.</p>
 deleteTargetGroup :: forall eff. DeleteTargetGroupInput -> Aff (exception :: EXCEPTION | eff) DeleteTargetGroupOutput
-deleteTargetGroup = Request.request serviceName "deleteTargetGroup" 
+deleteTargetGroup = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "deleteTargetGroup"
 
 
 -- | <p>Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.</p>
 deregisterTargets :: forall eff. DeregisterTargetsInput -> Aff (exception :: EXCEPTION | eff) DeregisterTargetsOutput
-deregisterTargets = Request.request serviceName "deregisterTargets" 
+deregisterTargets = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "deregisterTargets"
 
 
 -- | <p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i> or <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p>
 describeAccountLimits :: forall eff. DescribeAccountLimitsInput -> Aff (exception :: EXCEPTION | eff) DescribeAccountLimitsOutput
-describeAccountLimits = Request.request serviceName "describeAccountLimits" 
+describeAccountLimits = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeAccountLimits"
 
 
 -- | <p>Describes the certificates for the specified secure listener.</p>
 describeListenerCertificates :: forall eff. DescribeListenerCertificatesInput -> Aff (exception :: EXCEPTION | eff) DescribeListenerCertificatesOutput
-describeListenerCertificates = Request.request serviceName "describeListenerCertificates" 
+describeListenerCertificates = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeListenerCertificates"
 
 
 -- | <p>Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load Balancer. You must specify either a load balancer or one or more listeners.</p>
 describeListeners :: forall eff. DescribeListenersInput -> Aff (exception :: EXCEPTION | eff) DescribeListenersOutput
-describeListeners = Request.request serviceName "describeListeners" 
+describeListeners = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeListeners"
 
 
 -- | <p>Describes the attributes for the specified Application Load Balancer or Network Load Balancer.</p>
 describeLoadBalancerAttributes :: forall eff. DescribeLoadBalancerAttributesInput -> Aff (exception :: EXCEPTION | eff) DescribeLoadBalancerAttributesOutput
-describeLoadBalancerAttributes = Request.request serviceName "describeLoadBalancerAttributes" 
+describeLoadBalancerAttributes = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeLoadBalancerAttributes"
 
 
 -- | <p>Describes the specified load balancers or all of your load balancers.</p> <p>To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.</p>
 describeLoadBalancers :: forall eff. DescribeLoadBalancersInput -> Aff (exception :: EXCEPTION | eff) DescribeLoadBalancersOutput
-describeLoadBalancers = Request.request serviceName "describeLoadBalancers" 
+describeLoadBalancers = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeLoadBalancers"
 
 
 -- | <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>
 describeRules :: forall eff. DescribeRulesInput -> Aff (exception :: EXCEPTION | eff) DescribeRulesOutput
-describeRules = Request.request serviceName "describeRules" 
+describeRules = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeRules"
 
 
 -- | <p>Describes the specified policies or all policies used for SSL negotiation.</p> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
 describeSSLPolicies :: forall eff. DescribeSSLPoliciesInput -> Aff (exception :: EXCEPTION | eff) DescribeSSLPoliciesOutput
-describeSSLPolicies = Request.request serviceName "describeSSLPolicies" 
+describeSSLPolicies = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeSSLPolicies"
 
 
 -- | <p>Describes the tags for the specified resources. You can describe the tags for one or more Application Load Balancers, Network Load Balancers, and target groups.</p>
 describeTags :: forall eff. DescribeTagsInput -> Aff (exception :: EXCEPTION | eff) DescribeTagsOutput
-describeTags = Request.request serviceName "describeTags" 
+describeTags = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeTags"
 
 
 -- | <p>Describes the attributes for the specified target group.</p>
 describeTargetGroupAttributes :: forall eff. DescribeTargetGroupAttributesInput -> Aff (exception :: EXCEPTION | eff) DescribeTargetGroupAttributesOutput
-describeTargetGroupAttributes = Request.request serviceName "describeTargetGroupAttributes" 
+describeTargetGroupAttributes = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeTargetGroupAttributes"
 
 
 -- | <p>Describes the specified target groups or all of your target groups. By default, all target groups are described. Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of one or more target groups.</p> <p>To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.</p>
 describeTargetGroups :: forall eff. DescribeTargetGroupsInput -> Aff (exception :: EXCEPTION | eff) DescribeTargetGroupsOutput
-describeTargetGroups = Request.request serviceName "describeTargetGroups" 
+describeTargetGroups = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeTargetGroups"
 
 
 -- | <p>Describes the health of the specified targets or all of your targets.</p>
 describeTargetHealth :: forall eff. DescribeTargetHealthInput -> Aff (exception :: EXCEPTION | eff) DescribeTargetHealthOutput
-describeTargetHealth = Request.request serviceName "describeTargetHealth" 
+describeTargetHealth = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "describeTargetHealth"
 
 
 -- | <p>Modifies the specified properties of the specified listener.</p> <p>Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS, you must add the security policy and server certificate.</p>
 modifyListener :: forall eff. ModifyListenerInput -> Aff (exception :: EXCEPTION | eff) ModifyListenerOutput
-modifyListener = Request.request serviceName "modifyListener" 
+modifyListener = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "modifyListener"
 
 
 -- | <p>Modifies the specified attributes of the specified Application Load Balancer or Network Load Balancer.</p> <p>If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that you do not modify retain their current values.</p>
 modifyLoadBalancerAttributes :: forall eff. ModifyLoadBalancerAttributesInput -> Aff (exception :: EXCEPTION | eff) ModifyLoadBalancerAttributesOutput
-modifyLoadBalancerAttributes = Request.request serviceName "modifyLoadBalancerAttributes" 
+modifyLoadBalancerAttributes = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "modifyLoadBalancerAttributes"
 
 
 -- | <p>Modifies the specified rule.</p> <p>Any existing properties that you do not modify retain their current values.</p> <p>To modify the default action, use <a>ModifyListener</a>.</p>
 modifyRule :: forall eff. ModifyRuleInput -> Aff (exception :: EXCEPTION | eff) ModifyRuleOutput
-modifyRule = Request.request serviceName "modifyRule" 
+modifyRule = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "modifyRule"
 
 
 -- | <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p> <p>To monitor the health of the targets, use <a>DescribeTargetHealth</a>.</p>
 modifyTargetGroup :: forall eff. ModifyTargetGroupInput -> Aff (exception :: EXCEPTION | eff) ModifyTargetGroupOutput
-modifyTargetGroup = Request.request serviceName "modifyTargetGroup" 
+modifyTargetGroup = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "modifyTargetGroup"
 
 
 -- | <p>Modifies the specified attributes of the specified target group.</p>
 modifyTargetGroupAttributes :: forall eff. ModifyTargetGroupAttributesInput -> Aff (exception :: EXCEPTION | eff) ModifyTargetGroupAttributesOutput
-modifyTargetGroupAttributes = Request.request serviceName "modifyTargetGroupAttributes" 
+modifyTargetGroupAttributes = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "modifyTargetGroupAttributes"
 
 
 -- | <p>Registers the specified targets with the specified target group.</p> <p>You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port for the target group. Alternatively, you can override the port for a target when you register it. You can register each EC2 instance or IP address with the same target group multiple times using different ports.</p> <p>With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>
 registerTargets :: forall eff. RegisterTargetsInput -> Aff (exception :: EXCEPTION | eff) RegisterTargetsOutput
-registerTargets = Request.request serviceName "registerTargets" 
+registerTargets = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "registerTargets"
 
 
 -- | <p>Removes the specified certificate from the specified secure listener.</p> <p>You can't remove the default certificate for a listener. To replace the default certificate, call <a>ModifyListener</a>.</p> <p>To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.</p>
 removeListenerCertificates :: forall eff. RemoveListenerCertificatesInput -> Aff (exception :: EXCEPTION | eff) RemoveListenerCertificatesOutput
-removeListenerCertificates = Request.request serviceName "removeListenerCertificates" 
+removeListenerCertificates = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "removeListenerCertificates"
 
 
 -- | <p>Removes the specified tags from the specified Elastic Load Balancing resource.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>.</p>
 removeTags :: forall eff. RemoveTagsInput -> Aff (exception :: EXCEPTION | eff) RemoveTagsOutput
-removeTags = Request.request serviceName "removeTags" 
+removeTags = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "removeTags"
 
 
 -- | <p>Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load Balancer.</p> <p>Note that Network Load Balancers must use <code>ipv4</code>.</p>
 setIpAddressType :: forall eff. SetIpAddressTypeInput -> Aff (exception :: EXCEPTION | eff) SetIpAddressTypeOutput
-setIpAddressType = Request.request serviceName "setIpAddressType" 
+setIpAddressType = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "setIpAddressType"
 
 
 -- | <p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any existing rules that you do not specify retain their current priority.</p>
 setRulePriorities :: forall eff. SetRulePrioritiesInput -> Aff (exception :: EXCEPTION | eff) SetRulePrioritiesOutput
-setRulePriorities = Request.request serviceName "setRulePriorities" 
+setRulePriorities = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "setRulePriorities"
 
 
 -- | <p>Associates the specified security groups with the specified Application Load Balancer. The specified security groups override the previously associated security groups.</p> <p>Note that you can't specify a security group for a Network Load Balancer.</p>
 setSecurityGroups :: forall eff. SetSecurityGroupsInput -> Aff (exception :: EXCEPTION | eff) SetSecurityGroupsOutput
-setSecurityGroups = Request.request serviceName "setSecurityGroups" 
+setSecurityGroups = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "setSecurityGroups"
 
 
 -- | <p>Enables the Availability Zone for the specified public subnets for the specified Application Load Balancer. The specified subnets replace the previously enabled subnets.</p> <p>Note that you can't change the subnets for a Network Load Balancer.</p>
 setSubnets :: forall eff. SetSubnetsInput -> Aff (exception :: EXCEPTION | eff) SetSubnetsOutput
-setSubnets = Request.request serviceName "setSubnets" 
+setSubnets = Request.request service method  where
+    service = Request.ServiceName "ELBv2"
+    method = Request.MethodName "setSubnets"
 
 
 -- | <p>Information about an action.</p>
