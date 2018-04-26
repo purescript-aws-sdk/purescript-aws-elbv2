@@ -108,7 +108,7 @@ Constructs AddListenerCertificatesInput's fields from required parameters
 
 ``` purescript
 newtype AddListenerCertificatesOutput
-  = AddListenerCertificatesOutput { "Certificates" :: NullOrUndefined (CertificateList) }
+  = AddListenerCertificatesOutput { "Certificates" :: Maybe (CertificateList) }
 ```
 
 ##### Instances
@@ -131,7 +131,7 @@ Constructs AddListenerCertificatesOutput from required parameters
 #### `newAddListenerCertificatesOutput'`
 
 ``` purescript
-newAddListenerCertificatesOutput' :: ({ "Certificates" :: NullOrUndefined (CertificateList) } -> { "Certificates" :: NullOrUndefined (CertificateList) }) -> AddListenerCertificatesOutput
+newAddListenerCertificatesOutput' :: ({ "Certificates" :: Maybe (CertificateList) } -> { "Certificates" :: Maybe (CertificateList) }) -> AddListenerCertificatesOutput
 ```
 
 Constructs AddListenerCertificatesOutput's fields from required parameters
@@ -222,7 +222,7 @@ Encode AllocationIdNotFoundException
 
 ``` purescript
 newtype AvailabilityZone
-  = AvailabilityZone { "ZoneName" :: NullOrUndefined (ZoneName), "SubnetId" :: NullOrUndefined (SubnetId), "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses) }
+  = AvailabilityZone { "ZoneName" :: Maybe (ZoneName), "SubnetId" :: Maybe (SubnetId), "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses) }
 ```
 
 <p>Information about an Availability Zone.</p>
@@ -247,7 +247,7 @@ Constructs AvailabilityZone from required parameters
 #### `newAvailabilityZone'`
 
 ``` purescript
-newAvailabilityZone' :: ({ "ZoneName" :: NullOrUndefined (ZoneName), "SubnetId" :: NullOrUndefined (SubnetId), "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses) } -> { "ZoneName" :: NullOrUndefined (ZoneName), "SubnetId" :: NullOrUndefined (SubnetId), "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses) }) -> AvailabilityZone
+newAvailabilityZone' :: ({ "ZoneName" :: Maybe (ZoneName), "SubnetId" :: Maybe (SubnetId), "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses) } -> { "ZoneName" :: Maybe (ZoneName), "SubnetId" :: Maybe (SubnetId), "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses) }) -> AvailabilityZone
 ```
 
 Constructs AvailabilityZone's fields from required parameters
@@ -306,7 +306,7 @@ Encode CanonicalHostedZoneId
 
 ``` purescript
 newtype Certificate
-  = Certificate { "CertificateArn" :: NullOrUndefined (CertificateArn), "IsDefault" :: NullOrUndefined (Default) }
+  = Certificate { "CertificateArn" :: Maybe (CertificateArn), "IsDefault" :: Maybe (Default) }
 ```
 
 <p>Information about an SSL server certificate.</p>
@@ -331,7 +331,7 @@ Constructs Certificate from required parameters
 #### `newCertificate'`
 
 ``` purescript
-newCertificate' :: ({ "CertificateArn" :: NullOrUndefined (CertificateArn), "IsDefault" :: NullOrUndefined (Default) } -> { "CertificateArn" :: NullOrUndefined (CertificateArn), "IsDefault" :: NullOrUndefined (Default) }) -> Certificate
+newCertificate' :: ({ "CertificateArn" :: Maybe (CertificateArn), "IsDefault" :: Maybe (Default) } -> { "CertificateArn" :: Maybe (CertificateArn), "IsDefault" :: Maybe (Default) }) -> Certificate
 ```
 
 Constructs Certificate's fields from required parameters
@@ -390,7 +390,7 @@ Encode CertificateNotFoundException
 
 ``` purescript
 newtype Cipher
-  = Cipher { "Name" :: NullOrUndefined (CipherName), "Priority" :: NullOrUndefined (CipherPriority) }
+  = Cipher { "Name" :: Maybe (CipherName), "Priority" :: Maybe (CipherPriority) }
 ```
 
 <p>Information about a cipher used in a policy.</p>
@@ -415,7 +415,7 @@ Constructs Cipher from required parameters
 #### `newCipher'`
 
 ``` purescript
-newCipher' :: ({ "Name" :: NullOrUndefined (CipherName), "Priority" :: NullOrUndefined (CipherPriority) } -> { "Name" :: NullOrUndefined (CipherName), "Priority" :: NullOrUndefined (CipherPriority) }) -> Cipher
+newCipher' :: ({ "Name" :: Maybe (CipherName), "Priority" :: Maybe (CipherPriority) } -> { "Name" :: Maybe (CipherName), "Priority" :: Maybe (CipherPriority) }) -> Cipher
 ```
 
 Constructs Cipher's fields from required parameters
@@ -488,7 +488,7 @@ Encode ConditionFieldName
 
 ``` purescript
 newtype CreateListenerInput
-  = CreateListenerInput { "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: Actions }
+  = CreateListenerInput { "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Actions }
 ```
 
 ##### Instances
@@ -511,7 +511,7 @@ Constructs CreateListenerInput from required parameters
 #### `newCreateListenerInput'`
 
 ``` purescript
-newCreateListenerInput' :: Actions -> LoadBalancerArn -> Port -> ProtocolEnum -> ({ "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: Actions } -> { "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: Actions }) -> CreateListenerInput
+newCreateListenerInput' :: Actions -> LoadBalancerArn -> Port -> ProtocolEnum -> ({ "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Actions } -> { "LoadBalancerArn" :: LoadBalancerArn, "Protocol" :: ProtocolEnum, "Port" :: Port, "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Actions }) -> CreateListenerInput
 ```
 
 Constructs CreateListenerInput's fields from required parameters
@@ -520,7 +520,7 @@ Constructs CreateListenerInput's fields from required parameters
 
 ``` purescript
 newtype CreateListenerOutput
-  = CreateListenerOutput { "Listeners" :: NullOrUndefined (Listeners) }
+  = CreateListenerOutput { "Listeners" :: Maybe (Listeners) }
 ```
 
 ##### Instances
@@ -543,7 +543,7 @@ Constructs CreateListenerOutput from required parameters
 #### `newCreateListenerOutput'`
 
 ``` purescript
-newCreateListenerOutput' :: ({ "Listeners" :: NullOrUndefined (Listeners) } -> { "Listeners" :: NullOrUndefined (Listeners) }) -> CreateListenerOutput
+newCreateListenerOutput' :: ({ "Listeners" :: Maybe (Listeners) } -> { "Listeners" :: Maybe (Listeners) }) -> CreateListenerOutput
 ```
 
 Constructs CreateListenerOutput's fields from required parameters
@@ -552,7 +552,7 @@ Constructs CreateListenerOutput's fields from required parameters
 
 ``` purescript
 newtype CreateLoadBalancerInput
-  = CreateLoadBalancerInput { "Name" :: LoadBalancerName, "Subnets" :: NullOrUndefined (Subnets), "SubnetMappings" :: NullOrUndefined (SubnetMappings), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "Tags" :: NullOrUndefined (TagList), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "IpAddressType" :: NullOrUndefined (IpAddressType) }
+  = CreateLoadBalancerInput { "Name" :: LoadBalancerName, "Subnets" :: Maybe (Subnets), "SubnetMappings" :: Maybe (SubnetMappings), "SecurityGroups" :: Maybe (SecurityGroups), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "Tags" :: Maybe (TagList), "Type" :: Maybe (LoadBalancerTypeEnum), "IpAddressType" :: Maybe (IpAddressType) }
 ```
 
 ##### Instances
@@ -575,7 +575,7 @@ Constructs CreateLoadBalancerInput from required parameters
 #### `newCreateLoadBalancerInput'`
 
 ``` purescript
-newCreateLoadBalancerInput' :: LoadBalancerName -> ({ "Name" :: LoadBalancerName, "Subnets" :: NullOrUndefined (Subnets), "SubnetMappings" :: NullOrUndefined (SubnetMappings), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "Tags" :: NullOrUndefined (TagList), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "IpAddressType" :: NullOrUndefined (IpAddressType) } -> { "Name" :: LoadBalancerName, "Subnets" :: NullOrUndefined (Subnets), "SubnetMappings" :: NullOrUndefined (SubnetMappings), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "Tags" :: NullOrUndefined (TagList), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "IpAddressType" :: NullOrUndefined (IpAddressType) }) -> CreateLoadBalancerInput
+newCreateLoadBalancerInput' :: LoadBalancerName -> ({ "Name" :: LoadBalancerName, "Subnets" :: Maybe (Subnets), "SubnetMappings" :: Maybe (SubnetMappings), "SecurityGroups" :: Maybe (SecurityGroups), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "Tags" :: Maybe (TagList), "Type" :: Maybe (LoadBalancerTypeEnum), "IpAddressType" :: Maybe (IpAddressType) } -> { "Name" :: LoadBalancerName, "Subnets" :: Maybe (Subnets), "SubnetMappings" :: Maybe (SubnetMappings), "SecurityGroups" :: Maybe (SecurityGroups), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "Tags" :: Maybe (TagList), "Type" :: Maybe (LoadBalancerTypeEnum), "IpAddressType" :: Maybe (IpAddressType) }) -> CreateLoadBalancerInput
 ```
 
 Constructs CreateLoadBalancerInput's fields from required parameters
@@ -584,7 +584,7 @@ Constructs CreateLoadBalancerInput's fields from required parameters
 
 ``` purescript
 newtype CreateLoadBalancerOutput
-  = CreateLoadBalancerOutput { "LoadBalancers" :: NullOrUndefined (LoadBalancers) }
+  = CreateLoadBalancerOutput { "LoadBalancers" :: Maybe (LoadBalancers) }
 ```
 
 ##### Instances
@@ -607,7 +607,7 @@ Constructs CreateLoadBalancerOutput from required parameters
 #### `newCreateLoadBalancerOutput'`
 
 ``` purescript
-newCreateLoadBalancerOutput' :: ({ "LoadBalancers" :: NullOrUndefined (LoadBalancers) } -> { "LoadBalancers" :: NullOrUndefined (LoadBalancers) }) -> CreateLoadBalancerOutput
+newCreateLoadBalancerOutput' :: ({ "LoadBalancers" :: Maybe (LoadBalancers) } -> { "LoadBalancers" :: Maybe (LoadBalancers) }) -> CreateLoadBalancerOutput
 ```
 
 Constructs CreateLoadBalancerOutput's fields from required parameters
@@ -648,7 +648,7 @@ Constructs CreateRuleInput's fields from required parameters
 
 ``` purescript
 newtype CreateRuleOutput
-  = CreateRuleOutput { "Rules" :: NullOrUndefined (Rules) }
+  = CreateRuleOutput { "Rules" :: Maybe (Rules) }
 ```
 
 ##### Instances
@@ -671,7 +671,7 @@ Constructs CreateRuleOutput from required parameters
 #### `newCreateRuleOutput'`
 
 ``` purescript
-newCreateRuleOutput' :: ({ "Rules" :: NullOrUndefined (Rules) } -> { "Rules" :: NullOrUndefined (Rules) }) -> CreateRuleOutput
+newCreateRuleOutput' :: ({ "Rules" :: Maybe (Rules) } -> { "Rules" :: Maybe (Rules) }) -> CreateRuleOutput
 ```
 
 Constructs CreateRuleOutput's fields from required parameters
@@ -680,7 +680,7 @@ Constructs CreateRuleOutput's fields from required parameters
 
 ``` purescript
 newtype CreateTargetGroupInput
-  = CreateTargetGroupInput { "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher), "TargetType" :: NullOrUndefined (TargetTypeEnum) }
+  = CreateTargetGroupInput { "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher), "TargetType" :: Maybe (TargetTypeEnum) }
 ```
 
 ##### Instances
@@ -703,7 +703,7 @@ Constructs CreateTargetGroupInput from required parameters
 #### `newCreateTargetGroupInput'`
 
 ``` purescript
-newCreateTargetGroupInput' :: TargetGroupName -> Port -> ProtocolEnum -> VpcId -> ({ "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher), "TargetType" :: NullOrUndefined (TargetTypeEnum) } -> { "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher), "TargetType" :: NullOrUndefined (TargetTypeEnum) }) -> CreateTargetGroupInput
+newCreateTargetGroupInput' :: TargetGroupName -> Port -> ProtocolEnum -> VpcId -> ({ "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher), "TargetType" :: Maybe (TargetTypeEnum) } -> { "Name" :: TargetGroupName, "Protocol" :: ProtocolEnum, "Port" :: Port, "VpcId" :: VpcId, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher), "TargetType" :: Maybe (TargetTypeEnum) }) -> CreateTargetGroupInput
 ```
 
 Constructs CreateTargetGroupInput's fields from required parameters
@@ -712,7 +712,7 @@ Constructs CreateTargetGroupInput's fields from required parameters
 
 ``` purescript
 newtype CreateTargetGroupOutput
-  = CreateTargetGroupOutput { "TargetGroups" :: NullOrUndefined (TargetGroups) }
+  = CreateTargetGroupOutput { "TargetGroups" :: Maybe (TargetGroups) }
 ```
 
 ##### Instances
@@ -735,7 +735,7 @@ Constructs CreateTargetGroupOutput from required parameters
 #### `newCreateTargetGroupOutput'`
 
 ``` purescript
-newCreateTargetGroupOutput' :: ({ "TargetGroups" :: NullOrUndefined (TargetGroups) } -> { "TargetGroups" :: NullOrUndefined (TargetGroups) }) -> CreateTargetGroupOutput
+newCreateTargetGroupOutput' :: ({ "TargetGroups" :: Maybe (TargetGroups) } -> { "TargetGroups" :: Maybe (TargetGroups) }) -> CreateTargetGroupOutput
 ```
 
 Constructs CreateTargetGroupOutput's fields from required parameters
@@ -1032,7 +1032,7 @@ Encode DeregisterTargetsOutput
 
 ``` purescript
 newtype DescribeAccountLimitsInput
-  = DescribeAccountLimitsInput { "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeAccountLimitsInput { "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1055,7 +1055,7 @@ Constructs DescribeAccountLimitsInput from required parameters
 #### `newDescribeAccountLimitsInput'`
 
 ``` purescript
-newDescribeAccountLimitsInput' :: ({ "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeAccountLimitsInput
+newDescribeAccountLimitsInput' :: ({ "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeAccountLimitsInput
 ```
 
 Constructs DescribeAccountLimitsInput's fields from required parameters
@@ -1064,7 +1064,7 @@ Constructs DescribeAccountLimitsInput's fields from required parameters
 
 ``` purescript
 newtype DescribeAccountLimitsOutput
-  = DescribeAccountLimitsOutput { "Limits" :: NullOrUndefined (Limits), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeAccountLimitsOutput { "Limits" :: Maybe (Limits), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1087,7 +1087,7 @@ Constructs DescribeAccountLimitsOutput from required parameters
 #### `newDescribeAccountLimitsOutput'`
 
 ``` purescript
-newDescribeAccountLimitsOutput' :: ({ "Limits" :: NullOrUndefined (Limits), "NextMarker" :: NullOrUndefined (Marker) } -> { "Limits" :: NullOrUndefined (Limits), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeAccountLimitsOutput
+newDescribeAccountLimitsOutput' :: ({ "Limits" :: Maybe (Limits), "NextMarker" :: Maybe (Marker) } -> { "Limits" :: Maybe (Limits), "NextMarker" :: Maybe (Marker) }) -> DescribeAccountLimitsOutput
 ```
 
 Constructs DescribeAccountLimitsOutput's fields from required parameters
@@ -1096,7 +1096,7 @@ Constructs DescribeAccountLimitsOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeListenerCertificatesInput
-  = DescribeListenerCertificatesInput { "ListenerArn" :: ListenerArn, "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeListenerCertificatesInput { "ListenerArn" :: ListenerArn, "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1119,7 +1119,7 @@ Constructs DescribeListenerCertificatesInput from required parameters
 #### `newDescribeListenerCertificatesInput'`
 
 ``` purescript
-newDescribeListenerCertificatesInput' :: ListenerArn -> ({ "ListenerArn" :: ListenerArn, "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "ListenerArn" :: ListenerArn, "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeListenerCertificatesInput
+newDescribeListenerCertificatesInput' :: ListenerArn -> ({ "ListenerArn" :: ListenerArn, "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "ListenerArn" :: ListenerArn, "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeListenerCertificatesInput
 ```
 
 Constructs DescribeListenerCertificatesInput's fields from required parameters
@@ -1128,7 +1128,7 @@ Constructs DescribeListenerCertificatesInput's fields from required parameters
 
 ``` purescript
 newtype DescribeListenerCertificatesOutput
-  = DescribeListenerCertificatesOutput { "Certificates" :: NullOrUndefined (CertificateList), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeListenerCertificatesOutput { "Certificates" :: Maybe (CertificateList), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1151,7 +1151,7 @@ Constructs DescribeListenerCertificatesOutput from required parameters
 #### `newDescribeListenerCertificatesOutput'`
 
 ``` purescript
-newDescribeListenerCertificatesOutput' :: ({ "Certificates" :: NullOrUndefined (CertificateList), "NextMarker" :: NullOrUndefined (Marker) } -> { "Certificates" :: NullOrUndefined (CertificateList), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeListenerCertificatesOutput
+newDescribeListenerCertificatesOutput' :: ({ "Certificates" :: Maybe (CertificateList), "NextMarker" :: Maybe (Marker) } -> { "Certificates" :: Maybe (CertificateList), "NextMarker" :: Maybe (Marker) }) -> DescribeListenerCertificatesOutput
 ```
 
 Constructs DescribeListenerCertificatesOutput's fields from required parameters
@@ -1160,7 +1160,7 @@ Constructs DescribeListenerCertificatesOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeListenersInput
-  = DescribeListenersInput { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "ListenerArns" :: NullOrUndefined (ListenerArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeListenersInput { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "ListenerArns" :: Maybe (ListenerArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1183,7 +1183,7 @@ Constructs DescribeListenersInput from required parameters
 #### `newDescribeListenersInput'`
 
 ``` purescript
-newDescribeListenersInput' :: ({ "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "ListenerArns" :: NullOrUndefined (ListenerArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "ListenerArns" :: NullOrUndefined (ListenerArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeListenersInput
+newDescribeListenersInput' :: ({ "LoadBalancerArn" :: Maybe (LoadBalancerArn), "ListenerArns" :: Maybe (ListenerArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "ListenerArns" :: Maybe (ListenerArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeListenersInput
 ```
 
 Constructs DescribeListenersInput's fields from required parameters
@@ -1192,7 +1192,7 @@ Constructs DescribeListenersInput's fields from required parameters
 
 ``` purescript
 newtype DescribeListenersOutput
-  = DescribeListenersOutput { "Listeners" :: NullOrUndefined (Listeners), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeListenersOutput { "Listeners" :: Maybe (Listeners), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1215,7 +1215,7 @@ Constructs DescribeListenersOutput from required parameters
 #### `newDescribeListenersOutput'`
 
 ``` purescript
-newDescribeListenersOutput' :: ({ "Listeners" :: NullOrUndefined (Listeners), "NextMarker" :: NullOrUndefined (Marker) } -> { "Listeners" :: NullOrUndefined (Listeners), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeListenersOutput
+newDescribeListenersOutput' :: ({ "Listeners" :: Maybe (Listeners), "NextMarker" :: Maybe (Marker) } -> { "Listeners" :: Maybe (Listeners), "NextMarker" :: Maybe (Marker) }) -> DescribeListenersOutput
 ```
 
 Constructs DescribeListenersOutput's fields from required parameters
@@ -1256,7 +1256,7 @@ Constructs DescribeLoadBalancerAttributesInput's fields from required parameters
 
 ``` purescript
 newtype DescribeLoadBalancerAttributesOutput
-  = DescribeLoadBalancerAttributesOutput { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) }
+  = DescribeLoadBalancerAttributesOutput { "Attributes" :: Maybe (LoadBalancerAttributes) }
 ```
 
 ##### Instances
@@ -1279,7 +1279,7 @@ Constructs DescribeLoadBalancerAttributesOutput from required parameters
 #### `newDescribeLoadBalancerAttributesOutput'`
 
 ``` purescript
-newDescribeLoadBalancerAttributesOutput' :: ({ "Attributes" :: NullOrUndefined (LoadBalancerAttributes) } -> { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) }) -> DescribeLoadBalancerAttributesOutput
+newDescribeLoadBalancerAttributesOutput' :: ({ "Attributes" :: Maybe (LoadBalancerAttributes) } -> { "Attributes" :: Maybe (LoadBalancerAttributes) }) -> DescribeLoadBalancerAttributesOutput
 ```
 
 Constructs DescribeLoadBalancerAttributesOutput's fields from required parameters
@@ -1288,7 +1288,7 @@ Constructs DescribeLoadBalancerAttributesOutput's fields from required parameter
 
 ``` purescript
 newtype DescribeLoadBalancersInput
-  = DescribeLoadBalancersInput { "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "Names" :: NullOrUndefined (LoadBalancerNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeLoadBalancersInput { "LoadBalancerArns" :: Maybe (LoadBalancerArns), "Names" :: Maybe (LoadBalancerNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1311,7 +1311,7 @@ Constructs DescribeLoadBalancersInput from required parameters
 #### `newDescribeLoadBalancersInput'`
 
 ``` purescript
-newDescribeLoadBalancersInput' :: ({ "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "Names" :: NullOrUndefined (LoadBalancerNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "Names" :: NullOrUndefined (LoadBalancerNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeLoadBalancersInput
+newDescribeLoadBalancersInput' :: ({ "LoadBalancerArns" :: Maybe (LoadBalancerArns), "Names" :: Maybe (LoadBalancerNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "LoadBalancerArns" :: Maybe (LoadBalancerArns), "Names" :: Maybe (LoadBalancerNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeLoadBalancersInput
 ```
 
 Constructs DescribeLoadBalancersInput's fields from required parameters
@@ -1320,7 +1320,7 @@ Constructs DescribeLoadBalancersInput's fields from required parameters
 
 ``` purescript
 newtype DescribeLoadBalancersOutput
-  = DescribeLoadBalancersOutput { "LoadBalancers" :: NullOrUndefined (LoadBalancers), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeLoadBalancersOutput { "LoadBalancers" :: Maybe (LoadBalancers), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1343,7 +1343,7 @@ Constructs DescribeLoadBalancersOutput from required parameters
 #### `newDescribeLoadBalancersOutput'`
 
 ``` purescript
-newDescribeLoadBalancersOutput' :: ({ "LoadBalancers" :: NullOrUndefined (LoadBalancers), "NextMarker" :: NullOrUndefined (Marker) } -> { "LoadBalancers" :: NullOrUndefined (LoadBalancers), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeLoadBalancersOutput
+newDescribeLoadBalancersOutput' :: ({ "LoadBalancers" :: Maybe (LoadBalancers), "NextMarker" :: Maybe (Marker) } -> { "LoadBalancers" :: Maybe (LoadBalancers), "NextMarker" :: Maybe (Marker) }) -> DescribeLoadBalancersOutput
 ```
 
 Constructs DescribeLoadBalancersOutput's fields from required parameters
@@ -1352,7 +1352,7 @@ Constructs DescribeLoadBalancersOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeRulesInput
-  = DescribeRulesInput { "ListenerArn" :: NullOrUndefined (ListenerArn), "RuleArns" :: NullOrUndefined (RuleArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeRulesInput { "ListenerArn" :: Maybe (ListenerArn), "RuleArns" :: Maybe (RuleArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1375,7 +1375,7 @@ Constructs DescribeRulesInput from required parameters
 #### `newDescribeRulesInput'`
 
 ``` purescript
-newDescribeRulesInput' :: ({ "ListenerArn" :: NullOrUndefined (ListenerArn), "RuleArns" :: NullOrUndefined (RuleArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "ListenerArn" :: NullOrUndefined (ListenerArn), "RuleArns" :: NullOrUndefined (RuleArns), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeRulesInput
+newDescribeRulesInput' :: ({ "ListenerArn" :: Maybe (ListenerArn), "RuleArns" :: Maybe (RuleArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "ListenerArn" :: Maybe (ListenerArn), "RuleArns" :: Maybe (RuleArns), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeRulesInput
 ```
 
 Constructs DescribeRulesInput's fields from required parameters
@@ -1384,7 +1384,7 @@ Constructs DescribeRulesInput's fields from required parameters
 
 ``` purescript
 newtype DescribeRulesOutput
-  = DescribeRulesOutput { "Rules" :: NullOrUndefined (Rules), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeRulesOutput { "Rules" :: Maybe (Rules), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1407,7 +1407,7 @@ Constructs DescribeRulesOutput from required parameters
 #### `newDescribeRulesOutput'`
 
 ``` purescript
-newDescribeRulesOutput' :: ({ "Rules" :: NullOrUndefined (Rules), "NextMarker" :: NullOrUndefined (Marker) } -> { "Rules" :: NullOrUndefined (Rules), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeRulesOutput
+newDescribeRulesOutput' :: ({ "Rules" :: Maybe (Rules), "NextMarker" :: Maybe (Marker) } -> { "Rules" :: Maybe (Rules), "NextMarker" :: Maybe (Marker) }) -> DescribeRulesOutput
 ```
 
 Constructs DescribeRulesOutput's fields from required parameters
@@ -1416,7 +1416,7 @@ Constructs DescribeRulesOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeSSLPoliciesInput
-  = DescribeSSLPoliciesInput { "Names" :: NullOrUndefined (SslPolicyNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeSSLPoliciesInput { "Names" :: Maybe (SslPolicyNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1439,7 +1439,7 @@ Constructs DescribeSSLPoliciesInput from required parameters
 #### `newDescribeSSLPoliciesInput'`
 
 ``` purescript
-newDescribeSSLPoliciesInput' :: ({ "Names" :: NullOrUndefined (SslPolicyNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "Names" :: NullOrUndefined (SslPolicyNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeSSLPoliciesInput
+newDescribeSSLPoliciesInput' :: ({ "Names" :: Maybe (SslPolicyNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "Names" :: Maybe (SslPolicyNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeSSLPoliciesInput
 ```
 
 Constructs DescribeSSLPoliciesInput's fields from required parameters
@@ -1448,7 +1448,7 @@ Constructs DescribeSSLPoliciesInput's fields from required parameters
 
 ``` purescript
 newtype DescribeSSLPoliciesOutput
-  = DescribeSSLPoliciesOutput { "SslPolicies" :: NullOrUndefined (SslPolicies), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeSSLPoliciesOutput { "SslPolicies" :: Maybe (SslPolicies), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1471,7 +1471,7 @@ Constructs DescribeSSLPoliciesOutput from required parameters
 #### `newDescribeSSLPoliciesOutput'`
 
 ``` purescript
-newDescribeSSLPoliciesOutput' :: ({ "SslPolicies" :: NullOrUndefined (SslPolicies), "NextMarker" :: NullOrUndefined (Marker) } -> { "SslPolicies" :: NullOrUndefined (SslPolicies), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeSSLPoliciesOutput
+newDescribeSSLPoliciesOutput' :: ({ "SslPolicies" :: Maybe (SslPolicies), "NextMarker" :: Maybe (Marker) } -> { "SslPolicies" :: Maybe (SslPolicies), "NextMarker" :: Maybe (Marker) }) -> DescribeSSLPoliciesOutput
 ```
 
 Constructs DescribeSSLPoliciesOutput's fields from required parameters
@@ -1512,7 +1512,7 @@ Constructs DescribeTagsInput's fields from required parameters
 
 ``` purescript
 newtype DescribeTagsOutput
-  = DescribeTagsOutput { "TagDescriptions" :: NullOrUndefined (TagDescriptions) }
+  = DescribeTagsOutput { "TagDescriptions" :: Maybe (TagDescriptions) }
 ```
 
 ##### Instances
@@ -1535,7 +1535,7 @@ Constructs DescribeTagsOutput from required parameters
 #### `newDescribeTagsOutput'`
 
 ``` purescript
-newDescribeTagsOutput' :: ({ "TagDescriptions" :: NullOrUndefined (TagDescriptions) } -> { "TagDescriptions" :: NullOrUndefined (TagDescriptions) }) -> DescribeTagsOutput
+newDescribeTagsOutput' :: ({ "TagDescriptions" :: Maybe (TagDescriptions) } -> { "TagDescriptions" :: Maybe (TagDescriptions) }) -> DescribeTagsOutput
 ```
 
 Constructs DescribeTagsOutput's fields from required parameters
@@ -1576,7 +1576,7 @@ Constructs DescribeTargetGroupAttributesInput's fields from required parameters
 
 ``` purescript
 newtype DescribeTargetGroupAttributesOutput
-  = DescribeTargetGroupAttributesOutput { "Attributes" :: NullOrUndefined (TargetGroupAttributes) }
+  = DescribeTargetGroupAttributesOutput { "Attributes" :: Maybe (TargetGroupAttributes) }
 ```
 
 ##### Instances
@@ -1599,7 +1599,7 @@ Constructs DescribeTargetGroupAttributesOutput from required parameters
 #### `newDescribeTargetGroupAttributesOutput'`
 
 ``` purescript
-newDescribeTargetGroupAttributesOutput' :: ({ "Attributes" :: NullOrUndefined (TargetGroupAttributes) } -> { "Attributes" :: NullOrUndefined (TargetGroupAttributes) }) -> DescribeTargetGroupAttributesOutput
+newDescribeTargetGroupAttributesOutput' :: ({ "Attributes" :: Maybe (TargetGroupAttributes) } -> { "Attributes" :: Maybe (TargetGroupAttributes) }) -> DescribeTargetGroupAttributesOutput
 ```
 
 Constructs DescribeTargetGroupAttributesOutput's fields from required parameters
@@ -1608,7 +1608,7 @@ Constructs DescribeTargetGroupAttributesOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeTargetGroupsInput
-  = DescribeTargetGroupsInput { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "TargetGroupArns" :: NullOrUndefined (TargetGroupArns), "Names" :: NullOrUndefined (TargetGroupNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }
+  = DescribeTargetGroupsInput { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "TargetGroupArns" :: Maybe (TargetGroupArns), "Names" :: Maybe (TargetGroupNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -1631,7 +1631,7 @@ Constructs DescribeTargetGroupsInput from required parameters
 #### `newDescribeTargetGroupsInput'`
 
 ``` purescript
-newDescribeTargetGroupsInput' :: ({ "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "TargetGroupArns" :: NullOrUndefined (TargetGroupArns), "Names" :: NullOrUndefined (TargetGroupNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) } -> { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "TargetGroupArns" :: NullOrUndefined (TargetGroupArns), "Names" :: NullOrUndefined (TargetGroupNames), "Marker" :: NullOrUndefined (Marker), "PageSize" :: NullOrUndefined (PageSize) }) -> DescribeTargetGroupsInput
+newDescribeTargetGroupsInput' :: ({ "LoadBalancerArn" :: Maybe (LoadBalancerArn), "TargetGroupArns" :: Maybe (TargetGroupArns), "Names" :: Maybe (TargetGroupNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) } -> { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "TargetGroupArns" :: Maybe (TargetGroupArns), "Names" :: Maybe (TargetGroupNames), "Marker" :: Maybe (Marker), "PageSize" :: Maybe (PageSize) }) -> DescribeTargetGroupsInput
 ```
 
 Constructs DescribeTargetGroupsInput's fields from required parameters
@@ -1640,7 +1640,7 @@ Constructs DescribeTargetGroupsInput's fields from required parameters
 
 ``` purescript
 newtype DescribeTargetGroupsOutput
-  = DescribeTargetGroupsOutput { "TargetGroups" :: NullOrUndefined (TargetGroups), "NextMarker" :: NullOrUndefined (Marker) }
+  = DescribeTargetGroupsOutput { "TargetGroups" :: Maybe (TargetGroups), "NextMarker" :: Maybe (Marker) }
 ```
 
 ##### Instances
@@ -1663,7 +1663,7 @@ Constructs DescribeTargetGroupsOutput from required parameters
 #### `newDescribeTargetGroupsOutput'`
 
 ``` purescript
-newDescribeTargetGroupsOutput' :: ({ "TargetGroups" :: NullOrUndefined (TargetGroups), "NextMarker" :: NullOrUndefined (Marker) } -> { "TargetGroups" :: NullOrUndefined (TargetGroups), "NextMarker" :: NullOrUndefined (Marker) }) -> DescribeTargetGroupsOutput
+newDescribeTargetGroupsOutput' :: ({ "TargetGroups" :: Maybe (TargetGroups), "NextMarker" :: Maybe (Marker) } -> { "TargetGroups" :: Maybe (TargetGroups), "NextMarker" :: Maybe (Marker) }) -> DescribeTargetGroupsOutput
 ```
 
 Constructs DescribeTargetGroupsOutput's fields from required parameters
@@ -1672,7 +1672,7 @@ Constructs DescribeTargetGroupsOutput's fields from required parameters
 
 ``` purescript
 newtype DescribeTargetHealthInput
-  = DescribeTargetHealthInput { "TargetGroupArn" :: TargetGroupArn, "Targets" :: NullOrUndefined (TargetDescriptions) }
+  = DescribeTargetHealthInput { "TargetGroupArn" :: TargetGroupArn, "Targets" :: Maybe (TargetDescriptions) }
 ```
 
 ##### Instances
@@ -1695,7 +1695,7 @@ Constructs DescribeTargetHealthInput from required parameters
 #### `newDescribeTargetHealthInput'`
 
 ``` purescript
-newDescribeTargetHealthInput' :: TargetGroupArn -> ({ "TargetGroupArn" :: TargetGroupArn, "Targets" :: NullOrUndefined (TargetDescriptions) } -> { "TargetGroupArn" :: TargetGroupArn, "Targets" :: NullOrUndefined (TargetDescriptions) }) -> DescribeTargetHealthInput
+newDescribeTargetHealthInput' :: TargetGroupArn -> ({ "TargetGroupArn" :: TargetGroupArn, "Targets" :: Maybe (TargetDescriptions) } -> { "TargetGroupArn" :: TargetGroupArn, "Targets" :: Maybe (TargetDescriptions) }) -> DescribeTargetHealthInput
 ```
 
 Constructs DescribeTargetHealthInput's fields from required parameters
@@ -1704,7 +1704,7 @@ Constructs DescribeTargetHealthInput's fields from required parameters
 
 ``` purescript
 newtype DescribeTargetHealthOutput
-  = DescribeTargetHealthOutput { "TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions) }
+  = DescribeTargetHealthOutput { "TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions) }
 ```
 
 ##### Instances
@@ -1727,7 +1727,7 @@ Constructs DescribeTargetHealthOutput from required parameters
 #### `newDescribeTargetHealthOutput'`
 
 ``` purescript
-newDescribeTargetHealthOutput' :: ({ "TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions) } -> { "TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions) }) -> DescribeTargetHealthOutput
+newDescribeTargetHealthOutput' :: ({ "TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions) } -> { "TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions) }) -> DescribeTargetHealthOutput
 ```
 
 Constructs DescribeTargetHealthOutput's fields from required parameters
@@ -2078,7 +2078,7 @@ Encode IsDefault
 
 ``` purescript
 newtype Limit
-  = Limit { "Name" :: NullOrUndefined (Name), "Max" :: NullOrUndefined (Max) }
+  = Limit { "Name" :: Maybe (Name), "Max" :: Maybe (Max) }
 ```
 
 <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
@@ -2103,7 +2103,7 @@ Constructs Limit from required parameters
 #### `newLimit'`
 
 ``` purescript
-newLimit' :: ({ "Name" :: NullOrUndefined (Name), "Max" :: NullOrUndefined (Max) } -> { "Name" :: NullOrUndefined (Name), "Max" :: NullOrUndefined (Max) }) -> Limit
+newLimit' :: ({ "Name" :: Maybe (Name), "Max" :: Maybe (Max) } -> { "Name" :: Maybe (Name), "Max" :: Maybe (Max) }) -> Limit
 ```
 
 Constructs Limit's fields from required parameters
@@ -2144,7 +2144,7 @@ Encode ListOfString
 
 ``` purescript
 newtype Listener
-  = Listener { "ListenerArn" :: NullOrUndefined (ListenerArn), "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "Certificates" :: NullOrUndefined (CertificateList), "SslPolicy" :: NullOrUndefined (SslPolicyName), "DefaultActions" :: NullOrUndefined (Actions) }
+  = Listener { "ListenerArn" :: Maybe (ListenerArn), "LoadBalancerArn" :: Maybe (LoadBalancerArn), "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "Certificates" :: Maybe (CertificateList), "SslPolicy" :: Maybe (SslPolicyName), "DefaultActions" :: Maybe (Actions) }
 ```
 
 <p>Information about a listener.</p>
@@ -2169,7 +2169,7 @@ Constructs Listener from required parameters
 #### `newListener'`
 
 ``` purescript
-newListener' :: ({ "ListenerArn" :: NullOrUndefined (ListenerArn), "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "Certificates" :: NullOrUndefined (CertificateList), "SslPolicy" :: NullOrUndefined (SslPolicyName), "DefaultActions" :: NullOrUndefined (Actions) } -> { "ListenerArn" :: NullOrUndefined (ListenerArn), "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "Certificates" :: NullOrUndefined (CertificateList), "SslPolicy" :: NullOrUndefined (SslPolicyName), "DefaultActions" :: NullOrUndefined (Actions) }) -> Listener
+newListener' :: ({ "ListenerArn" :: Maybe (ListenerArn), "LoadBalancerArn" :: Maybe (LoadBalancerArn), "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "Certificates" :: Maybe (CertificateList), "SslPolicy" :: Maybe (SslPolicyName), "DefaultActions" :: Maybe (Actions) } -> { "ListenerArn" :: Maybe (ListenerArn), "LoadBalancerArn" :: Maybe (LoadBalancerArn), "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "Certificates" :: Maybe (CertificateList), "SslPolicy" :: Maybe (SslPolicyName), "DefaultActions" :: Maybe (Actions) }) -> Listener
 ```
 
 Constructs Listener's fields from required parameters
@@ -2244,7 +2244,7 @@ Encode Listeners
 
 ``` purescript
 newtype LoadBalancer
-  = LoadBalancer { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "DNSName" :: NullOrUndefined (DNSName), "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId), "CreatedTime" :: NullOrUndefined (CreatedTime), "LoadBalancerName" :: NullOrUndefined (LoadBalancerName), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "VpcId" :: NullOrUndefined (VpcId), "State" :: NullOrUndefined (LoadBalancerState), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "IpAddressType" :: NullOrUndefined (IpAddressType) }
+  = LoadBalancer { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "DNSName" :: Maybe (DNSName), "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId), "CreatedTime" :: Maybe (CreatedTime), "LoadBalancerName" :: Maybe (LoadBalancerName), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "VpcId" :: Maybe (VpcId), "State" :: Maybe (LoadBalancerState), "Type" :: Maybe (LoadBalancerTypeEnum), "AvailabilityZones" :: Maybe (AvailabilityZones), "SecurityGroups" :: Maybe (SecurityGroups), "IpAddressType" :: Maybe (IpAddressType) }
 ```
 
 <p>Information about a load balancer.</p>
@@ -2269,7 +2269,7 @@ Constructs LoadBalancer from required parameters
 #### `newLoadBalancer'`
 
 ``` purescript
-newLoadBalancer' :: ({ "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "DNSName" :: NullOrUndefined (DNSName), "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId), "CreatedTime" :: NullOrUndefined (CreatedTime), "LoadBalancerName" :: NullOrUndefined (LoadBalancerName), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "VpcId" :: NullOrUndefined (VpcId), "State" :: NullOrUndefined (LoadBalancerState), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "IpAddressType" :: NullOrUndefined (IpAddressType) } -> { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn), "DNSName" :: NullOrUndefined (DNSName), "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId), "CreatedTime" :: NullOrUndefined (CreatedTime), "LoadBalancerName" :: NullOrUndefined (LoadBalancerName), "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum), "VpcId" :: NullOrUndefined (VpcId), "State" :: NullOrUndefined (LoadBalancerState), "Type" :: NullOrUndefined (LoadBalancerTypeEnum), "AvailabilityZones" :: NullOrUndefined (AvailabilityZones), "SecurityGroups" :: NullOrUndefined (SecurityGroups), "IpAddressType" :: NullOrUndefined (IpAddressType) }) -> LoadBalancer
+newLoadBalancer' :: ({ "LoadBalancerArn" :: Maybe (LoadBalancerArn), "DNSName" :: Maybe (DNSName), "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId), "CreatedTime" :: Maybe (CreatedTime), "LoadBalancerName" :: Maybe (LoadBalancerName), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "VpcId" :: Maybe (VpcId), "State" :: Maybe (LoadBalancerState), "Type" :: Maybe (LoadBalancerTypeEnum), "AvailabilityZones" :: Maybe (AvailabilityZones), "SecurityGroups" :: Maybe (SecurityGroups), "IpAddressType" :: Maybe (IpAddressType) } -> { "LoadBalancerArn" :: Maybe (LoadBalancerArn), "DNSName" :: Maybe (DNSName), "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId), "CreatedTime" :: Maybe (CreatedTime), "LoadBalancerName" :: Maybe (LoadBalancerName), "Scheme" :: Maybe (LoadBalancerSchemeEnum), "VpcId" :: Maybe (VpcId), "State" :: Maybe (LoadBalancerState), "Type" :: Maybe (LoadBalancerTypeEnum), "AvailabilityZones" :: Maybe (AvailabilityZones), "SecurityGroups" :: Maybe (SecurityGroups), "IpAddressType" :: Maybe (IpAddressType) }) -> LoadBalancer
 ```
 
 Constructs LoadBalancer's fields from required parameters
@@ -2278,7 +2278,7 @@ Constructs LoadBalancer's fields from required parameters
 
 ``` purescript
 newtype LoadBalancerAddress
-  = LoadBalancerAddress { "IpAddress" :: NullOrUndefined (IpAddress), "AllocationId" :: NullOrUndefined (AllocationId) }
+  = LoadBalancerAddress { "IpAddress" :: Maybe (IpAddress), "AllocationId" :: Maybe (AllocationId) }
 ```
 
 <p>Information about a static IP address for a load balancer.</p>
@@ -2303,7 +2303,7 @@ Constructs LoadBalancerAddress from required parameters
 #### `newLoadBalancerAddress'`
 
 ``` purescript
-newLoadBalancerAddress' :: ({ "IpAddress" :: NullOrUndefined (IpAddress), "AllocationId" :: NullOrUndefined (AllocationId) } -> { "IpAddress" :: NullOrUndefined (IpAddress), "AllocationId" :: NullOrUndefined (AllocationId) }) -> LoadBalancerAddress
+newLoadBalancerAddress' :: ({ "IpAddress" :: Maybe (IpAddress), "AllocationId" :: Maybe (AllocationId) } -> { "IpAddress" :: Maybe (IpAddress), "AllocationId" :: Maybe (AllocationId) }) -> LoadBalancerAddress
 ```
 
 Constructs LoadBalancerAddress's fields from required parameters
@@ -2360,7 +2360,7 @@ Encode LoadBalancerArns
 
 ``` purescript
 newtype LoadBalancerAttribute
-  = LoadBalancerAttribute { "Key" :: NullOrUndefined (LoadBalancerAttributeKey), "Value" :: NullOrUndefined (LoadBalancerAttributeValue) }
+  = LoadBalancerAttribute { "Key" :: Maybe (LoadBalancerAttributeKey), "Value" :: Maybe (LoadBalancerAttributeValue) }
 ```
 
 <p>Information about a load balancer attribute.</p>
@@ -2385,7 +2385,7 @@ Constructs LoadBalancerAttribute from required parameters
 #### `newLoadBalancerAttribute'`
 
 ``` purescript
-newLoadBalancerAttribute' :: ({ "Key" :: NullOrUndefined (LoadBalancerAttributeKey), "Value" :: NullOrUndefined (LoadBalancerAttributeValue) } -> { "Key" :: NullOrUndefined (LoadBalancerAttributeKey), "Value" :: NullOrUndefined (LoadBalancerAttributeValue) }) -> LoadBalancerAttribute
+newLoadBalancerAttribute' :: ({ "Key" :: Maybe (LoadBalancerAttributeKey), "Value" :: Maybe (LoadBalancerAttributeValue) } -> { "Key" :: Maybe (LoadBalancerAttributeKey), "Value" :: Maybe (LoadBalancerAttributeValue) }) -> LoadBalancerAttribute
 ```
 
 Constructs LoadBalancerAttribute's fields from required parameters
@@ -2508,7 +2508,7 @@ Encode LoadBalancerSchemeEnum
 
 ``` purescript
 newtype LoadBalancerState
-  = LoadBalancerState { "Code" :: NullOrUndefined (LoadBalancerStateEnum), "Reason" :: NullOrUndefined (StateReason) }
+  = LoadBalancerState { "Code" :: Maybe (LoadBalancerStateEnum), "Reason" :: Maybe (StateReason) }
 ```
 
 <p>Information about the state of the load balancer.</p>
@@ -2533,7 +2533,7 @@ Constructs LoadBalancerState from required parameters
 #### `newLoadBalancerState'`
 
 ``` purescript
-newLoadBalancerState' :: ({ "Code" :: NullOrUndefined (LoadBalancerStateEnum), "Reason" :: NullOrUndefined (StateReason) } -> { "Code" :: NullOrUndefined (LoadBalancerStateEnum), "Reason" :: NullOrUndefined (StateReason) }) -> LoadBalancerState
+newLoadBalancerState' :: ({ "Code" :: Maybe (LoadBalancerStateEnum), "Reason" :: Maybe (StateReason) } -> { "Code" :: Maybe (LoadBalancerStateEnum), "Reason" :: Maybe (StateReason) }) -> LoadBalancerState
 ```
 
 Constructs LoadBalancerState's fields from required parameters
@@ -2656,7 +2656,7 @@ Encode Max
 
 ``` purescript
 newtype ModifyListenerInput
-  = ModifyListenerInput { "ListenerArn" :: ListenerArn, "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: NullOrUndefined (Actions) }
+  = ModifyListenerInput { "ListenerArn" :: ListenerArn, "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Maybe (Actions) }
 ```
 
 ##### Instances
@@ -2679,7 +2679,7 @@ Constructs ModifyListenerInput from required parameters
 #### `newModifyListenerInput'`
 
 ``` purescript
-newModifyListenerInput' :: ListenerArn -> ({ "ListenerArn" :: ListenerArn, "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: NullOrUndefined (Actions) } -> { "ListenerArn" :: ListenerArn, "Port" :: NullOrUndefined (Port), "Protocol" :: NullOrUndefined (ProtocolEnum), "SslPolicy" :: NullOrUndefined (SslPolicyName), "Certificates" :: NullOrUndefined (CertificateList), "DefaultActions" :: NullOrUndefined (Actions) }) -> ModifyListenerInput
+newModifyListenerInput' :: ListenerArn -> ({ "ListenerArn" :: ListenerArn, "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Maybe (Actions) } -> { "ListenerArn" :: ListenerArn, "Port" :: Maybe (Port), "Protocol" :: Maybe (ProtocolEnum), "SslPolicy" :: Maybe (SslPolicyName), "Certificates" :: Maybe (CertificateList), "DefaultActions" :: Maybe (Actions) }) -> ModifyListenerInput
 ```
 
 Constructs ModifyListenerInput's fields from required parameters
@@ -2688,7 +2688,7 @@ Constructs ModifyListenerInput's fields from required parameters
 
 ``` purescript
 newtype ModifyListenerOutput
-  = ModifyListenerOutput { "Listeners" :: NullOrUndefined (Listeners) }
+  = ModifyListenerOutput { "Listeners" :: Maybe (Listeners) }
 ```
 
 ##### Instances
@@ -2711,7 +2711,7 @@ Constructs ModifyListenerOutput from required parameters
 #### `newModifyListenerOutput'`
 
 ``` purescript
-newModifyListenerOutput' :: ({ "Listeners" :: NullOrUndefined (Listeners) } -> { "Listeners" :: NullOrUndefined (Listeners) }) -> ModifyListenerOutput
+newModifyListenerOutput' :: ({ "Listeners" :: Maybe (Listeners) } -> { "Listeners" :: Maybe (Listeners) }) -> ModifyListenerOutput
 ```
 
 Constructs ModifyListenerOutput's fields from required parameters
@@ -2752,7 +2752,7 @@ Constructs ModifyLoadBalancerAttributesInput's fields from required parameters
 
 ``` purescript
 newtype ModifyLoadBalancerAttributesOutput
-  = ModifyLoadBalancerAttributesOutput { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) }
+  = ModifyLoadBalancerAttributesOutput { "Attributes" :: Maybe (LoadBalancerAttributes) }
 ```
 
 ##### Instances
@@ -2775,7 +2775,7 @@ Constructs ModifyLoadBalancerAttributesOutput from required parameters
 #### `newModifyLoadBalancerAttributesOutput'`
 
 ``` purescript
-newModifyLoadBalancerAttributesOutput' :: ({ "Attributes" :: NullOrUndefined (LoadBalancerAttributes) } -> { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) }) -> ModifyLoadBalancerAttributesOutput
+newModifyLoadBalancerAttributesOutput' :: ({ "Attributes" :: Maybe (LoadBalancerAttributes) } -> { "Attributes" :: Maybe (LoadBalancerAttributes) }) -> ModifyLoadBalancerAttributesOutput
 ```
 
 Constructs ModifyLoadBalancerAttributesOutput's fields from required parameters
@@ -2784,7 +2784,7 @@ Constructs ModifyLoadBalancerAttributesOutput's fields from required parameters
 
 ``` purescript
 newtype ModifyRuleInput
-  = ModifyRuleInput { "RuleArn" :: RuleArn, "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions) }
+  = ModifyRuleInput { "RuleArn" :: RuleArn, "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions) }
 ```
 
 ##### Instances
@@ -2807,7 +2807,7 @@ Constructs ModifyRuleInput from required parameters
 #### `newModifyRuleInput'`
 
 ``` purescript
-newModifyRuleInput' :: RuleArn -> ({ "RuleArn" :: RuleArn, "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions) } -> { "RuleArn" :: RuleArn, "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions) }) -> ModifyRuleInput
+newModifyRuleInput' :: RuleArn -> ({ "RuleArn" :: RuleArn, "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions) } -> { "RuleArn" :: RuleArn, "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions) }) -> ModifyRuleInput
 ```
 
 Constructs ModifyRuleInput's fields from required parameters
@@ -2816,7 +2816,7 @@ Constructs ModifyRuleInput's fields from required parameters
 
 ``` purescript
 newtype ModifyRuleOutput
-  = ModifyRuleOutput { "Rules" :: NullOrUndefined (Rules) }
+  = ModifyRuleOutput { "Rules" :: Maybe (Rules) }
 ```
 
 ##### Instances
@@ -2839,7 +2839,7 @@ Constructs ModifyRuleOutput from required parameters
 #### `newModifyRuleOutput'`
 
 ``` purescript
-newModifyRuleOutput' :: ({ "Rules" :: NullOrUndefined (Rules) } -> { "Rules" :: NullOrUndefined (Rules) }) -> ModifyRuleOutput
+newModifyRuleOutput' :: ({ "Rules" :: Maybe (Rules) } -> { "Rules" :: Maybe (Rules) }) -> ModifyRuleOutput
 ```
 
 Constructs ModifyRuleOutput's fields from required parameters
@@ -2880,7 +2880,7 @@ Constructs ModifyTargetGroupAttributesInput's fields from required parameters
 
 ``` purescript
 newtype ModifyTargetGroupAttributesOutput
-  = ModifyTargetGroupAttributesOutput { "Attributes" :: NullOrUndefined (TargetGroupAttributes) }
+  = ModifyTargetGroupAttributesOutput { "Attributes" :: Maybe (TargetGroupAttributes) }
 ```
 
 ##### Instances
@@ -2903,7 +2903,7 @@ Constructs ModifyTargetGroupAttributesOutput from required parameters
 #### `newModifyTargetGroupAttributesOutput'`
 
 ``` purescript
-newModifyTargetGroupAttributesOutput' :: ({ "Attributes" :: NullOrUndefined (TargetGroupAttributes) } -> { "Attributes" :: NullOrUndefined (TargetGroupAttributes) }) -> ModifyTargetGroupAttributesOutput
+newModifyTargetGroupAttributesOutput' :: ({ "Attributes" :: Maybe (TargetGroupAttributes) } -> { "Attributes" :: Maybe (TargetGroupAttributes) }) -> ModifyTargetGroupAttributesOutput
 ```
 
 Constructs ModifyTargetGroupAttributesOutput's fields from required parameters
@@ -2912,7 +2912,7 @@ Constructs ModifyTargetGroupAttributesOutput's fields from required parameters
 
 ``` purescript
 newtype ModifyTargetGroupInput
-  = ModifyTargetGroupInput { "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher) }
+  = ModifyTargetGroupInput { "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher) }
 ```
 
 ##### Instances
@@ -2935,7 +2935,7 @@ Constructs ModifyTargetGroupInput from required parameters
 #### `newModifyTargetGroupInput'`
 
 ``` purescript
-newModifyTargetGroupInput' :: TargetGroupArn -> ({ "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher) } -> { "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckPath" :: NullOrUndefined (Path), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "Matcher" :: NullOrUndefined (Matcher) }) -> ModifyTargetGroupInput
+newModifyTargetGroupInput' :: TargetGroupArn -> ({ "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher) } -> { "TargetGroupArn" :: TargetGroupArn, "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckPath" :: Maybe (Path), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "Matcher" :: Maybe (Matcher) }) -> ModifyTargetGroupInput
 ```
 
 Constructs ModifyTargetGroupInput's fields from required parameters
@@ -2944,7 +2944,7 @@ Constructs ModifyTargetGroupInput's fields from required parameters
 
 ``` purescript
 newtype ModifyTargetGroupOutput
-  = ModifyTargetGroupOutput { "TargetGroups" :: NullOrUndefined (TargetGroups) }
+  = ModifyTargetGroupOutput { "TargetGroups" :: Maybe (TargetGroups) }
 ```
 
 ##### Instances
@@ -2967,7 +2967,7 @@ Constructs ModifyTargetGroupOutput from required parameters
 #### `newModifyTargetGroupOutput'`
 
 ``` purescript
-newModifyTargetGroupOutput' :: ({ "TargetGroups" :: NullOrUndefined (TargetGroups) } -> { "TargetGroups" :: NullOrUndefined (TargetGroups) }) -> ModifyTargetGroupOutput
+newModifyTargetGroupOutput' :: ({ "TargetGroups" :: Maybe (TargetGroups) } -> { "TargetGroups" :: Maybe (TargetGroups) }) -> ModifyTargetGroupOutput
 ```
 
 Constructs ModifyTargetGroupOutput's fields from required parameters
@@ -3286,7 +3286,7 @@ Encode ResourceInUseException
 
 ``` purescript
 newtype Rule
-  = Rule { "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (String), "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions), "IsDefault" :: NullOrUndefined (IsDefault) }
+  = Rule { "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (String), "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions), "IsDefault" :: Maybe (IsDefault) }
 ```
 
 <p>Information about a rule.</p>
@@ -3311,7 +3311,7 @@ Constructs Rule from required parameters
 #### `newRule'`
 
 ``` purescript
-newRule' :: ({ "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (String), "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions), "IsDefault" :: NullOrUndefined (IsDefault) } -> { "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (String), "Conditions" :: NullOrUndefined (RuleConditionList), "Actions" :: NullOrUndefined (Actions), "IsDefault" :: NullOrUndefined (IsDefault) }) -> Rule
+newRule' :: ({ "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (String), "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions), "IsDefault" :: Maybe (IsDefault) } -> { "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (String), "Conditions" :: Maybe (RuleConditionList), "Actions" :: Maybe (Actions), "IsDefault" :: Maybe (IsDefault) }) -> Rule
 ```
 
 Constructs Rule's fields from required parameters
@@ -3352,7 +3352,7 @@ Encode RuleArns
 
 ``` purescript
 newtype RuleCondition
-  = RuleCondition { "Field" :: NullOrUndefined (ConditionFieldName), "Values" :: NullOrUndefined (ListOfString) }
+  = RuleCondition { "Field" :: Maybe (ConditionFieldName), "Values" :: Maybe (ListOfString) }
 ```
 
 <p>Information about a condition for a rule.</p>
@@ -3377,7 +3377,7 @@ Constructs RuleCondition from required parameters
 #### `newRuleCondition'`
 
 ``` purescript
-newRuleCondition' :: ({ "Field" :: NullOrUndefined (ConditionFieldName), "Values" :: NullOrUndefined (ListOfString) } -> { "Field" :: NullOrUndefined (ConditionFieldName), "Values" :: NullOrUndefined (ListOfString) }) -> RuleCondition
+newRuleCondition' :: ({ "Field" :: Maybe (ConditionFieldName), "Values" :: Maybe (ListOfString) } -> { "Field" :: Maybe (ConditionFieldName), "Values" :: Maybe (ListOfString) }) -> RuleCondition
 ```
 
 Constructs RuleCondition's fields from required parameters
@@ -3452,7 +3452,7 @@ Encode RulePriorityList
 
 ``` purescript
 newtype RulePriorityPair
-  = RulePriorityPair { "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (RulePriority) }
+  = RulePriorityPair { "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (RulePriority) }
 ```
 
 <p>Information about the priorities for the rules for a listener.</p>
@@ -3477,7 +3477,7 @@ Constructs RulePriorityPair from required parameters
 #### `newRulePriorityPair'`
 
 ``` purescript
-newRulePriorityPair' :: ({ "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (RulePriority) } -> { "RuleArn" :: NullOrUndefined (RuleArn), "Priority" :: NullOrUndefined (RulePriority) }) -> RulePriorityPair
+newRulePriorityPair' :: ({ "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (RulePriority) } -> { "RuleArn" :: Maybe (RuleArn), "Priority" :: Maybe (RulePriority) }) -> RulePriorityPair
 ```
 
 Constructs RulePriorityPair's fields from required parameters
@@ -3584,7 +3584,7 @@ Constructs SetIpAddressTypeInput's fields from required parameters
 
 ``` purescript
 newtype SetIpAddressTypeOutput
-  = SetIpAddressTypeOutput { "IpAddressType" :: NullOrUndefined (IpAddressType) }
+  = SetIpAddressTypeOutput { "IpAddressType" :: Maybe (IpAddressType) }
 ```
 
 ##### Instances
@@ -3607,7 +3607,7 @@ Constructs SetIpAddressTypeOutput from required parameters
 #### `newSetIpAddressTypeOutput'`
 
 ``` purescript
-newSetIpAddressTypeOutput' :: ({ "IpAddressType" :: NullOrUndefined (IpAddressType) } -> { "IpAddressType" :: NullOrUndefined (IpAddressType) }) -> SetIpAddressTypeOutput
+newSetIpAddressTypeOutput' :: ({ "IpAddressType" :: Maybe (IpAddressType) } -> { "IpAddressType" :: Maybe (IpAddressType) }) -> SetIpAddressTypeOutput
 ```
 
 Constructs SetIpAddressTypeOutput's fields from required parameters
@@ -3648,7 +3648,7 @@ Constructs SetRulePrioritiesInput's fields from required parameters
 
 ``` purescript
 newtype SetRulePrioritiesOutput
-  = SetRulePrioritiesOutput { "Rules" :: NullOrUndefined (Rules) }
+  = SetRulePrioritiesOutput { "Rules" :: Maybe (Rules) }
 ```
 
 ##### Instances
@@ -3671,7 +3671,7 @@ Constructs SetRulePrioritiesOutput from required parameters
 #### `newSetRulePrioritiesOutput'`
 
 ``` purescript
-newSetRulePrioritiesOutput' :: ({ "Rules" :: NullOrUndefined (Rules) } -> { "Rules" :: NullOrUndefined (Rules) }) -> SetRulePrioritiesOutput
+newSetRulePrioritiesOutput' :: ({ "Rules" :: Maybe (Rules) } -> { "Rules" :: Maybe (Rules) }) -> SetRulePrioritiesOutput
 ```
 
 Constructs SetRulePrioritiesOutput's fields from required parameters
@@ -3712,7 +3712,7 @@ Constructs SetSecurityGroupsInput's fields from required parameters
 
 ``` purescript
 newtype SetSecurityGroupsOutput
-  = SetSecurityGroupsOutput { "SecurityGroupIds" :: NullOrUndefined (SecurityGroups) }
+  = SetSecurityGroupsOutput { "SecurityGroupIds" :: Maybe (SecurityGroups) }
 ```
 
 ##### Instances
@@ -3735,7 +3735,7 @@ Constructs SetSecurityGroupsOutput from required parameters
 #### `newSetSecurityGroupsOutput'`
 
 ``` purescript
-newSetSecurityGroupsOutput' :: ({ "SecurityGroupIds" :: NullOrUndefined (SecurityGroups) } -> { "SecurityGroupIds" :: NullOrUndefined (SecurityGroups) }) -> SetSecurityGroupsOutput
+newSetSecurityGroupsOutput' :: ({ "SecurityGroupIds" :: Maybe (SecurityGroups) } -> { "SecurityGroupIds" :: Maybe (SecurityGroups) }) -> SetSecurityGroupsOutput
 ```
 
 Constructs SetSecurityGroupsOutput's fields from required parameters
@@ -3744,7 +3744,7 @@ Constructs SetSecurityGroupsOutput's fields from required parameters
 
 ``` purescript
 newtype SetSubnetsInput
-  = SetSubnetsInput { "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: NullOrUndefined (SubnetMappings) }
+  = SetSubnetsInput { "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: Maybe (SubnetMappings) }
 ```
 
 ##### Instances
@@ -3767,7 +3767,7 @@ Constructs SetSubnetsInput from required parameters
 #### `newSetSubnetsInput'`
 
 ``` purescript
-newSetSubnetsInput' :: LoadBalancerArn -> Subnets -> ({ "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: NullOrUndefined (SubnetMappings) } -> { "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: NullOrUndefined (SubnetMappings) }) -> SetSubnetsInput
+newSetSubnetsInput' :: LoadBalancerArn -> Subnets -> ({ "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: Maybe (SubnetMappings) } -> { "LoadBalancerArn" :: LoadBalancerArn, "Subnets" :: Subnets, "SubnetMappings" :: Maybe (SubnetMappings) }) -> SetSubnetsInput
 ```
 
 Constructs SetSubnetsInput's fields from required parameters
@@ -3776,7 +3776,7 @@ Constructs SetSubnetsInput's fields from required parameters
 
 ``` purescript
 newtype SetSubnetsOutput
-  = SetSubnetsOutput { "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) }
+  = SetSubnetsOutput { "AvailabilityZones" :: Maybe (AvailabilityZones) }
 ```
 
 ##### Instances
@@ -3799,7 +3799,7 @@ Constructs SetSubnetsOutput from required parameters
 #### `newSetSubnetsOutput'`
 
 ``` purescript
-newSetSubnetsOutput' :: ({ "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } -> { "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) }) -> SetSubnetsOutput
+newSetSubnetsOutput' :: ({ "AvailabilityZones" :: Maybe (AvailabilityZones) } -> { "AvailabilityZones" :: Maybe (AvailabilityZones) }) -> SetSubnetsOutput
 ```
 
 Constructs SetSubnetsOutput's fields from required parameters
@@ -3824,7 +3824,7 @@ Encode SslPolicies
 
 ``` purescript
 newtype SslPolicy
-  = SslPolicy { "SslProtocols" :: NullOrUndefined (SslProtocols), "Ciphers" :: NullOrUndefined (Ciphers), "Name" :: NullOrUndefined (SslPolicyName) }
+  = SslPolicy { "SslProtocols" :: Maybe (SslProtocols), "Ciphers" :: Maybe (Ciphers), "Name" :: Maybe (SslPolicyName) }
 ```
 
 <p>Information about a policy used for SSL negotiation.</p>
@@ -3849,7 +3849,7 @@ Constructs SslPolicy from required parameters
 #### `newSslPolicy'`
 
 ``` purescript
-newSslPolicy' :: ({ "SslProtocols" :: NullOrUndefined (SslProtocols), "Ciphers" :: NullOrUndefined (Ciphers), "Name" :: NullOrUndefined (SslPolicyName) } -> { "SslProtocols" :: NullOrUndefined (SslProtocols), "Ciphers" :: NullOrUndefined (Ciphers), "Name" :: NullOrUndefined (SslPolicyName) }) -> SslPolicy
+newSslPolicy' :: ({ "SslProtocols" :: Maybe (SslProtocols), "Ciphers" :: Maybe (Ciphers), "Name" :: Maybe (SslPolicyName) } -> { "SslProtocols" :: Maybe (SslProtocols), "Ciphers" :: Maybe (Ciphers), "Name" :: Maybe (SslPolicyName) }) -> SslPolicy
 ```
 
 Constructs SslPolicy's fields from required parameters
@@ -3970,7 +3970,7 @@ Encode SubnetId
 
 ``` purescript
 newtype SubnetMapping
-  = SubnetMapping { "SubnetId" :: NullOrUndefined (SubnetId), "AllocationId" :: NullOrUndefined (AllocationId) }
+  = SubnetMapping { "SubnetId" :: Maybe (SubnetId), "AllocationId" :: Maybe (AllocationId) }
 ```
 
 <p>Information about a subnet mapping.</p>
@@ -3995,7 +3995,7 @@ Constructs SubnetMapping from required parameters
 #### `newSubnetMapping'`
 
 ``` purescript
-newSubnetMapping' :: ({ "SubnetId" :: NullOrUndefined (SubnetId), "AllocationId" :: NullOrUndefined (AllocationId) } -> { "SubnetId" :: NullOrUndefined (SubnetId), "AllocationId" :: NullOrUndefined (AllocationId) }) -> SubnetMapping
+newSubnetMapping' :: ({ "SubnetId" :: Maybe (SubnetId), "AllocationId" :: Maybe (AllocationId) } -> { "SubnetId" :: Maybe (SubnetId), "AllocationId" :: Maybe (AllocationId) }) -> SubnetMapping
 ```
 
 Constructs SubnetMapping's fields from required parameters
@@ -4054,7 +4054,7 @@ Encode Subnets
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) }
+  = Tag { "Key" :: TagKey, "Value" :: Maybe (TagValue) }
 ```
 
 <p>Information about a tag.</p>
@@ -4079,7 +4079,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: TagKey -> ({ "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) } -> { "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) }) -> Tag
+newTag' :: TagKey -> ({ "Key" :: TagKey, "Value" :: Maybe (TagValue) } -> { "Key" :: TagKey, "Value" :: Maybe (TagValue) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -4088,7 +4088,7 @@ Constructs Tag's fields from required parameters
 
 ``` purescript
 newtype TagDescription
-  = TagDescription { "ResourceArn" :: NullOrUndefined (ResourceArn), "Tags" :: NullOrUndefined (TagList) }
+  = TagDescription { "ResourceArn" :: Maybe (ResourceArn), "Tags" :: Maybe (TagList) }
 ```
 
 <p>The tags associated with a resource.</p>
@@ -4113,7 +4113,7 @@ Constructs TagDescription from required parameters
 #### `newTagDescription'`
 
 ``` purescript
-newTagDescription' :: ({ "ResourceArn" :: NullOrUndefined (ResourceArn), "Tags" :: NullOrUndefined (TagList) } -> { "ResourceArn" :: NullOrUndefined (ResourceArn), "Tags" :: NullOrUndefined (TagList) }) -> TagDescription
+newTagDescription' :: ({ "ResourceArn" :: Maybe (ResourceArn), "Tags" :: Maybe (TagList) } -> { "ResourceArn" :: Maybe (ResourceArn), "Tags" :: Maybe (TagList) }) -> TagDescription
 ```
 
 Constructs TagDescription's fields from required parameters
@@ -4202,7 +4202,7 @@ Encode TagValue
 
 ``` purescript
 newtype TargetDescription
-  = TargetDescription { "Id" :: TargetId, "Port" :: NullOrUndefined (Port), "AvailabilityZone" :: NullOrUndefined (ZoneName) }
+  = TargetDescription { "Id" :: TargetId, "Port" :: Maybe (Port), "AvailabilityZone" :: Maybe (ZoneName) }
 ```
 
 <p>Information about a target.</p>
@@ -4227,7 +4227,7 @@ Constructs TargetDescription from required parameters
 #### `newTargetDescription'`
 
 ``` purescript
-newTargetDescription' :: TargetId -> ({ "Id" :: TargetId, "Port" :: NullOrUndefined (Port), "AvailabilityZone" :: NullOrUndefined (ZoneName) } -> { "Id" :: TargetId, "Port" :: NullOrUndefined (Port), "AvailabilityZone" :: NullOrUndefined (ZoneName) }) -> TargetDescription
+newTargetDescription' :: TargetId -> ({ "Id" :: TargetId, "Port" :: Maybe (Port), "AvailabilityZone" :: Maybe (ZoneName) } -> { "Id" :: TargetId, "Port" :: Maybe (Port), "AvailabilityZone" :: Maybe (ZoneName) }) -> TargetDescription
 ```
 
 Constructs TargetDescription's fields from required parameters
@@ -4252,7 +4252,7 @@ Encode TargetDescriptions
 
 ``` purescript
 newtype TargetGroup
-  = TargetGroup { "TargetGroupArn" :: NullOrUndefined (TargetGroupArn), "TargetGroupName" :: NullOrUndefined (TargetGroupName), "Protocol" :: NullOrUndefined (ProtocolEnum), "Port" :: NullOrUndefined (Port), "VpcId" :: NullOrUndefined (VpcId), "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "HealthCheckPath" :: NullOrUndefined (Path), "Matcher" :: NullOrUndefined (Matcher), "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "TargetType" :: NullOrUndefined (TargetTypeEnum) }
+  = TargetGroup { "TargetGroupArn" :: Maybe (TargetGroupArn), "TargetGroupName" :: Maybe (TargetGroupName), "Protocol" :: Maybe (ProtocolEnum), "Port" :: Maybe (Port), "VpcId" :: Maybe (VpcId), "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "HealthCheckPath" :: Maybe (Path), "Matcher" :: Maybe (Matcher), "LoadBalancerArns" :: Maybe (LoadBalancerArns), "TargetType" :: Maybe (TargetTypeEnum) }
 ```
 
 <p>Information about a target group.</p>
@@ -4277,7 +4277,7 @@ Constructs TargetGroup from required parameters
 #### `newTargetGroup'`
 
 ``` purescript
-newTargetGroup' :: ({ "TargetGroupArn" :: NullOrUndefined (TargetGroupArn), "TargetGroupName" :: NullOrUndefined (TargetGroupName), "Protocol" :: NullOrUndefined (ProtocolEnum), "Port" :: NullOrUndefined (Port), "VpcId" :: NullOrUndefined (VpcId), "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "HealthCheckPath" :: NullOrUndefined (Path), "Matcher" :: NullOrUndefined (Matcher), "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "TargetType" :: NullOrUndefined (TargetTypeEnum) } -> { "TargetGroupArn" :: NullOrUndefined (TargetGroupArn), "TargetGroupName" :: NullOrUndefined (TargetGroupName), "Protocol" :: NullOrUndefined (ProtocolEnum), "Port" :: NullOrUndefined (Port), "VpcId" :: NullOrUndefined (VpcId), "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount), "HealthCheckPath" :: NullOrUndefined (Path), "Matcher" :: NullOrUndefined (Matcher), "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns), "TargetType" :: NullOrUndefined (TargetTypeEnum) }) -> TargetGroup
+newTargetGroup' :: ({ "TargetGroupArn" :: Maybe (TargetGroupArn), "TargetGroupName" :: Maybe (TargetGroupName), "Protocol" :: Maybe (ProtocolEnum), "Port" :: Maybe (Port), "VpcId" :: Maybe (VpcId), "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "HealthCheckPath" :: Maybe (Path), "Matcher" :: Maybe (Matcher), "LoadBalancerArns" :: Maybe (LoadBalancerArns), "TargetType" :: Maybe (TargetTypeEnum) } -> { "TargetGroupArn" :: Maybe (TargetGroupArn), "TargetGroupName" :: Maybe (TargetGroupName), "Protocol" :: Maybe (ProtocolEnum), "Port" :: Maybe (Port), "VpcId" :: Maybe (VpcId), "HealthCheckProtocol" :: Maybe (ProtocolEnum), "HealthCheckPort" :: Maybe (HealthCheckPort), "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds), "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds), "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount), "HealthCheckPath" :: Maybe (Path), "Matcher" :: Maybe (Matcher), "LoadBalancerArns" :: Maybe (LoadBalancerArns), "TargetType" :: Maybe (TargetTypeEnum) }) -> TargetGroup
 ```
 
 Constructs TargetGroup's fields from required parameters
@@ -4336,7 +4336,7 @@ Encode TargetGroupAssociationLimitException
 
 ``` purescript
 newtype TargetGroupAttribute
-  = TargetGroupAttribute { "Key" :: NullOrUndefined (TargetGroupAttributeKey), "Value" :: NullOrUndefined (TargetGroupAttributeValue) }
+  = TargetGroupAttribute { "Key" :: Maybe (TargetGroupAttributeKey), "Value" :: Maybe (TargetGroupAttributeValue) }
 ```
 
 <p>Information about a target group attribute.</p>
@@ -4361,7 +4361,7 @@ Constructs TargetGroupAttribute from required parameters
 #### `newTargetGroupAttribute'`
 
 ``` purescript
-newTargetGroupAttribute' :: ({ "Key" :: NullOrUndefined (TargetGroupAttributeKey), "Value" :: NullOrUndefined (TargetGroupAttributeValue) } -> { "Key" :: NullOrUndefined (TargetGroupAttributeKey), "Value" :: NullOrUndefined (TargetGroupAttributeValue) }) -> TargetGroupAttribute
+newTargetGroupAttribute' :: ({ "Key" :: Maybe (TargetGroupAttributeKey), "Value" :: Maybe (TargetGroupAttributeValue) } -> { "Key" :: Maybe (TargetGroupAttributeKey), "Value" :: Maybe (TargetGroupAttributeValue) }) -> TargetGroupAttribute
 ```
 
 Constructs TargetGroupAttribute's fields from required parameters
@@ -4484,7 +4484,7 @@ Encode TargetGroups
 
 ``` purescript
 newtype TargetHealth
-  = TargetHealth { "State" :: NullOrUndefined (TargetHealthStateEnum), "Reason" :: NullOrUndefined (TargetHealthReasonEnum), "Description" :: NullOrUndefined (Description) }
+  = TargetHealth { "State" :: Maybe (TargetHealthStateEnum), "Reason" :: Maybe (TargetHealthReasonEnum), "Description" :: Maybe (Description) }
 ```
 
 <p>Information about the current health of a target.</p>
@@ -4509,7 +4509,7 @@ Constructs TargetHealth from required parameters
 #### `newTargetHealth'`
 
 ``` purescript
-newTargetHealth' :: ({ "State" :: NullOrUndefined (TargetHealthStateEnum), "Reason" :: NullOrUndefined (TargetHealthReasonEnum), "Description" :: NullOrUndefined (Description) } -> { "State" :: NullOrUndefined (TargetHealthStateEnum), "Reason" :: NullOrUndefined (TargetHealthReasonEnum), "Description" :: NullOrUndefined (Description) }) -> TargetHealth
+newTargetHealth' :: ({ "State" :: Maybe (TargetHealthStateEnum), "Reason" :: Maybe (TargetHealthReasonEnum), "Description" :: Maybe (Description) } -> { "State" :: Maybe (TargetHealthStateEnum), "Reason" :: Maybe (TargetHealthReasonEnum), "Description" :: Maybe (Description) }) -> TargetHealth
 ```
 
 Constructs TargetHealth's fields from required parameters
@@ -4518,7 +4518,7 @@ Constructs TargetHealth's fields from required parameters
 
 ``` purescript
 newtype TargetHealthDescription
-  = TargetHealthDescription { "Target" :: NullOrUndefined (TargetDescription), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "TargetHealth" :: NullOrUndefined (TargetHealth) }
+  = TargetHealthDescription { "Target" :: Maybe (TargetDescription), "HealthCheckPort" :: Maybe (HealthCheckPort), "TargetHealth" :: Maybe (TargetHealth) }
 ```
 
 <p>Information about the health of a target.</p>
@@ -4543,7 +4543,7 @@ Constructs TargetHealthDescription from required parameters
 #### `newTargetHealthDescription'`
 
 ``` purescript
-newTargetHealthDescription' :: ({ "Target" :: NullOrUndefined (TargetDescription), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "TargetHealth" :: NullOrUndefined (TargetHealth) } -> { "Target" :: NullOrUndefined (TargetDescription), "HealthCheckPort" :: NullOrUndefined (HealthCheckPort), "TargetHealth" :: NullOrUndefined (TargetHealth) }) -> TargetHealthDescription
+newTargetHealthDescription' :: ({ "Target" :: Maybe (TargetDescription), "HealthCheckPort" :: Maybe (HealthCheckPort), "TargetHealth" :: Maybe (TargetHealth) } -> { "Target" :: Maybe (TargetDescription), "HealthCheckPort" :: Maybe (HealthCheckPort), "TargetHealth" :: Maybe (TargetHealth) }) -> TargetHealthDescription
 ```
 
 Constructs TargetHealthDescription's fields from required parameters

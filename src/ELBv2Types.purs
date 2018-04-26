@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -80,7 +79,7 @@ newAddListenerCertificatesInput' _Certificates _ListenerArn customize = (AddList
 
 
 newtype AddListenerCertificatesOutput = AddListenerCertificatesOutput 
-  { "Certificates" :: NullOrUndefined (CertificateList)
+  { "Certificates" :: Maybe (CertificateList)
   }
 derive instance newtypeAddListenerCertificatesOutput :: Newtype AddListenerCertificatesOutput _
 derive instance repGenericAddListenerCertificatesOutput :: Generic AddListenerCertificatesOutput _
@@ -90,12 +89,12 @@ instance encodeAddListenerCertificatesOutput :: Encode AddListenerCertificatesOu
 
 -- | Constructs AddListenerCertificatesOutput from required parameters
 newAddListenerCertificatesOutput :: AddListenerCertificatesOutput
-newAddListenerCertificatesOutput  = AddListenerCertificatesOutput { "Certificates": (NullOrUndefined Nothing) }
+newAddListenerCertificatesOutput  = AddListenerCertificatesOutput { "Certificates": Nothing }
 
 -- | Constructs AddListenerCertificatesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddListenerCertificatesOutput' :: ( { "Certificates" :: NullOrUndefined (CertificateList) } -> {"Certificates" :: NullOrUndefined (CertificateList) } ) -> AddListenerCertificatesOutput
-newAddListenerCertificatesOutput'  customize = (AddListenerCertificatesOutput <<< customize) { "Certificates": (NullOrUndefined Nothing) }
+newAddListenerCertificatesOutput' :: ( { "Certificates" :: Maybe (CertificateList) } -> {"Certificates" :: Maybe (CertificateList) } ) -> AddListenerCertificatesOutput
+newAddListenerCertificatesOutput'  customize = (AddListenerCertificatesOutput <<< customize) { "Certificates": Nothing }
 
 
 
@@ -150,9 +149,9 @@ instance encodeAllocationIdNotFoundException :: Encode AllocationIdNotFoundExcep
 
 -- | <p>Information about an Availability Zone.</p>
 newtype AvailabilityZone = AvailabilityZone 
-  { "ZoneName" :: NullOrUndefined (ZoneName)
-  , "SubnetId" :: NullOrUndefined (SubnetId)
-  , "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses)
+  { "ZoneName" :: Maybe (ZoneName)
+  , "SubnetId" :: Maybe (SubnetId)
+  , "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses)
   }
 derive instance newtypeAvailabilityZone :: Newtype AvailabilityZone _
 derive instance repGenericAvailabilityZone :: Generic AvailabilityZone _
@@ -162,12 +161,12 @@ instance encodeAvailabilityZone :: Encode AvailabilityZone where encode = generi
 
 -- | Constructs AvailabilityZone from required parameters
 newAvailabilityZone :: AvailabilityZone
-newAvailabilityZone  = AvailabilityZone { "LoadBalancerAddresses": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "ZoneName": (NullOrUndefined Nothing) }
+newAvailabilityZone  = AvailabilityZone { "LoadBalancerAddresses": Nothing, "SubnetId": Nothing, "ZoneName": Nothing }
 
 -- | Constructs AvailabilityZone's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailabilityZone' :: ( { "ZoneName" :: NullOrUndefined (ZoneName) , "SubnetId" :: NullOrUndefined (SubnetId) , "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses) } -> {"ZoneName" :: NullOrUndefined (ZoneName) , "SubnetId" :: NullOrUndefined (SubnetId) , "LoadBalancerAddresses" :: NullOrUndefined (LoadBalancerAddresses) } ) -> AvailabilityZone
-newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "LoadBalancerAddresses": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "ZoneName": (NullOrUndefined Nothing) }
+newAvailabilityZone' :: ( { "ZoneName" :: Maybe (ZoneName) , "SubnetId" :: Maybe (SubnetId) , "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses) } -> {"ZoneName" :: Maybe (ZoneName) , "SubnetId" :: Maybe (SubnetId) , "LoadBalancerAddresses" :: Maybe (LoadBalancerAddresses) } ) -> AvailabilityZone
+newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "LoadBalancerAddresses": Nothing, "SubnetId": Nothing, "ZoneName": Nothing }
 
 
 
@@ -201,8 +200,8 @@ instance encodeCanonicalHostedZoneId :: Encode CanonicalHostedZoneId where encod
 
 -- | <p>Information about an SSL server certificate.</p>
 newtype Certificate = Certificate 
-  { "CertificateArn" :: NullOrUndefined (CertificateArn)
-  , "IsDefault" :: NullOrUndefined (Default)
+  { "CertificateArn" :: Maybe (CertificateArn)
+  , "IsDefault" :: Maybe (Default)
   }
 derive instance newtypeCertificate :: Newtype Certificate _
 derive instance repGenericCertificate :: Generic Certificate _
@@ -212,12 +211,12 @@ instance encodeCertificate :: Encode Certificate where encode = genericEncode op
 
 -- | Constructs Certificate from required parameters
 newCertificate :: Certificate
-newCertificate  = Certificate { "CertificateArn": (NullOrUndefined Nothing), "IsDefault": (NullOrUndefined Nothing) }
+newCertificate  = Certificate { "CertificateArn": Nothing, "IsDefault": Nothing }
 
 -- | Constructs Certificate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCertificate' :: ( { "CertificateArn" :: NullOrUndefined (CertificateArn) , "IsDefault" :: NullOrUndefined (Default) } -> {"CertificateArn" :: NullOrUndefined (CertificateArn) , "IsDefault" :: NullOrUndefined (Default) } ) -> Certificate
-newCertificate'  customize = (Certificate <<< customize) { "CertificateArn": (NullOrUndefined Nothing), "IsDefault": (NullOrUndefined Nothing) }
+newCertificate' :: ( { "CertificateArn" :: Maybe (CertificateArn) , "IsDefault" :: Maybe (Default) } -> {"CertificateArn" :: Maybe (CertificateArn) , "IsDefault" :: Maybe (Default) } ) -> Certificate
+newCertificate'  customize = (Certificate <<< customize) { "CertificateArn": Nothing, "IsDefault": Nothing }
 
 
 
@@ -251,8 +250,8 @@ instance encodeCertificateNotFoundException :: Encode CertificateNotFoundExcepti
 
 -- | <p>Information about a cipher used in a policy.</p>
 newtype Cipher = Cipher 
-  { "Name" :: NullOrUndefined (CipherName)
-  , "Priority" :: NullOrUndefined (CipherPriority)
+  { "Name" :: Maybe (CipherName)
+  , "Priority" :: Maybe (CipherPriority)
   }
 derive instance newtypeCipher :: Newtype Cipher _
 derive instance repGenericCipher :: Generic Cipher _
@@ -262,12 +261,12 @@ instance encodeCipher :: Encode Cipher where encode = genericEncode options
 
 -- | Constructs Cipher from required parameters
 newCipher :: Cipher
-newCipher  = Cipher { "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing) }
+newCipher  = Cipher { "Name": Nothing, "Priority": Nothing }
 
 -- | Constructs Cipher's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCipher' :: ( { "Name" :: NullOrUndefined (CipherName) , "Priority" :: NullOrUndefined (CipherPriority) } -> {"Name" :: NullOrUndefined (CipherName) , "Priority" :: NullOrUndefined (CipherPriority) } ) -> Cipher
-newCipher'  customize = (Cipher <<< customize) { "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing) }
+newCipher' :: ( { "Name" :: Maybe (CipherName) , "Priority" :: Maybe (CipherPriority) } -> {"Name" :: Maybe (CipherName) , "Priority" :: Maybe (CipherPriority) } ) -> Cipher
+newCipher'  customize = (Cipher <<< customize) { "Name": Nothing, "Priority": Nothing }
 
 
 
@@ -311,8 +310,8 @@ newtype CreateListenerInput = CreateListenerInput
   { "LoadBalancerArn" :: (LoadBalancerArn)
   , "Protocol" :: (ProtocolEnum)
   , "Port" :: (Port)
-  , "SslPolicy" :: NullOrUndefined (SslPolicyName)
-  , "Certificates" :: NullOrUndefined (CertificateList)
+  , "SslPolicy" :: Maybe (SslPolicyName)
+  , "Certificates" :: Maybe (CertificateList)
   , "DefaultActions" :: (Actions)
   }
 derive instance newtypeCreateListenerInput :: Newtype CreateListenerInput _
@@ -323,17 +322,17 @@ instance encodeCreateListenerInput :: Encode CreateListenerInput where encode = 
 
 -- | Constructs CreateListenerInput from required parameters
 newCreateListenerInput :: Actions -> LoadBalancerArn -> Port -> ProtocolEnum -> CreateListenerInput
-newCreateListenerInput _DefaultActions _LoadBalancerArn _Port _Protocol = CreateListenerInput { "DefaultActions": _DefaultActions, "LoadBalancerArn": _LoadBalancerArn, "Port": _Port, "Protocol": _Protocol, "Certificates": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newCreateListenerInput _DefaultActions _LoadBalancerArn _Port _Protocol = CreateListenerInput { "DefaultActions": _DefaultActions, "LoadBalancerArn": _LoadBalancerArn, "Port": _Port, "Protocol": _Protocol, "Certificates": Nothing, "SslPolicy": Nothing }
 
 -- | Constructs CreateListenerInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateListenerInput' :: Actions -> LoadBalancerArn -> Port -> ProtocolEnum -> ( { "LoadBalancerArn" :: (LoadBalancerArn) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "Certificates" :: NullOrUndefined (CertificateList) , "DefaultActions" :: (Actions) } -> {"LoadBalancerArn" :: (LoadBalancerArn) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "Certificates" :: NullOrUndefined (CertificateList) , "DefaultActions" :: (Actions) } ) -> CreateListenerInput
-newCreateListenerInput' _DefaultActions _LoadBalancerArn _Port _Protocol customize = (CreateListenerInput <<< customize) { "DefaultActions": _DefaultActions, "LoadBalancerArn": _LoadBalancerArn, "Port": _Port, "Protocol": _Protocol, "Certificates": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newCreateListenerInput' :: Actions -> LoadBalancerArn -> Port -> ProtocolEnum -> ( { "LoadBalancerArn" :: (LoadBalancerArn) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "SslPolicy" :: Maybe (SslPolicyName) , "Certificates" :: Maybe (CertificateList) , "DefaultActions" :: (Actions) } -> {"LoadBalancerArn" :: (LoadBalancerArn) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "SslPolicy" :: Maybe (SslPolicyName) , "Certificates" :: Maybe (CertificateList) , "DefaultActions" :: (Actions) } ) -> CreateListenerInput
+newCreateListenerInput' _DefaultActions _LoadBalancerArn _Port _Protocol customize = (CreateListenerInput <<< customize) { "DefaultActions": _DefaultActions, "LoadBalancerArn": _LoadBalancerArn, "Port": _Port, "Protocol": _Protocol, "Certificates": Nothing, "SslPolicy": Nothing }
 
 
 
 newtype CreateListenerOutput = CreateListenerOutput 
-  { "Listeners" :: NullOrUndefined (Listeners)
+  { "Listeners" :: Maybe (Listeners)
   }
 derive instance newtypeCreateListenerOutput :: Newtype CreateListenerOutput _
 derive instance repGenericCreateListenerOutput :: Generic CreateListenerOutput _
@@ -343,24 +342,24 @@ instance encodeCreateListenerOutput :: Encode CreateListenerOutput where encode 
 
 -- | Constructs CreateListenerOutput from required parameters
 newCreateListenerOutput :: CreateListenerOutput
-newCreateListenerOutput  = CreateListenerOutput { "Listeners": (NullOrUndefined Nothing) }
+newCreateListenerOutput  = CreateListenerOutput { "Listeners": Nothing }
 
 -- | Constructs CreateListenerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateListenerOutput' :: ( { "Listeners" :: NullOrUndefined (Listeners) } -> {"Listeners" :: NullOrUndefined (Listeners) } ) -> CreateListenerOutput
-newCreateListenerOutput'  customize = (CreateListenerOutput <<< customize) { "Listeners": (NullOrUndefined Nothing) }
+newCreateListenerOutput' :: ( { "Listeners" :: Maybe (Listeners) } -> {"Listeners" :: Maybe (Listeners) } ) -> CreateListenerOutput
+newCreateListenerOutput'  customize = (CreateListenerOutput <<< customize) { "Listeners": Nothing }
 
 
 
 newtype CreateLoadBalancerInput = CreateLoadBalancerInput 
   { "Name" :: (LoadBalancerName)
-  , "Subnets" :: NullOrUndefined (Subnets)
-  , "SubnetMappings" :: NullOrUndefined (SubnetMappings)
-  , "SecurityGroups" :: NullOrUndefined (SecurityGroups)
-  , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "Type" :: NullOrUndefined (LoadBalancerTypeEnum)
-  , "IpAddressType" :: NullOrUndefined (IpAddressType)
+  , "Subnets" :: Maybe (Subnets)
+  , "SubnetMappings" :: Maybe (SubnetMappings)
+  , "SecurityGroups" :: Maybe (SecurityGroups)
+  , "Scheme" :: Maybe (LoadBalancerSchemeEnum)
+  , "Tags" :: Maybe (TagList)
+  , "Type" :: Maybe (LoadBalancerTypeEnum)
+  , "IpAddressType" :: Maybe (IpAddressType)
   }
 derive instance newtypeCreateLoadBalancerInput :: Newtype CreateLoadBalancerInput _
 derive instance repGenericCreateLoadBalancerInput :: Generic CreateLoadBalancerInput _
@@ -370,17 +369,17 @@ instance encodeCreateLoadBalancerInput :: Encode CreateLoadBalancerInput where e
 
 -- | Constructs CreateLoadBalancerInput from required parameters
 newCreateLoadBalancerInput :: LoadBalancerName -> CreateLoadBalancerInput
-newCreateLoadBalancerInput _Name = CreateLoadBalancerInput { "Name": _Name, "IpAddressType": (NullOrUndefined Nothing), "Scheme": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetMappings": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateLoadBalancerInput _Name = CreateLoadBalancerInput { "Name": _Name, "IpAddressType": Nothing, "Scheme": Nothing, "SecurityGroups": Nothing, "SubnetMappings": Nothing, "Subnets": Nothing, "Tags": Nothing, "Type": Nothing }
 
 -- | Constructs CreateLoadBalancerInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLoadBalancerInput' :: LoadBalancerName -> ( { "Name" :: (LoadBalancerName) , "Subnets" :: NullOrUndefined (Subnets) , "SubnetMappings" :: NullOrUndefined (SubnetMappings) , "SecurityGroups" :: NullOrUndefined (SecurityGroups) , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum) , "Tags" :: NullOrUndefined (TagList) , "Type" :: NullOrUndefined (LoadBalancerTypeEnum) , "IpAddressType" :: NullOrUndefined (IpAddressType) } -> {"Name" :: (LoadBalancerName) , "Subnets" :: NullOrUndefined (Subnets) , "SubnetMappings" :: NullOrUndefined (SubnetMappings) , "SecurityGroups" :: NullOrUndefined (SecurityGroups) , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum) , "Tags" :: NullOrUndefined (TagList) , "Type" :: NullOrUndefined (LoadBalancerTypeEnum) , "IpAddressType" :: NullOrUndefined (IpAddressType) } ) -> CreateLoadBalancerInput
-newCreateLoadBalancerInput' _Name customize = (CreateLoadBalancerInput <<< customize) { "Name": _Name, "IpAddressType": (NullOrUndefined Nothing), "Scheme": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetMappings": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateLoadBalancerInput' :: LoadBalancerName -> ( { "Name" :: (LoadBalancerName) , "Subnets" :: Maybe (Subnets) , "SubnetMappings" :: Maybe (SubnetMappings) , "SecurityGroups" :: Maybe (SecurityGroups) , "Scheme" :: Maybe (LoadBalancerSchemeEnum) , "Tags" :: Maybe (TagList) , "Type" :: Maybe (LoadBalancerTypeEnum) , "IpAddressType" :: Maybe (IpAddressType) } -> {"Name" :: (LoadBalancerName) , "Subnets" :: Maybe (Subnets) , "SubnetMappings" :: Maybe (SubnetMappings) , "SecurityGroups" :: Maybe (SecurityGroups) , "Scheme" :: Maybe (LoadBalancerSchemeEnum) , "Tags" :: Maybe (TagList) , "Type" :: Maybe (LoadBalancerTypeEnum) , "IpAddressType" :: Maybe (IpAddressType) } ) -> CreateLoadBalancerInput
+newCreateLoadBalancerInput' _Name customize = (CreateLoadBalancerInput <<< customize) { "Name": _Name, "IpAddressType": Nothing, "Scheme": Nothing, "SecurityGroups": Nothing, "SubnetMappings": Nothing, "Subnets": Nothing, "Tags": Nothing, "Type": Nothing }
 
 
 
 newtype CreateLoadBalancerOutput = CreateLoadBalancerOutput 
-  { "LoadBalancers" :: NullOrUndefined (LoadBalancers)
+  { "LoadBalancers" :: Maybe (LoadBalancers)
   }
 derive instance newtypeCreateLoadBalancerOutput :: Newtype CreateLoadBalancerOutput _
 derive instance repGenericCreateLoadBalancerOutput :: Generic CreateLoadBalancerOutput _
@@ -390,12 +389,12 @@ instance encodeCreateLoadBalancerOutput :: Encode CreateLoadBalancerOutput where
 
 -- | Constructs CreateLoadBalancerOutput from required parameters
 newCreateLoadBalancerOutput :: CreateLoadBalancerOutput
-newCreateLoadBalancerOutput  = CreateLoadBalancerOutput { "LoadBalancers": (NullOrUndefined Nothing) }
+newCreateLoadBalancerOutput  = CreateLoadBalancerOutput { "LoadBalancers": Nothing }
 
 -- | Constructs CreateLoadBalancerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLoadBalancerOutput' :: ( { "LoadBalancers" :: NullOrUndefined (LoadBalancers) } -> {"LoadBalancers" :: NullOrUndefined (LoadBalancers) } ) -> CreateLoadBalancerOutput
-newCreateLoadBalancerOutput'  customize = (CreateLoadBalancerOutput <<< customize) { "LoadBalancers": (NullOrUndefined Nothing) }
+newCreateLoadBalancerOutput' :: ( { "LoadBalancers" :: Maybe (LoadBalancers) } -> {"LoadBalancers" :: Maybe (LoadBalancers) } ) -> CreateLoadBalancerOutput
+newCreateLoadBalancerOutput'  customize = (CreateLoadBalancerOutput <<< customize) { "LoadBalancers": Nothing }
 
 
 
@@ -423,7 +422,7 @@ newCreateRuleInput' _Actions _Conditions _ListenerArn _Priority customize = (Cre
 
 
 newtype CreateRuleOutput = CreateRuleOutput 
-  { "Rules" :: NullOrUndefined (Rules)
+  { "Rules" :: Maybe (Rules)
   }
 derive instance newtypeCreateRuleOutput :: Newtype CreateRuleOutput _
 derive instance repGenericCreateRuleOutput :: Generic CreateRuleOutput _
@@ -433,12 +432,12 @@ instance encodeCreateRuleOutput :: Encode CreateRuleOutput where encode = generi
 
 -- | Constructs CreateRuleOutput from required parameters
 newCreateRuleOutput :: CreateRuleOutput
-newCreateRuleOutput  = CreateRuleOutput { "Rules": (NullOrUndefined Nothing) }
+newCreateRuleOutput  = CreateRuleOutput { "Rules": Nothing }
 
 -- | Constructs CreateRuleOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateRuleOutput' :: ( { "Rules" :: NullOrUndefined (Rules) } -> {"Rules" :: NullOrUndefined (Rules) } ) -> CreateRuleOutput
-newCreateRuleOutput'  customize = (CreateRuleOutput <<< customize) { "Rules": (NullOrUndefined Nothing) }
+newCreateRuleOutput' :: ( { "Rules" :: Maybe (Rules) } -> {"Rules" :: Maybe (Rules) } ) -> CreateRuleOutput
+newCreateRuleOutput'  customize = (CreateRuleOutput <<< customize) { "Rules": Nothing }
 
 
 
@@ -447,15 +446,15 @@ newtype CreateTargetGroupInput = CreateTargetGroupInput
   , "Protocol" :: (ProtocolEnum)
   , "Port" :: (Port)
   , "VpcId" :: (VpcId)
-  , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum)
-  , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort)
-  , "HealthCheckPath" :: NullOrUndefined (Path)
-  , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds)
-  , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds)
-  , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "Matcher" :: NullOrUndefined (Matcher)
-  , "TargetType" :: NullOrUndefined (TargetTypeEnum)
+  , "HealthCheckProtocol" :: Maybe (ProtocolEnum)
+  , "HealthCheckPort" :: Maybe (HealthCheckPort)
+  , "HealthCheckPath" :: Maybe (Path)
+  , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds)
+  , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds)
+  , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "Matcher" :: Maybe (Matcher)
+  , "TargetType" :: Maybe (TargetTypeEnum)
   }
 derive instance newtypeCreateTargetGroupInput :: Newtype CreateTargetGroupInput _
 derive instance repGenericCreateTargetGroupInput :: Generic CreateTargetGroupInput _
@@ -465,17 +464,17 @@ instance encodeCreateTargetGroupInput :: Encode CreateTargetGroupInput where enc
 
 -- | Constructs CreateTargetGroupInput from required parameters
 newCreateTargetGroupInput :: TargetGroupName -> Port -> ProtocolEnum -> VpcId -> CreateTargetGroupInput
-newCreateTargetGroupInput _Name _Port _Protocol _VpcId = CreateTargetGroupInput { "Name": _Name, "Port": _Port, "Protocol": _Protocol, "VpcId": _VpcId, "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing) }
+newCreateTargetGroupInput _Name _Port _Protocol _VpcId = CreateTargetGroupInput { "Name": _Name, "Port": _Port, "Protocol": _Protocol, "VpcId": _VpcId, "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "Matcher": Nothing, "TargetType": Nothing, "UnhealthyThresholdCount": Nothing }
 
 -- | Constructs CreateTargetGroupInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTargetGroupInput' :: TargetGroupName -> Port -> ProtocolEnum -> VpcId -> ( { "Name" :: (TargetGroupName) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "VpcId" :: (VpcId) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckPath" :: NullOrUndefined (Path) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "Matcher" :: NullOrUndefined (Matcher) , "TargetType" :: NullOrUndefined (TargetTypeEnum) } -> {"Name" :: (TargetGroupName) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "VpcId" :: (VpcId) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckPath" :: NullOrUndefined (Path) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "Matcher" :: NullOrUndefined (Matcher) , "TargetType" :: NullOrUndefined (TargetTypeEnum) } ) -> CreateTargetGroupInput
-newCreateTargetGroupInput' _Name _Port _Protocol _VpcId customize = (CreateTargetGroupInput <<< customize) { "Name": _Name, "Port": _Port, "Protocol": _Protocol, "VpcId": _VpcId, "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing) }
+newCreateTargetGroupInput' :: TargetGroupName -> Port -> ProtocolEnum -> VpcId -> ( { "Name" :: (TargetGroupName) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "VpcId" :: (VpcId) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckPath" :: Maybe (Path) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "Matcher" :: Maybe (Matcher) , "TargetType" :: Maybe (TargetTypeEnum) } -> {"Name" :: (TargetGroupName) , "Protocol" :: (ProtocolEnum) , "Port" :: (Port) , "VpcId" :: (VpcId) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckPath" :: Maybe (Path) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "Matcher" :: Maybe (Matcher) , "TargetType" :: Maybe (TargetTypeEnum) } ) -> CreateTargetGroupInput
+newCreateTargetGroupInput' _Name _Port _Protocol _VpcId customize = (CreateTargetGroupInput <<< customize) { "Name": _Name, "Port": _Port, "Protocol": _Protocol, "VpcId": _VpcId, "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "Matcher": Nothing, "TargetType": Nothing, "UnhealthyThresholdCount": Nothing }
 
 
 
 newtype CreateTargetGroupOutput = CreateTargetGroupOutput 
-  { "TargetGroups" :: NullOrUndefined (TargetGroups)
+  { "TargetGroups" :: Maybe (TargetGroups)
   }
 derive instance newtypeCreateTargetGroupOutput :: Newtype CreateTargetGroupOutput _
 derive instance repGenericCreateTargetGroupOutput :: Generic CreateTargetGroupOutput _
@@ -485,12 +484,12 @@ instance encodeCreateTargetGroupOutput :: Encode CreateTargetGroupOutput where e
 
 -- | Constructs CreateTargetGroupOutput from required parameters
 newCreateTargetGroupOutput :: CreateTargetGroupOutput
-newCreateTargetGroupOutput  = CreateTargetGroupOutput { "TargetGroups": (NullOrUndefined Nothing) }
+newCreateTargetGroupOutput  = CreateTargetGroupOutput { "TargetGroups": Nothing }
 
 -- | Constructs CreateTargetGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTargetGroupOutput' :: ( { "TargetGroups" :: NullOrUndefined (TargetGroups) } -> {"TargetGroups" :: NullOrUndefined (TargetGroups) } ) -> CreateTargetGroupOutput
-newCreateTargetGroupOutput'  customize = (CreateTargetGroupOutput <<< customize) { "TargetGroups": (NullOrUndefined Nothing) }
+newCreateTargetGroupOutput' :: ( { "TargetGroups" :: Maybe (TargetGroups) } -> {"TargetGroups" :: Maybe (TargetGroups) } ) -> CreateTargetGroupOutput
+newCreateTargetGroupOutput'  customize = (CreateTargetGroupOutput <<< customize) { "TargetGroups": Nothing }
 
 
 
@@ -668,8 +667,8 @@ instance encodeDeregisterTargetsOutput :: Encode DeregisterTargetsOutput where e
 
 
 newtype DescribeAccountLimitsInput = DescribeAccountLimitsInput 
-  { "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeAccountLimitsInput :: Newtype DescribeAccountLimitsInput _
 derive instance repGenericDescribeAccountLimitsInput :: Generic DescribeAccountLimitsInput _
@@ -679,18 +678,18 @@ instance encodeDescribeAccountLimitsInput :: Encode DescribeAccountLimitsInput w
 
 -- | Constructs DescribeAccountLimitsInput from required parameters
 newDescribeAccountLimitsInput :: DescribeAccountLimitsInput
-newDescribeAccountLimitsInput  = DescribeAccountLimitsInput { "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeAccountLimitsInput  = DescribeAccountLimitsInput { "Marker": Nothing, "PageSize": Nothing }
 
 -- | Constructs DescribeAccountLimitsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAccountLimitsInput' :: ( { "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeAccountLimitsInput
-newDescribeAccountLimitsInput'  customize = (DescribeAccountLimitsInput <<< customize) { "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeAccountLimitsInput' :: ( { "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeAccountLimitsInput
+newDescribeAccountLimitsInput'  customize = (DescribeAccountLimitsInput <<< customize) { "Marker": Nothing, "PageSize": Nothing }
 
 
 
 newtype DescribeAccountLimitsOutput = DescribeAccountLimitsOutput 
-  { "Limits" :: NullOrUndefined (Limits)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "Limits" :: Maybe (Limits)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeAccountLimitsOutput :: Newtype DescribeAccountLimitsOutput _
 derive instance repGenericDescribeAccountLimitsOutput :: Generic DescribeAccountLimitsOutput _
@@ -700,19 +699,19 @@ instance encodeDescribeAccountLimitsOutput :: Encode DescribeAccountLimitsOutput
 
 -- | Constructs DescribeAccountLimitsOutput from required parameters
 newDescribeAccountLimitsOutput :: DescribeAccountLimitsOutput
-newDescribeAccountLimitsOutput  = DescribeAccountLimitsOutput { "Limits": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeAccountLimitsOutput  = DescribeAccountLimitsOutput { "Limits": Nothing, "NextMarker": Nothing }
 
 -- | Constructs DescribeAccountLimitsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAccountLimitsOutput' :: ( { "Limits" :: NullOrUndefined (Limits) , "NextMarker" :: NullOrUndefined (Marker) } -> {"Limits" :: NullOrUndefined (Limits) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeAccountLimitsOutput
-newDescribeAccountLimitsOutput'  customize = (DescribeAccountLimitsOutput <<< customize) { "Limits": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeAccountLimitsOutput' :: ( { "Limits" :: Maybe (Limits) , "NextMarker" :: Maybe (Marker) } -> {"Limits" :: Maybe (Limits) , "NextMarker" :: Maybe (Marker) } ) -> DescribeAccountLimitsOutput
+newDescribeAccountLimitsOutput'  customize = (DescribeAccountLimitsOutput <<< customize) { "Limits": Nothing, "NextMarker": Nothing }
 
 
 
 newtype DescribeListenerCertificatesInput = DescribeListenerCertificatesInput 
   { "ListenerArn" :: (ListenerArn)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeListenerCertificatesInput :: Newtype DescribeListenerCertificatesInput _
 derive instance repGenericDescribeListenerCertificatesInput :: Generic DescribeListenerCertificatesInput _
@@ -722,18 +721,18 @@ instance encodeDescribeListenerCertificatesInput :: Encode DescribeListenerCerti
 
 -- | Constructs DescribeListenerCertificatesInput from required parameters
 newDescribeListenerCertificatesInput :: ListenerArn -> DescribeListenerCertificatesInput
-newDescribeListenerCertificatesInput _ListenerArn = DescribeListenerCertificatesInput { "ListenerArn": _ListenerArn, "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeListenerCertificatesInput _ListenerArn = DescribeListenerCertificatesInput { "ListenerArn": _ListenerArn, "Marker": Nothing, "PageSize": Nothing }
 
 -- | Constructs DescribeListenerCertificatesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeListenerCertificatesInput' :: ListenerArn -> ( { "ListenerArn" :: (ListenerArn) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"ListenerArn" :: (ListenerArn) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeListenerCertificatesInput
-newDescribeListenerCertificatesInput' _ListenerArn customize = (DescribeListenerCertificatesInput <<< customize) { "ListenerArn": _ListenerArn, "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeListenerCertificatesInput' :: ListenerArn -> ( { "ListenerArn" :: (ListenerArn) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"ListenerArn" :: (ListenerArn) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeListenerCertificatesInput
+newDescribeListenerCertificatesInput' _ListenerArn customize = (DescribeListenerCertificatesInput <<< customize) { "ListenerArn": _ListenerArn, "Marker": Nothing, "PageSize": Nothing }
 
 
 
 newtype DescribeListenerCertificatesOutput = DescribeListenerCertificatesOutput 
-  { "Certificates" :: NullOrUndefined (CertificateList)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "Certificates" :: Maybe (CertificateList)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeListenerCertificatesOutput :: Newtype DescribeListenerCertificatesOutput _
 derive instance repGenericDescribeListenerCertificatesOutput :: Generic DescribeListenerCertificatesOutput _
@@ -743,20 +742,20 @@ instance encodeDescribeListenerCertificatesOutput :: Encode DescribeListenerCert
 
 -- | Constructs DescribeListenerCertificatesOutput from required parameters
 newDescribeListenerCertificatesOutput :: DescribeListenerCertificatesOutput
-newDescribeListenerCertificatesOutput  = DescribeListenerCertificatesOutput { "Certificates": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeListenerCertificatesOutput  = DescribeListenerCertificatesOutput { "Certificates": Nothing, "NextMarker": Nothing }
 
 -- | Constructs DescribeListenerCertificatesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeListenerCertificatesOutput' :: ( { "Certificates" :: NullOrUndefined (CertificateList) , "NextMarker" :: NullOrUndefined (Marker) } -> {"Certificates" :: NullOrUndefined (CertificateList) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeListenerCertificatesOutput
-newDescribeListenerCertificatesOutput'  customize = (DescribeListenerCertificatesOutput <<< customize) { "Certificates": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeListenerCertificatesOutput' :: ( { "Certificates" :: Maybe (CertificateList) , "NextMarker" :: Maybe (Marker) } -> {"Certificates" :: Maybe (CertificateList) , "NextMarker" :: Maybe (Marker) } ) -> DescribeListenerCertificatesOutput
+newDescribeListenerCertificatesOutput'  customize = (DescribeListenerCertificatesOutput <<< customize) { "Certificates": Nothing, "NextMarker": Nothing }
 
 
 
 newtype DescribeListenersInput = DescribeListenersInput 
-  { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn)
-  , "ListenerArns" :: NullOrUndefined (ListenerArns)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "LoadBalancerArn" :: Maybe (LoadBalancerArn)
+  , "ListenerArns" :: Maybe (ListenerArns)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeListenersInput :: Newtype DescribeListenersInput _
 derive instance repGenericDescribeListenersInput :: Generic DescribeListenersInput _
@@ -766,18 +765,18 @@ instance encodeDescribeListenersInput :: Encode DescribeListenersInput where enc
 
 -- | Constructs DescribeListenersInput from required parameters
 newDescribeListenersInput :: DescribeListenersInput
-newDescribeListenersInput  = DescribeListenersInput { "ListenerArns": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeListenersInput  = DescribeListenersInput { "ListenerArns": Nothing, "LoadBalancerArn": Nothing, "Marker": Nothing, "PageSize": Nothing }
 
 -- | Constructs DescribeListenersInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeListenersInput' :: ( { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "ListenerArns" :: NullOrUndefined (ListenerArns) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "ListenerArns" :: NullOrUndefined (ListenerArns) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeListenersInput
-newDescribeListenersInput'  customize = (DescribeListenersInput <<< customize) { "ListenerArns": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeListenersInput' :: ( { "LoadBalancerArn" :: Maybe (LoadBalancerArn) , "ListenerArns" :: Maybe (ListenerArns) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"LoadBalancerArn" :: Maybe (LoadBalancerArn) , "ListenerArns" :: Maybe (ListenerArns) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeListenersInput
+newDescribeListenersInput'  customize = (DescribeListenersInput <<< customize) { "ListenerArns": Nothing, "LoadBalancerArn": Nothing, "Marker": Nothing, "PageSize": Nothing }
 
 
 
 newtype DescribeListenersOutput = DescribeListenersOutput 
-  { "Listeners" :: NullOrUndefined (Listeners)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "Listeners" :: Maybe (Listeners)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeListenersOutput :: Newtype DescribeListenersOutput _
 derive instance repGenericDescribeListenersOutput :: Generic DescribeListenersOutput _
@@ -787,12 +786,12 @@ instance encodeDescribeListenersOutput :: Encode DescribeListenersOutput where e
 
 -- | Constructs DescribeListenersOutput from required parameters
 newDescribeListenersOutput :: DescribeListenersOutput
-newDescribeListenersOutput  = DescribeListenersOutput { "Listeners": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeListenersOutput  = DescribeListenersOutput { "Listeners": Nothing, "NextMarker": Nothing }
 
 -- | Constructs DescribeListenersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeListenersOutput' :: ( { "Listeners" :: NullOrUndefined (Listeners) , "NextMarker" :: NullOrUndefined (Marker) } -> {"Listeners" :: NullOrUndefined (Listeners) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeListenersOutput
-newDescribeListenersOutput'  customize = (DescribeListenersOutput <<< customize) { "Listeners": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeListenersOutput' :: ( { "Listeners" :: Maybe (Listeners) , "NextMarker" :: Maybe (Marker) } -> {"Listeners" :: Maybe (Listeners) , "NextMarker" :: Maybe (Marker) } ) -> DescribeListenersOutput
+newDescribeListenersOutput'  customize = (DescribeListenersOutput <<< customize) { "Listeners": Nothing, "NextMarker": Nothing }
 
 
 
@@ -817,7 +816,7 @@ newDescribeLoadBalancerAttributesInput' _LoadBalancerArn customize = (DescribeLo
 
 
 newtype DescribeLoadBalancerAttributesOutput = DescribeLoadBalancerAttributesOutput 
-  { "Attributes" :: NullOrUndefined (LoadBalancerAttributes)
+  { "Attributes" :: Maybe (LoadBalancerAttributes)
   }
 derive instance newtypeDescribeLoadBalancerAttributesOutput :: Newtype DescribeLoadBalancerAttributesOutput _
 derive instance repGenericDescribeLoadBalancerAttributesOutput :: Generic DescribeLoadBalancerAttributesOutput _
@@ -827,20 +826,20 @@ instance encodeDescribeLoadBalancerAttributesOutput :: Encode DescribeLoadBalanc
 
 -- | Constructs DescribeLoadBalancerAttributesOutput from required parameters
 newDescribeLoadBalancerAttributesOutput :: DescribeLoadBalancerAttributesOutput
-newDescribeLoadBalancerAttributesOutput  = DescribeLoadBalancerAttributesOutput { "Attributes": (NullOrUndefined Nothing) }
+newDescribeLoadBalancerAttributesOutput  = DescribeLoadBalancerAttributesOutput { "Attributes": Nothing }
 
 -- | Constructs DescribeLoadBalancerAttributesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLoadBalancerAttributesOutput' :: ( { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) } -> {"Attributes" :: NullOrUndefined (LoadBalancerAttributes) } ) -> DescribeLoadBalancerAttributesOutput
-newDescribeLoadBalancerAttributesOutput'  customize = (DescribeLoadBalancerAttributesOutput <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newDescribeLoadBalancerAttributesOutput' :: ( { "Attributes" :: Maybe (LoadBalancerAttributes) } -> {"Attributes" :: Maybe (LoadBalancerAttributes) } ) -> DescribeLoadBalancerAttributesOutput
+newDescribeLoadBalancerAttributesOutput'  customize = (DescribeLoadBalancerAttributesOutput <<< customize) { "Attributes": Nothing }
 
 
 
 newtype DescribeLoadBalancersInput = DescribeLoadBalancersInput 
-  { "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns)
-  , "Names" :: NullOrUndefined (LoadBalancerNames)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "LoadBalancerArns" :: Maybe (LoadBalancerArns)
+  , "Names" :: Maybe (LoadBalancerNames)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeLoadBalancersInput :: Newtype DescribeLoadBalancersInput _
 derive instance repGenericDescribeLoadBalancersInput :: Generic DescribeLoadBalancersInput _
@@ -850,18 +849,18 @@ instance encodeDescribeLoadBalancersInput :: Encode DescribeLoadBalancersInput w
 
 -- | Constructs DescribeLoadBalancersInput from required parameters
 newDescribeLoadBalancersInput :: DescribeLoadBalancersInput
-newDescribeLoadBalancersInput  = DescribeLoadBalancersInput { "LoadBalancerArns": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeLoadBalancersInput  = DescribeLoadBalancersInput { "LoadBalancerArns": Nothing, "Marker": Nothing, "Names": Nothing, "PageSize": Nothing }
 
 -- | Constructs DescribeLoadBalancersInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLoadBalancersInput' :: ( { "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns) , "Names" :: NullOrUndefined (LoadBalancerNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns) , "Names" :: NullOrUndefined (LoadBalancerNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeLoadBalancersInput
-newDescribeLoadBalancersInput'  customize = (DescribeLoadBalancersInput <<< customize) { "LoadBalancerArns": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeLoadBalancersInput' :: ( { "LoadBalancerArns" :: Maybe (LoadBalancerArns) , "Names" :: Maybe (LoadBalancerNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"LoadBalancerArns" :: Maybe (LoadBalancerArns) , "Names" :: Maybe (LoadBalancerNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeLoadBalancersInput
+newDescribeLoadBalancersInput'  customize = (DescribeLoadBalancersInput <<< customize) { "LoadBalancerArns": Nothing, "Marker": Nothing, "Names": Nothing, "PageSize": Nothing }
 
 
 
 newtype DescribeLoadBalancersOutput = DescribeLoadBalancersOutput 
-  { "LoadBalancers" :: NullOrUndefined (LoadBalancers)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "LoadBalancers" :: Maybe (LoadBalancers)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeLoadBalancersOutput :: Newtype DescribeLoadBalancersOutput _
 derive instance repGenericDescribeLoadBalancersOutput :: Generic DescribeLoadBalancersOutput _
@@ -871,20 +870,20 @@ instance encodeDescribeLoadBalancersOutput :: Encode DescribeLoadBalancersOutput
 
 -- | Constructs DescribeLoadBalancersOutput from required parameters
 newDescribeLoadBalancersOutput :: DescribeLoadBalancersOutput
-newDescribeLoadBalancersOutput  = DescribeLoadBalancersOutput { "LoadBalancers": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeLoadBalancersOutput  = DescribeLoadBalancersOutput { "LoadBalancers": Nothing, "NextMarker": Nothing }
 
 -- | Constructs DescribeLoadBalancersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLoadBalancersOutput' :: ( { "LoadBalancers" :: NullOrUndefined (LoadBalancers) , "NextMarker" :: NullOrUndefined (Marker) } -> {"LoadBalancers" :: NullOrUndefined (LoadBalancers) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeLoadBalancersOutput
-newDescribeLoadBalancersOutput'  customize = (DescribeLoadBalancersOutput <<< customize) { "LoadBalancers": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing) }
+newDescribeLoadBalancersOutput' :: ( { "LoadBalancers" :: Maybe (LoadBalancers) , "NextMarker" :: Maybe (Marker) } -> {"LoadBalancers" :: Maybe (LoadBalancers) , "NextMarker" :: Maybe (Marker) } ) -> DescribeLoadBalancersOutput
+newDescribeLoadBalancersOutput'  customize = (DescribeLoadBalancersOutput <<< customize) { "LoadBalancers": Nothing, "NextMarker": Nothing }
 
 
 
 newtype DescribeRulesInput = DescribeRulesInput 
-  { "ListenerArn" :: NullOrUndefined (ListenerArn)
-  , "RuleArns" :: NullOrUndefined (RuleArns)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "ListenerArn" :: Maybe (ListenerArn)
+  , "RuleArns" :: Maybe (RuleArns)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeRulesInput :: Newtype DescribeRulesInput _
 derive instance repGenericDescribeRulesInput :: Generic DescribeRulesInput _
@@ -894,18 +893,18 @@ instance encodeDescribeRulesInput :: Encode DescribeRulesInput where encode = ge
 
 -- | Constructs DescribeRulesInput from required parameters
 newDescribeRulesInput :: DescribeRulesInput
-newDescribeRulesInput  = DescribeRulesInput { "ListenerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing), "RuleArns": (NullOrUndefined Nothing) }
+newDescribeRulesInput  = DescribeRulesInput { "ListenerArn": Nothing, "Marker": Nothing, "PageSize": Nothing, "RuleArns": Nothing }
 
 -- | Constructs DescribeRulesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRulesInput' :: ( { "ListenerArn" :: NullOrUndefined (ListenerArn) , "RuleArns" :: NullOrUndefined (RuleArns) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"ListenerArn" :: NullOrUndefined (ListenerArn) , "RuleArns" :: NullOrUndefined (RuleArns) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeRulesInput
-newDescribeRulesInput'  customize = (DescribeRulesInput <<< customize) { "ListenerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing), "RuleArns": (NullOrUndefined Nothing) }
+newDescribeRulesInput' :: ( { "ListenerArn" :: Maybe (ListenerArn) , "RuleArns" :: Maybe (RuleArns) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"ListenerArn" :: Maybe (ListenerArn) , "RuleArns" :: Maybe (RuleArns) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeRulesInput
+newDescribeRulesInput'  customize = (DescribeRulesInput <<< customize) { "ListenerArn": Nothing, "Marker": Nothing, "PageSize": Nothing, "RuleArns": Nothing }
 
 
 
 newtype DescribeRulesOutput = DescribeRulesOutput 
-  { "Rules" :: NullOrUndefined (Rules)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "Rules" :: Maybe (Rules)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeRulesOutput :: Newtype DescribeRulesOutput _
 derive instance repGenericDescribeRulesOutput :: Generic DescribeRulesOutput _
@@ -915,19 +914,19 @@ instance encodeDescribeRulesOutput :: Encode DescribeRulesOutput where encode = 
 
 -- | Constructs DescribeRulesOutput from required parameters
 newDescribeRulesOutput :: DescribeRulesOutput
-newDescribeRulesOutput  = DescribeRulesOutput { "NextMarker": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newDescribeRulesOutput  = DescribeRulesOutput { "NextMarker": Nothing, "Rules": Nothing }
 
 -- | Constructs DescribeRulesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRulesOutput' :: ( { "Rules" :: NullOrUndefined (Rules) , "NextMarker" :: NullOrUndefined (Marker) } -> {"Rules" :: NullOrUndefined (Rules) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeRulesOutput
-newDescribeRulesOutput'  customize = (DescribeRulesOutput <<< customize) { "NextMarker": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newDescribeRulesOutput' :: ( { "Rules" :: Maybe (Rules) , "NextMarker" :: Maybe (Marker) } -> {"Rules" :: Maybe (Rules) , "NextMarker" :: Maybe (Marker) } ) -> DescribeRulesOutput
+newDescribeRulesOutput'  customize = (DescribeRulesOutput <<< customize) { "NextMarker": Nothing, "Rules": Nothing }
 
 
 
 newtype DescribeSSLPoliciesInput = DescribeSSLPoliciesInput 
-  { "Names" :: NullOrUndefined (SslPolicyNames)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "Names" :: Maybe (SslPolicyNames)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeSSLPoliciesInput :: Newtype DescribeSSLPoliciesInput _
 derive instance repGenericDescribeSSLPoliciesInput :: Generic DescribeSSLPoliciesInput _
@@ -937,18 +936,18 @@ instance encodeDescribeSSLPoliciesInput :: Encode DescribeSSLPoliciesInput where
 
 -- | Constructs DescribeSSLPoliciesInput from required parameters
 newDescribeSSLPoliciesInput :: DescribeSSLPoliciesInput
-newDescribeSSLPoliciesInput  = DescribeSSLPoliciesInput { "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeSSLPoliciesInput  = DescribeSSLPoliciesInput { "Marker": Nothing, "Names": Nothing, "PageSize": Nothing }
 
 -- | Constructs DescribeSSLPoliciesInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSSLPoliciesInput' :: ( { "Names" :: NullOrUndefined (SslPolicyNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"Names" :: NullOrUndefined (SslPolicyNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeSSLPoliciesInput
-newDescribeSSLPoliciesInput'  customize = (DescribeSSLPoliciesInput <<< customize) { "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing) }
+newDescribeSSLPoliciesInput' :: ( { "Names" :: Maybe (SslPolicyNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"Names" :: Maybe (SslPolicyNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeSSLPoliciesInput
+newDescribeSSLPoliciesInput'  customize = (DescribeSSLPoliciesInput <<< customize) { "Marker": Nothing, "Names": Nothing, "PageSize": Nothing }
 
 
 
 newtype DescribeSSLPoliciesOutput = DescribeSSLPoliciesOutput 
-  { "SslPolicies" :: NullOrUndefined (SslPolicies)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "SslPolicies" :: Maybe (SslPolicies)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeSSLPoliciesOutput :: Newtype DescribeSSLPoliciesOutput _
 derive instance repGenericDescribeSSLPoliciesOutput :: Generic DescribeSSLPoliciesOutput _
@@ -958,12 +957,12 @@ instance encodeDescribeSSLPoliciesOutput :: Encode DescribeSSLPoliciesOutput whe
 
 -- | Constructs DescribeSSLPoliciesOutput from required parameters
 newDescribeSSLPoliciesOutput :: DescribeSSLPoliciesOutput
-newDescribeSSLPoliciesOutput  = DescribeSSLPoliciesOutput { "NextMarker": (NullOrUndefined Nothing), "SslPolicies": (NullOrUndefined Nothing) }
+newDescribeSSLPoliciesOutput  = DescribeSSLPoliciesOutput { "NextMarker": Nothing, "SslPolicies": Nothing }
 
 -- | Constructs DescribeSSLPoliciesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSSLPoliciesOutput' :: ( { "SslPolicies" :: NullOrUndefined (SslPolicies) , "NextMarker" :: NullOrUndefined (Marker) } -> {"SslPolicies" :: NullOrUndefined (SslPolicies) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeSSLPoliciesOutput
-newDescribeSSLPoliciesOutput'  customize = (DescribeSSLPoliciesOutput <<< customize) { "NextMarker": (NullOrUndefined Nothing), "SslPolicies": (NullOrUndefined Nothing) }
+newDescribeSSLPoliciesOutput' :: ( { "SslPolicies" :: Maybe (SslPolicies) , "NextMarker" :: Maybe (Marker) } -> {"SslPolicies" :: Maybe (SslPolicies) , "NextMarker" :: Maybe (Marker) } ) -> DescribeSSLPoliciesOutput
+newDescribeSSLPoliciesOutput'  customize = (DescribeSSLPoliciesOutput <<< customize) { "NextMarker": Nothing, "SslPolicies": Nothing }
 
 
 
@@ -988,7 +987,7 @@ newDescribeTagsInput' _ResourceArns customize = (DescribeTagsInput <<< customize
 
 
 newtype DescribeTagsOutput = DescribeTagsOutput 
-  { "TagDescriptions" :: NullOrUndefined (TagDescriptions)
+  { "TagDescriptions" :: Maybe (TagDescriptions)
   }
 derive instance newtypeDescribeTagsOutput :: Newtype DescribeTagsOutput _
 derive instance repGenericDescribeTagsOutput :: Generic DescribeTagsOutput _
@@ -998,12 +997,12 @@ instance encodeDescribeTagsOutput :: Encode DescribeTagsOutput where encode = ge
 
 -- | Constructs DescribeTagsOutput from required parameters
 newDescribeTagsOutput :: DescribeTagsOutput
-newDescribeTagsOutput  = DescribeTagsOutput { "TagDescriptions": (NullOrUndefined Nothing) }
+newDescribeTagsOutput  = DescribeTagsOutput { "TagDescriptions": Nothing }
 
 -- | Constructs DescribeTagsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTagsOutput' :: ( { "TagDescriptions" :: NullOrUndefined (TagDescriptions) } -> {"TagDescriptions" :: NullOrUndefined (TagDescriptions) } ) -> DescribeTagsOutput
-newDescribeTagsOutput'  customize = (DescribeTagsOutput <<< customize) { "TagDescriptions": (NullOrUndefined Nothing) }
+newDescribeTagsOutput' :: ( { "TagDescriptions" :: Maybe (TagDescriptions) } -> {"TagDescriptions" :: Maybe (TagDescriptions) } ) -> DescribeTagsOutput
+newDescribeTagsOutput'  customize = (DescribeTagsOutput <<< customize) { "TagDescriptions": Nothing }
 
 
 
@@ -1028,7 +1027,7 @@ newDescribeTargetGroupAttributesInput' _TargetGroupArn customize = (DescribeTarg
 
 
 newtype DescribeTargetGroupAttributesOutput = DescribeTargetGroupAttributesOutput 
-  { "Attributes" :: NullOrUndefined (TargetGroupAttributes)
+  { "Attributes" :: Maybe (TargetGroupAttributes)
   }
 derive instance newtypeDescribeTargetGroupAttributesOutput :: Newtype DescribeTargetGroupAttributesOutput _
 derive instance repGenericDescribeTargetGroupAttributesOutput :: Generic DescribeTargetGroupAttributesOutput _
@@ -1038,21 +1037,21 @@ instance encodeDescribeTargetGroupAttributesOutput :: Encode DescribeTargetGroup
 
 -- | Constructs DescribeTargetGroupAttributesOutput from required parameters
 newDescribeTargetGroupAttributesOutput :: DescribeTargetGroupAttributesOutput
-newDescribeTargetGroupAttributesOutput  = DescribeTargetGroupAttributesOutput { "Attributes": (NullOrUndefined Nothing) }
+newDescribeTargetGroupAttributesOutput  = DescribeTargetGroupAttributesOutput { "Attributes": Nothing }
 
 -- | Constructs DescribeTargetGroupAttributesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTargetGroupAttributesOutput' :: ( { "Attributes" :: NullOrUndefined (TargetGroupAttributes) } -> {"Attributes" :: NullOrUndefined (TargetGroupAttributes) } ) -> DescribeTargetGroupAttributesOutput
-newDescribeTargetGroupAttributesOutput'  customize = (DescribeTargetGroupAttributesOutput <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newDescribeTargetGroupAttributesOutput' :: ( { "Attributes" :: Maybe (TargetGroupAttributes) } -> {"Attributes" :: Maybe (TargetGroupAttributes) } ) -> DescribeTargetGroupAttributesOutput
+newDescribeTargetGroupAttributesOutput'  customize = (DescribeTargetGroupAttributesOutput <<< customize) { "Attributes": Nothing }
 
 
 
 newtype DescribeTargetGroupsInput = DescribeTargetGroupsInput 
-  { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn)
-  , "TargetGroupArns" :: NullOrUndefined (TargetGroupArns)
-  , "Names" :: NullOrUndefined (TargetGroupNames)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "PageSize" :: NullOrUndefined (PageSize)
+  { "LoadBalancerArn" :: Maybe (LoadBalancerArn)
+  , "TargetGroupArns" :: Maybe (TargetGroupArns)
+  , "Names" :: Maybe (TargetGroupNames)
+  , "Marker" :: Maybe (Marker)
+  , "PageSize" :: Maybe (PageSize)
   }
 derive instance newtypeDescribeTargetGroupsInput :: Newtype DescribeTargetGroupsInput _
 derive instance repGenericDescribeTargetGroupsInput :: Generic DescribeTargetGroupsInput _
@@ -1062,18 +1061,18 @@ instance encodeDescribeTargetGroupsInput :: Encode DescribeTargetGroupsInput whe
 
 -- | Constructs DescribeTargetGroupsInput from required parameters
 newDescribeTargetGroupsInput :: DescribeTargetGroupsInput
-newDescribeTargetGroupsInput  = DescribeTargetGroupsInput { "LoadBalancerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing), "TargetGroupArns": (NullOrUndefined Nothing) }
+newDescribeTargetGroupsInput  = DescribeTargetGroupsInput { "LoadBalancerArn": Nothing, "Marker": Nothing, "Names": Nothing, "PageSize": Nothing, "TargetGroupArns": Nothing }
 
 -- | Constructs DescribeTargetGroupsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTargetGroupsInput' :: ( { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "TargetGroupArns" :: NullOrUndefined (TargetGroupArns) , "Names" :: NullOrUndefined (TargetGroupNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } -> {"LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "TargetGroupArns" :: NullOrUndefined (TargetGroupArns) , "Names" :: NullOrUndefined (TargetGroupNames) , "Marker" :: NullOrUndefined (Marker) , "PageSize" :: NullOrUndefined (PageSize) } ) -> DescribeTargetGroupsInput
-newDescribeTargetGroupsInput'  customize = (DescribeTargetGroupsInput <<< customize) { "LoadBalancerArn": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "Names": (NullOrUndefined Nothing), "PageSize": (NullOrUndefined Nothing), "TargetGroupArns": (NullOrUndefined Nothing) }
+newDescribeTargetGroupsInput' :: ( { "LoadBalancerArn" :: Maybe (LoadBalancerArn) , "TargetGroupArns" :: Maybe (TargetGroupArns) , "Names" :: Maybe (TargetGroupNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } -> {"LoadBalancerArn" :: Maybe (LoadBalancerArn) , "TargetGroupArns" :: Maybe (TargetGroupArns) , "Names" :: Maybe (TargetGroupNames) , "Marker" :: Maybe (Marker) , "PageSize" :: Maybe (PageSize) } ) -> DescribeTargetGroupsInput
+newDescribeTargetGroupsInput'  customize = (DescribeTargetGroupsInput <<< customize) { "LoadBalancerArn": Nothing, "Marker": Nothing, "Names": Nothing, "PageSize": Nothing, "TargetGroupArns": Nothing }
 
 
 
 newtype DescribeTargetGroupsOutput = DescribeTargetGroupsOutput 
-  { "TargetGroups" :: NullOrUndefined (TargetGroups)
-  , "NextMarker" :: NullOrUndefined (Marker)
+  { "TargetGroups" :: Maybe (TargetGroups)
+  , "NextMarker" :: Maybe (Marker)
   }
 derive instance newtypeDescribeTargetGroupsOutput :: Newtype DescribeTargetGroupsOutput _
 derive instance repGenericDescribeTargetGroupsOutput :: Generic DescribeTargetGroupsOutput _
@@ -1083,18 +1082,18 @@ instance encodeDescribeTargetGroupsOutput :: Encode DescribeTargetGroupsOutput w
 
 -- | Constructs DescribeTargetGroupsOutput from required parameters
 newDescribeTargetGroupsOutput :: DescribeTargetGroupsOutput
-newDescribeTargetGroupsOutput  = DescribeTargetGroupsOutput { "NextMarker": (NullOrUndefined Nothing), "TargetGroups": (NullOrUndefined Nothing) }
+newDescribeTargetGroupsOutput  = DescribeTargetGroupsOutput { "NextMarker": Nothing, "TargetGroups": Nothing }
 
 -- | Constructs DescribeTargetGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTargetGroupsOutput' :: ( { "TargetGroups" :: NullOrUndefined (TargetGroups) , "NextMarker" :: NullOrUndefined (Marker) } -> {"TargetGroups" :: NullOrUndefined (TargetGroups) , "NextMarker" :: NullOrUndefined (Marker) } ) -> DescribeTargetGroupsOutput
-newDescribeTargetGroupsOutput'  customize = (DescribeTargetGroupsOutput <<< customize) { "NextMarker": (NullOrUndefined Nothing), "TargetGroups": (NullOrUndefined Nothing) }
+newDescribeTargetGroupsOutput' :: ( { "TargetGroups" :: Maybe (TargetGroups) , "NextMarker" :: Maybe (Marker) } -> {"TargetGroups" :: Maybe (TargetGroups) , "NextMarker" :: Maybe (Marker) } ) -> DescribeTargetGroupsOutput
+newDescribeTargetGroupsOutput'  customize = (DescribeTargetGroupsOutput <<< customize) { "NextMarker": Nothing, "TargetGroups": Nothing }
 
 
 
 newtype DescribeTargetHealthInput = DescribeTargetHealthInput 
   { "TargetGroupArn" :: (TargetGroupArn)
-  , "Targets" :: NullOrUndefined (TargetDescriptions)
+  , "Targets" :: Maybe (TargetDescriptions)
   }
 derive instance newtypeDescribeTargetHealthInput :: Newtype DescribeTargetHealthInput _
 derive instance repGenericDescribeTargetHealthInput :: Generic DescribeTargetHealthInput _
@@ -1104,17 +1103,17 @@ instance encodeDescribeTargetHealthInput :: Encode DescribeTargetHealthInput whe
 
 -- | Constructs DescribeTargetHealthInput from required parameters
 newDescribeTargetHealthInput :: TargetGroupArn -> DescribeTargetHealthInput
-newDescribeTargetHealthInput _TargetGroupArn = DescribeTargetHealthInput { "TargetGroupArn": _TargetGroupArn, "Targets": (NullOrUndefined Nothing) }
+newDescribeTargetHealthInput _TargetGroupArn = DescribeTargetHealthInput { "TargetGroupArn": _TargetGroupArn, "Targets": Nothing }
 
 -- | Constructs DescribeTargetHealthInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTargetHealthInput' :: TargetGroupArn -> ( { "TargetGroupArn" :: (TargetGroupArn) , "Targets" :: NullOrUndefined (TargetDescriptions) } -> {"TargetGroupArn" :: (TargetGroupArn) , "Targets" :: NullOrUndefined (TargetDescriptions) } ) -> DescribeTargetHealthInput
-newDescribeTargetHealthInput' _TargetGroupArn customize = (DescribeTargetHealthInput <<< customize) { "TargetGroupArn": _TargetGroupArn, "Targets": (NullOrUndefined Nothing) }
+newDescribeTargetHealthInput' :: TargetGroupArn -> ( { "TargetGroupArn" :: (TargetGroupArn) , "Targets" :: Maybe (TargetDescriptions) } -> {"TargetGroupArn" :: (TargetGroupArn) , "Targets" :: Maybe (TargetDescriptions) } ) -> DescribeTargetHealthInput
+newDescribeTargetHealthInput' _TargetGroupArn customize = (DescribeTargetHealthInput <<< customize) { "TargetGroupArn": _TargetGroupArn, "Targets": Nothing }
 
 
 
 newtype DescribeTargetHealthOutput = DescribeTargetHealthOutput 
-  { "TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions)
+  { "TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions)
   }
 derive instance newtypeDescribeTargetHealthOutput :: Newtype DescribeTargetHealthOutput _
 derive instance repGenericDescribeTargetHealthOutput :: Generic DescribeTargetHealthOutput _
@@ -1124,12 +1123,12 @@ instance encodeDescribeTargetHealthOutput :: Encode DescribeTargetHealthOutput w
 
 -- | Constructs DescribeTargetHealthOutput from required parameters
 newDescribeTargetHealthOutput :: DescribeTargetHealthOutput
-newDescribeTargetHealthOutput  = DescribeTargetHealthOutput { "TargetHealthDescriptions": (NullOrUndefined Nothing) }
+newDescribeTargetHealthOutput  = DescribeTargetHealthOutput { "TargetHealthDescriptions": Nothing }
 
 -- | Constructs DescribeTargetHealthOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTargetHealthOutput' :: ( { "TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions) } -> {"TargetHealthDescriptions" :: NullOrUndefined (TargetHealthDescriptions) } ) -> DescribeTargetHealthOutput
-newDescribeTargetHealthOutput'  customize = (DescribeTargetHealthOutput <<< customize) { "TargetHealthDescriptions": (NullOrUndefined Nothing) }
+newDescribeTargetHealthOutput' :: ( { "TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions) } -> {"TargetHealthDescriptions" :: Maybe (TargetHealthDescriptions) } ) -> DescribeTargetHealthOutput
+newDescribeTargetHealthOutput'  customize = (DescribeTargetHealthOutput <<< customize) { "TargetHealthDescriptions": Nothing }
 
 
 
@@ -1326,8 +1325,8 @@ instance encodeIsDefault :: Encode IsDefault where encode = genericEncode option
 
 -- | <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
 newtype Limit = Limit 
-  { "Name" :: NullOrUndefined (Name)
-  , "Max" :: NullOrUndefined (Max)
+  { "Name" :: Maybe (Name)
+  , "Max" :: Maybe (Max)
   }
 derive instance newtypeLimit :: Newtype Limit _
 derive instance repGenericLimit :: Generic Limit _
@@ -1337,12 +1336,12 @@ instance encodeLimit :: Encode Limit where encode = genericEncode options
 
 -- | Constructs Limit from required parameters
 newLimit :: Limit
-newLimit  = Limit { "Max": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newLimit  = Limit { "Max": Nothing, "Name": Nothing }
 
 -- | Constructs Limit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimit' :: ( { "Name" :: NullOrUndefined (Name) , "Max" :: NullOrUndefined (Max) } -> {"Name" :: NullOrUndefined (Name) , "Max" :: NullOrUndefined (Max) } ) -> Limit
-newLimit'  customize = (Limit <<< customize) { "Max": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newLimit' :: ( { "Name" :: Maybe (Name) , "Max" :: Maybe (Max) } -> {"Name" :: Maybe (Name) , "Max" :: Maybe (Max) } ) -> Limit
+newLimit'  customize = (Limit <<< customize) { "Max": Nothing, "Name": Nothing }
 
 
 
@@ -1366,13 +1365,13 @@ instance encodeListOfString :: Encode ListOfString where encode = genericEncode 
 
 -- | <p>Information about a listener.</p>
 newtype Listener = Listener 
-  { "ListenerArn" :: NullOrUndefined (ListenerArn)
-  , "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn)
-  , "Port" :: NullOrUndefined (Port)
-  , "Protocol" :: NullOrUndefined (ProtocolEnum)
-  , "Certificates" :: NullOrUndefined (CertificateList)
-  , "SslPolicy" :: NullOrUndefined (SslPolicyName)
-  , "DefaultActions" :: NullOrUndefined (Actions)
+  { "ListenerArn" :: Maybe (ListenerArn)
+  , "LoadBalancerArn" :: Maybe (LoadBalancerArn)
+  , "Port" :: Maybe (Port)
+  , "Protocol" :: Maybe (ProtocolEnum)
+  , "Certificates" :: Maybe (CertificateList)
+  , "SslPolicy" :: Maybe (SslPolicyName)
+  , "DefaultActions" :: Maybe (Actions)
   }
 derive instance newtypeListener :: Newtype Listener _
 derive instance repGenericListener :: Generic Listener _
@@ -1382,12 +1381,12 @@ instance encodeListener :: Encode Listener where encode = genericEncode options
 
 -- | Constructs Listener from required parameters
 newListener :: Listener
-newListener  = Listener { "Certificates": (NullOrUndefined Nothing), "DefaultActions": (NullOrUndefined Nothing), "ListenerArn": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newListener  = Listener { "Certificates": Nothing, "DefaultActions": Nothing, "ListenerArn": Nothing, "LoadBalancerArn": Nothing, "Port": Nothing, "Protocol": Nothing, "SslPolicy": Nothing }
 
 -- | Constructs Listener's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListener' :: ( { "ListenerArn" :: NullOrUndefined (ListenerArn) , "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "Port" :: NullOrUndefined (Port) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "Certificates" :: NullOrUndefined (CertificateList) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "DefaultActions" :: NullOrUndefined (Actions) } -> {"ListenerArn" :: NullOrUndefined (ListenerArn) , "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "Port" :: NullOrUndefined (Port) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "Certificates" :: NullOrUndefined (CertificateList) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "DefaultActions" :: NullOrUndefined (Actions) } ) -> Listener
-newListener'  customize = (Listener <<< customize) { "Certificates": (NullOrUndefined Nothing), "DefaultActions": (NullOrUndefined Nothing), "ListenerArn": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newListener' :: ( { "ListenerArn" :: Maybe (ListenerArn) , "LoadBalancerArn" :: Maybe (LoadBalancerArn) , "Port" :: Maybe (Port) , "Protocol" :: Maybe (ProtocolEnum) , "Certificates" :: Maybe (CertificateList) , "SslPolicy" :: Maybe (SslPolicyName) , "DefaultActions" :: Maybe (Actions) } -> {"ListenerArn" :: Maybe (ListenerArn) , "LoadBalancerArn" :: Maybe (LoadBalancerArn) , "Port" :: Maybe (Port) , "Protocol" :: Maybe (ProtocolEnum) , "Certificates" :: Maybe (CertificateList) , "SslPolicy" :: Maybe (SslPolicyName) , "DefaultActions" :: Maybe (Actions) } ) -> Listener
+newListener'  customize = (Listener <<< customize) { "Certificates": Nothing, "DefaultActions": Nothing, "ListenerArn": Nothing, "LoadBalancerArn": Nothing, "Port": Nothing, "Protocol": Nothing, "SslPolicy": Nothing }
 
 
 
@@ -1430,18 +1429,18 @@ instance encodeListeners :: Encode Listeners where encode = genericEncode option
 
 -- | <p>Information about a load balancer.</p>
 newtype LoadBalancer = LoadBalancer 
-  { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn)
-  , "DNSName" :: NullOrUndefined (DNSName)
-  , "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId)
-  , "CreatedTime" :: NullOrUndefined (CreatedTime)
-  , "LoadBalancerName" :: NullOrUndefined (LoadBalancerName)
-  , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum)
-  , "VpcId" :: NullOrUndefined (VpcId)
-  , "State" :: NullOrUndefined (LoadBalancerState)
-  , "Type" :: NullOrUndefined (LoadBalancerTypeEnum)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones)
-  , "SecurityGroups" :: NullOrUndefined (SecurityGroups)
-  , "IpAddressType" :: NullOrUndefined (IpAddressType)
+  { "LoadBalancerArn" :: Maybe (LoadBalancerArn)
+  , "DNSName" :: Maybe (DNSName)
+  , "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId)
+  , "CreatedTime" :: Maybe (CreatedTime)
+  , "LoadBalancerName" :: Maybe (LoadBalancerName)
+  , "Scheme" :: Maybe (LoadBalancerSchemeEnum)
+  , "VpcId" :: Maybe (VpcId)
+  , "State" :: Maybe (LoadBalancerState)
+  , "Type" :: Maybe (LoadBalancerTypeEnum)
+  , "AvailabilityZones" :: Maybe (AvailabilityZones)
+  , "SecurityGroups" :: Maybe (SecurityGroups)
+  , "IpAddressType" :: Maybe (IpAddressType)
   }
 derive instance newtypeLoadBalancer :: Newtype LoadBalancer _
 derive instance repGenericLoadBalancer :: Generic LoadBalancer _
@@ -1451,19 +1450,19 @@ instance encodeLoadBalancer :: Encode LoadBalancer where encode = genericEncode 
 
 -- | Constructs LoadBalancer from required parameters
 newLoadBalancer :: LoadBalancer
-newLoadBalancer  = LoadBalancer { "AvailabilityZones": (NullOrUndefined Nothing), "CanonicalHostedZoneId": (NullOrUndefined Nothing), "CreatedTime": (NullOrUndefined Nothing), "DNSName": (NullOrUndefined Nothing), "IpAddressType": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "LoadBalancerName": (NullOrUndefined Nothing), "Scheme": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newLoadBalancer  = LoadBalancer { "AvailabilityZones": Nothing, "CanonicalHostedZoneId": Nothing, "CreatedTime": Nothing, "DNSName": Nothing, "IpAddressType": Nothing, "LoadBalancerArn": Nothing, "LoadBalancerName": Nothing, "Scheme": Nothing, "SecurityGroups": Nothing, "State": Nothing, "Type": Nothing, "VpcId": Nothing }
 
 -- | Constructs LoadBalancer's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBalancer' :: ( { "LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "DNSName" :: NullOrUndefined (DNSName) , "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId) , "CreatedTime" :: NullOrUndefined (CreatedTime) , "LoadBalancerName" :: NullOrUndefined (LoadBalancerName) , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum) , "VpcId" :: NullOrUndefined (VpcId) , "State" :: NullOrUndefined (LoadBalancerState) , "Type" :: NullOrUndefined (LoadBalancerTypeEnum) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) , "SecurityGroups" :: NullOrUndefined (SecurityGroups) , "IpAddressType" :: NullOrUndefined (IpAddressType) } -> {"LoadBalancerArn" :: NullOrUndefined (LoadBalancerArn) , "DNSName" :: NullOrUndefined (DNSName) , "CanonicalHostedZoneId" :: NullOrUndefined (CanonicalHostedZoneId) , "CreatedTime" :: NullOrUndefined (CreatedTime) , "LoadBalancerName" :: NullOrUndefined (LoadBalancerName) , "Scheme" :: NullOrUndefined (LoadBalancerSchemeEnum) , "VpcId" :: NullOrUndefined (VpcId) , "State" :: NullOrUndefined (LoadBalancerState) , "Type" :: NullOrUndefined (LoadBalancerTypeEnum) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) , "SecurityGroups" :: NullOrUndefined (SecurityGroups) , "IpAddressType" :: NullOrUndefined (IpAddressType) } ) -> LoadBalancer
-newLoadBalancer'  customize = (LoadBalancer <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "CanonicalHostedZoneId": (NullOrUndefined Nothing), "CreatedTime": (NullOrUndefined Nothing), "DNSName": (NullOrUndefined Nothing), "IpAddressType": (NullOrUndefined Nothing), "LoadBalancerArn": (NullOrUndefined Nothing), "LoadBalancerName": (NullOrUndefined Nothing), "Scheme": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newLoadBalancer' :: ( { "LoadBalancerArn" :: Maybe (LoadBalancerArn) , "DNSName" :: Maybe (DNSName) , "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId) , "CreatedTime" :: Maybe (CreatedTime) , "LoadBalancerName" :: Maybe (LoadBalancerName) , "Scheme" :: Maybe (LoadBalancerSchemeEnum) , "VpcId" :: Maybe (VpcId) , "State" :: Maybe (LoadBalancerState) , "Type" :: Maybe (LoadBalancerTypeEnum) , "AvailabilityZones" :: Maybe (AvailabilityZones) , "SecurityGroups" :: Maybe (SecurityGroups) , "IpAddressType" :: Maybe (IpAddressType) } -> {"LoadBalancerArn" :: Maybe (LoadBalancerArn) , "DNSName" :: Maybe (DNSName) , "CanonicalHostedZoneId" :: Maybe (CanonicalHostedZoneId) , "CreatedTime" :: Maybe (CreatedTime) , "LoadBalancerName" :: Maybe (LoadBalancerName) , "Scheme" :: Maybe (LoadBalancerSchemeEnum) , "VpcId" :: Maybe (VpcId) , "State" :: Maybe (LoadBalancerState) , "Type" :: Maybe (LoadBalancerTypeEnum) , "AvailabilityZones" :: Maybe (AvailabilityZones) , "SecurityGroups" :: Maybe (SecurityGroups) , "IpAddressType" :: Maybe (IpAddressType) } ) -> LoadBalancer
+newLoadBalancer'  customize = (LoadBalancer <<< customize) { "AvailabilityZones": Nothing, "CanonicalHostedZoneId": Nothing, "CreatedTime": Nothing, "DNSName": Nothing, "IpAddressType": Nothing, "LoadBalancerArn": Nothing, "LoadBalancerName": Nothing, "Scheme": Nothing, "SecurityGroups": Nothing, "State": Nothing, "Type": Nothing, "VpcId": Nothing }
 
 
 
 -- | <p>Information about a static IP address for a load balancer.</p>
 newtype LoadBalancerAddress = LoadBalancerAddress 
-  { "IpAddress" :: NullOrUndefined (IpAddress)
-  , "AllocationId" :: NullOrUndefined (AllocationId)
+  { "IpAddress" :: Maybe (IpAddress)
+  , "AllocationId" :: Maybe (AllocationId)
   }
 derive instance newtypeLoadBalancerAddress :: Newtype LoadBalancerAddress _
 derive instance repGenericLoadBalancerAddress :: Generic LoadBalancerAddress _
@@ -1473,12 +1472,12 @@ instance encodeLoadBalancerAddress :: Encode LoadBalancerAddress where encode = 
 
 -- | Constructs LoadBalancerAddress from required parameters
 newLoadBalancerAddress :: LoadBalancerAddress
-newLoadBalancerAddress  = LoadBalancerAddress { "AllocationId": (NullOrUndefined Nothing), "IpAddress": (NullOrUndefined Nothing) }
+newLoadBalancerAddress  = LoadBalancerAddress { "AllocationId": Nothing, "IpAddress": Nothing }
 
 -- | Constructs LoadBalancerAddress's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBalancerAddress' :: ( { "IpAddress" :: NullOrUndefined (IpAddress) , "AllocationId" :: NullOrUndefined (AllocationId) } -> {"IpAddress" :: NullOrUndefined (IpAddress) , "AllocationId" :: NullOrUndefined (AllocationId) } ) -> LoadBalancerAddress
-newLoadBalancerAddress'  customize = (LoadBalancerAddress <<< customize) { "AllocationId": (NullOrUndefined Nothing), "IpAddress": (NullOrUndefined Nothing) }
+newLoadBalancerAddress' :: ( { "IpAddress" :: Maybe (IpAddress) , "AllocationId" :: Maybe (AllocationId) } -> {"IpAddress" :: Maybe (IpAddress) , "AllocationId" :: Maybe (AllocationId) } ) -> LoadBalancerAddress
+newLoadBalancerAddress'  customize = (LoadBalancerAddress <<< customize) { "AllocationId": Nothing, "IpAddress": Nothing }
 
 
 
@@ -1511,8 +1510,8 @@ instance encodeLoadBalancerArns :: Encode LoadBalancerArns where encode = generi
 
 -- | <p>Information about a load balancer attribute.</p>
 newtype LoadBalancerAttribute = LoadBalancerAttribute 
-  { "Key" :: NullOrUndefined (LoadBalancerAttributeKey)
-  , "Value" :: NullOrUndefined (LoadBalancerAttributeValue)
+  { "Key" :: Maybe (LoadBalancerAttributeKey)
+  , "Value" :: Maybe (LoadBalancerAttributeValue)
   }
 derive instance newtypeLoadBalancerAttribute :: Newtype LoadBalancerAttribute _
 derive instance repGenericLoadBalancerAttribute :: Generic LoadBalancerAttribute _
@@ -1522,12 +1521,12 @@ instance encodeLoadBalancerAttribute :: Encode LoadBalancerAttribute where encod
 
 -- | Constructs LoadBalancerAttribute from required parameters
 newLoadBalancerAttribute :: LoadBalancerAttribute
-newLoadBalancerAttribute  = LoadBalancerAttribute { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newLoadBalancerAttribute  = LoadBalancerAttribute { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs LoadBalancerAttribute's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBalancerAttribute' :: ( { "Key" :: NullOrUndefined (LoadBalancerAttributeKey) , "Value" :: NullOrUndefined (LoadBalancerAttributeValue) } -> {"Key" :: NullOrUndefined (LoadBalancerAttributeKey) , "Value" :: NullOrUndefined (LoadBalancerAttributeValue) } ) -> LoadBalancerAttribute
-newLoadBalancerAttribute'  customize = (LoadBalancerAttribute <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newLoadBalancerAttribute' :: ( { "Key" :: Maybe (LoadBalancerAttributeKey) , "Value" :: Maybe (LoadBalancerAttributeValue) } -> {"Key" :: Maybe (LoadBalancerAttributeKey) , "Value" :: Maybe (LoadBalancerAttributeValue) } ) -> LoadBalancerAttribute
+newLoadBalancerAttribute'  customize = (LoadBalancerAttribute <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -1597,8 +1596,8 @@ instance encodeLoadBalancerSchemeEnum :: Encode LoadBalancerSchemeEnum where enc
 
 -- | <p>Information about the state of the load balancer.</p>
 newtype LoadBalancerState = LoadBalancerState 
-  { "Code" :: NullOrUndefined (LoadBalancerStateEnum)
-  , "Reason" :: NullOrUndefined (StateReason)
+  { "Code" :: Maybe (LoadBalancerStateEnum)
+  , "Reason" :: Maybe (StateReason)
   }
 derive instance newtypeLoadBalancerState :: Newtype LoadBalancerState _
 derive instance repGenericLoadBalancerState :: Generic LoadBalancerState _
@@ -1608,12 +1607,12 @@ instance encodeLoadBalancerState :: Encode LoadBalancerState where encode = gene
 
 -- | Constructs LoadBalancerState from required parameters
 newLoadBalancerState :: LoadBalancerState
-newLoadBalancerState  = LoadBalancerState { "Code": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newLoadBalancerState  = LoadBalancerState { "Code": Nothing, "Reason": Nothing }
 
 -- | Constructs LoadBalancerState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoadBalancerState' :: ( { "Code" :: NullOrUndefined (LoadBalancerStateEnum) , "Reason" :: NullOrUndefined (StateReason) } -> {"Code" :: NullOrUndefined (LoadBalancerStateEnum) , "Reason" :: NullOrUndefined (StateReason) } ) -> LoadBalancerState
-newLoadBalancerState'  customize = (LoadBalancerState <<< customize) { "Code": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newLoadBalancerState' :: ( { "Code" :: Maybe (LoadBalancerStateEnum) , "Reason" :: Maybe (StateReason) } -> {"Code" :: Maybe (LoadBalancerStateEnum) , "Reason" :: Maybe (StateReason) } ) -> LoadBalancerState
+newLoadBalancerState'  customize = (LoadBalancerState <<< customize) { "Code": Nothing, "Reason": Nothing }
 
 
 
@@ -1685,11 +1684,11 @@ instance encodeMax :: Encode Max where encode = genericEncode options
 
 newtype ModifyListenerInput = ModifyListenerInput 
   { "ListenerArn" :: (ListenerArn)
-  , "Port" :: NullOrUndefined (Port)
-  , "Protocol" :: NullOrUndefined (ProtocolEnum)
-  , "SslPolicy" :: NullOrUndefined (SslPolicyName)
-  , "Certificates" :: NullOrUndefined (CertificateList)
-  , "DefaultActions" :: NullOrUndefined (Actions)
+  , "Port" :: Maybe (Port)
+  , "Protocol" :: Maybe (ProtocolEnum)
+  , "SslPolicy" :: Maybe (SslPolicyName)
+  , "Certificates" :: Maybe (CertificateList)
+  , "DefaultActions" :: Maybe (Actions)
   }
 derive instance newtypeModifyListenerInput :: Newtype ModifyListenerInput _
 derive instance repGenericModifyListenerInput :: Generic ModifyListenerInput _
@@ -1699,17 +1698,17 @@ instance encodeModifyListenerInput :: Encode ModifyListenerInput where encode = 
 
 -- | Constructs ModifyListenerInput from required parameters
 newModifyListenerInput :: ListenerArn -> ModifyListenerInput
-newModifyListenerInput _ListenerArn = ModifyListenerInput { "ListenerArn": _ListenerArn, "Certificates": (NullOrUndefined Nothing), "DefaultActions": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newModifyListenerInput _ListenerArn = ModifyListenerInput { "ListenerArn": _ListenerArn, "Certificates": Nothing, "DefaultActions": Nothing, "Port": Nothing, "Protocol": Nothing, "SslPolicy": Nothing }
 
 -- | Constructs ModifyListenerInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyListenerInput' :: ListenerArn -> ( { "ListenerArn" :: (ListenerArn) , "Port" :: NullOrUndefined (Port) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "Certificates" :: NullOrUndefined (CertificateList) , "DefaultActions" :: NullOrUndefined (Actions) } -> {"ListenerArn" :: (ListenerArn) , "Port" :: NullOrUndefined (Port) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "SslPolicy" :: NullOrUndefined (SslPolicyName) , "Certificates" :: NullOrUndefined (CertificateList) , "DefaultActions" :: NullOrUndefined (Actions) } ) -> ModifyListenerInput
-newModifyListenerInput' _ListenerArn customize = (ModifyListenerInput <<< customize) { "ListenerArn": _ListenerArn, "Certificates": (NullOrUndefined Nothing), "DefaultActions": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "SslPolicy": (NullOrUndefined Nothing) }
+newModifyListenerInput' :: ListenerArn -> ( { "ListenerArn" :: (ListenerArn) , "Port" :: Maybe (Port) , "Protocol" :: Maybe (ProtocolEnum) , "SslPolicy" :: Maybe (SslPolicyName) , "Certificates" :: Maybe (CertificateList) , "DefaultActions" :: Maybe (Actions) } -> {"ListenerArn" :: (ListenerArn) , "Port" :: Maybe (Port) , "Protocol" :: Maybe (ProtocolEnum) , "SslPolicy" :: Maybe (SslPolicyName) , "Certificates" :: Maybe (CertificateList) , "DefaultActions" :: Maybe (Actions) } ) -> ModifyListenerInput
+newModifyListenerInput' _ListenerArn customize = (ModifyListenerInput <<< customize) { "ListenerArn": _ListenerArn, "Certificates": Nothing, "DefaultActions": Nothing, "Port": Nothing, "Protocol": Nothing, "SslPolicy": Nothing }
 
 
 
 newtype ModifyListenerOutput = ModifyListenerOutput 
-  { "Listeners" :: NullOrUndefined (Listeners)
+  { "Listeners" :: Maybe (Listeners)
   }
 derive instance newtypeModifyListenerOutput :: Newtype ModifyListenerOutput _
 derive instance repGenericModifyListenerOutput :: Generic ModifyListenerOutput _
@@ -1719,12 +1718,12 @@ instance encodeModifyListenerOutput :: Encode ModifyListenerOutput where encode 
 
 -- | Constructs ModifyListenerOutput from required parameters
 newModifyListenerOutput :: ModifyListenerOutput
-newModifyListenerOutput  = ModifyListenerOutput { "Listeners": (NullOrUndefined Nothing) }
+newModifyListenerOutput  = ModifyListenerOutput { "Listeners": Nothing }
 
 -- | Constructs ModifyListenerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyListenerOutput' :: ( { "Listeners" :: NullOrUndefined (Listeners) } -> {"Listeners" :: NullOrUndefined (Listeners) } ) -> ModifyListenerOutput
-newModifyListenerOutput'  customize = (ModifyListenerOutput <<< customize) { "Listeners": (NullOrUndefined Nothing) }
+newModifyListenerOutput' :: ( { "Listeners" :: Maybe (Listeners) } -> {"Listeners" :: Maybe (Listeners) } ) -> ModifyListenerOutput
+newModifyListenerOutput'  customize = (ModifyListenerOutput <<< customize) { "Listeners": Nothing }
 
 
 
@@ -1750,7 +1749,7 @@ newModifyLoadBalancerAttributesInput' _Attributes _LoadBalancerArn customize = (
 
 
 newtype ModifyLoadBalancerAttributesOutput = ModifyLoadBalancerAttributesOutput 
-  { "Attributes" :: NullOrUndefined (LoadBalancerAttributes)
+  { "Attributes" :: Maybe (LoadBalancerAttributes)
   }
 derive instance newtypeModifyLoadBalancerAttributesOutput :: Newtype ModifyLoadBalancerAttributesOutput _
 derive instance repGenericModifyLoadBalancerAttributesOutput :: Generic ModifyLoadBalancerAttributesOutput _
@@ -1760,19 +1759,19 @@ instance encodeModifyLoadBalancerAttributesOutput :: Encode ModifyLoadBalancerAt
 
 -- | Constructs ModifyLoadBalancerAttributesOutput from required parameters
 newModifyLoadBalancerAttributesOutput :: ModifyLoadBalancerAttributesOutput
-newModifyLoadBalancerAttributesOutput  = ModifyLoadBalancerAttributesOutput { "Attributes": (NullOrUndefined Nothing) }
+newModifyLoadBalancerAttributesOutput  = ModifyLoadBalancerAttributesOutput { "Attributes": Nothing }
 
 -- | Constructs ModifyLoadBalancerAttributesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyLoadBalancerAttributesOutput' :: ( { "Attributes" :: NullOrUndefined (LoadBalancerAttributes) } -> {"Attributes" :: NullOrUndefined (LoadBalancerAttributes) } ) -> ModifyLoadBalancerAttributesOutput
-newModifyLoadBalancerAttributesOutput'  customize = (ModifyLoadBalancerAttributesOutput <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newModifyLoadBalancerAttributesOutput' :: ( { "Attributes" :: Maybe (LoadBalancerAttributes) } -> {"Attributes" :: Maybe (LoadBalancerAttributes) } ) -> ModifyLoadBalancerAttributesOutput
+newModifyLoadBalancerAttributesOutput'  customize = (ModifyLoadBalancerAttributesOutput <<< customize) { "Attributes": Nothing }
 
 
 
 newtype ModifyRuleInput = ModifyRuleInput 
   { "RuleArn" :: (RuleArn)
-  , "Conditions" :: NullOrUndefined (RuleConditionList)
-  , "Actions" :: NullOrUndefined (Actions)
+  , "Conditions" :: Maybe (RuleConditionList)
+  , "Actions" :: Maybe (Actions)
   }
 derive instance newtypeModifyRuleInput :: Newtype ModifyRuleInput _
 derive instance repGenericModifyRuleInput :: Generic ModifyRuleInput _
@@ -1782,17 +1781,17 @@ instance encodeModifyRuleInput :: Encode ModifyRuleInput where encode = genericE
 
 -- | Constructs ModifyRuleInput from required parameters
 newModifyRuleInput :: RuleArn -> ModifyRuleInput
-newModifyRuleInput _RuleArn = ModifyRuleInput { "RuleArn": _RuleArn, "Actions": (NullOrUndefined Nothing), "Conditions": (NullOrUndefined Nothing) }
+newModifyRuleInput _RuleArn = ModifyRuleInput { "RuleArn": _RuleArn, "Actions": Nothing, "Conditions": Nothing }
 
 -- | Constructs ModifyRuleInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyRuleInput' :: RuleArn -> ( { "RuleArn" :: (RuleArn) , "Conditions" :: NullOrUndefined (RuleConditionList) , "Actions" :: NullOrUndefined (Actions) } -> {"RuleArn" :: (RuleArn) , "Conditions" :: NullOrUndefined (RuleConditionList) , "Actions" :: NullOrUndefined (Actions) } ) -> ModifyRuleInput
-newModifyRuleInput' _RuleArn customize = (ModifyRuleInput <<< customize) { "RuleArn": _RuleArn, "Actions": (NullOrUndefined Nothing), "Conditions": (NullOrUndefined Nothing) }
+newModifyRuleInput' :: RuleArn -> ( { "RuleArn" :: (RuleArn) , "Conditions" :: Maybe (RuleConditionList) , "Actions" :: Maybe (Actions) } -> {"RuleArn" :: (RuleArn) , "Conditions" :: Maybe (RuleConditionList) , "Actions" :: Maybe (Actions) } ) -> ModifyRuleInput
+newModifyRuleInput' _RuleArn customize = (ModifyRuleInput <<< customize) { "RuleArn": _RuleArn, "Actions": Nothing, "Conditions": Nothing }
 
 
 
 newtype ModifyRuleOutput = ModifyRuleOutput 
-  { "Rules" :: NullOrUndefined (Rules)
+  { "Rules" :: Maybe (Rules)
   }
 derive instance newtypeModifyRuleOutput :: Newtype ModifyRuleOutput _
 derive instance repGenericModifyRuleOutput :: Generic ModifyRuleOutput _
@@ -1802,12 +1801,12 @@ instance encodeModifyRuleOutput :: Encode ModifyRuleOutput where encode = generi
 
 -- | Constructs ModifyRuleOutput from required parameters
 newModifyRuleOutput :: ModifyRuleOutput
-newModifyRuleOutput  = ModifyRuleOutput { "Rules": (NullOrUndefined Nothing) }
+newModifyRuleOutput  = ModifyRuleOutput { "Rules": Nothing }
 
 -- | Constructs ModifyRuleOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyRuleOutput' :: ( { "Rules" :: NullOrUndefined (Rules) } -> {"Rules" :: NullOrUndefined (Rules) } ) -> ModifyRuleOutput
-newModifyRuleOutput'  customize = (ModifyRuleOutput <<< customize) { "Rules": (NullOrUndefined Nothing) }
+newModifyRuleOutput' :: ( { "Rules" :: Maybe (Rules) } -> {"Rules" :: Maybe (Rules) } ) -> ModifyRuleOutput
+newModifyRuleOutput'  customize = (ModifyRuleOutput <<< customize) { "Rules": Nothing }
 
 
 
@@ -1833,7 +1832,7 @@ newModifyTargetGroupAttributesInput' _Attributes _TargetGroupArn customize = (Mo
 
 
 newtype ModifyTargetGroupAttributesOutput = ModifyTargetGroupAttributesOutput 
-  { "Attributes" :: NullOrUndefined (TargetGroupAttributes)
+  { "Attributes" :: Maybe (TargetGroupAttributes)
   }
 derive instance newtypeModifyTargetGroupAttributesOutput :: Newtype ModifyTargetGroupAttributesOutput _
 derive instance repGenericModifyTargetGroupAttributesOutput :: Generic ModifyTargetGroupAttributesOutput _
@@ -1843,25 +1842,25 @@ instance encodeModifyTargetGroupAttributesOutput :: Encode ModifyTargetGroupAttr
 
 -- | Constructs ModifyTargetGroupAttributesOutput from required parameters
 newModifyTargetGroupAttributesOutput :: ModifyTargetGroupAttributesOutput
-newModifyTargetGroupAttributesOutput  = ModifyTargetGroupAttributesOutput { "Attributes": (NullOrUndefined Nothing) }
+newModifyTargetGroupAttributesOutput  = ModifyTargetGroupAttributesOutput { "Attributes": Nothing }
 
 -- | Constructs ModifyTargetGroupAttributesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyTargetGroupAttributesOutput' :: ( { "Attributes" :: NullOrUndefined (TargetGroupAttributes) } -> {"Attributes" :: NullOrUndefined (TargetGroupAttributes) } ) -> ModifyTargetGroupAttributesOutput
-newModifyTargetGroupAttributesOutput'  customize = (ModifyTargetGroupAttributesOutput <<< customize) { "Attributes": (NullOrUndefined Nothing) }
+newModifyTargetGroupAttributesOutput' :: ( { "Attributes" :: Maybe (TargetGroupAttributes) } -> {"Attributes" :: Maybe (TargetGroupAttributes) } ) -> ModifyTargetGroupAttributesOutput
+newModifyTargetGroupAttributesOutput'  customize = (ModifyTargetGroupAttributesOutput <<< customize) { "Attributes": Nothing }
 
 
 
 newtype ModifyTargetGroupInput = ModifyTargetGroupInput 
   { "TargetGroupArn" :: (TargetGroupArn)
-  , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum)
-  , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort)
-  , "HealthCheckPath" :: NullOrUndefined (Path)
-  , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds)
-  , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds)
-  , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "Matcher" :: NullOrUndefined (Matcher)
+  , "HealthCheckProtocol" :: Maybe (ProtocolEnum)
+  , "HealthCheckPort" :: Maybe (HealthCheckPort)
+  , "HealthCheckPath" :: Maybe (Path)
+  , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds)
+  , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds)
+  , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "Matcher" :: Maybe (Matcher)
   }
 derive instance newtypeModifyTargetGroupInput :: Newtype ModifyTargetGroupInput _
 derive instance repGenericModifyTargetGroupInput :: Generic ModifyTargetGroupInput _
@@ -1871,17 +1870,17 @@ instance encodeModifyTargetGroupInput :: Encode ModifyTargetGroupInput where enc
 
 -- | Constructs ModifyTargetGroupInput from required parameters
 newModifyTargetGroupInput :: TargetGroupArn -> ModifyTargetGroupInput
-newModifyTargetGroupInput _TargetGroupArn = ModifyTargetGroupInput { "TargetGroupArn": _TargetGroupArn, "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing) }
+newModifyTargetGroupInput _TargetGroupArn = ModifyTargetGroupInput { "TargetGroupArn": _TargetGroupArn, "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "Matcher": Nothing, "UnhealthyThresholdCount": Nothing }
 
 -- | Constructs ModifyTargetGroupInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyTargetGroupInput' :: TargetGroupArn -> ( { "TargetGroupArn" :: (TargetGroupArn) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckPath" :: NullOrUndefined (Path) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "Matcher" :: NullOrUndefined (Matcher) } -> {"TargetGroupArn" :: (TargetGroupArn) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckPath" :: NullOrUndefined (Path) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "Matcher" :: NullOrUndefined (Matcher) } ) -> ModifyTargetGroupInput
-newModifyTargetGroupInput' _TargetGroupArn customize = (ModifyTargetGroupInput <<< customize) { "TargetGroupArn": _TargetGroupArn, "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing) }
+newModifyTargetGroupInput' :: TargetGroupArn -> ( { "TargetGroupArn" :: (TargetGroupArn) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckPath" :: Maybe (Path) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "Matcher" :: Maybe (Matcher) } -> {"TargetGroupArn" :: (TargetGroupArn) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckPath" :: Maybe (Path) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "Matcher" :: Maybe (Matcher) } ) -> ModifyTargetGroupInput
+newModifyTargetGroupInput' _TargetGroupArn customize = (ModifyTargetGroupInput <<< customize) { "TargetGroupArn": _TargetGroupArn, "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "Matcher": Nothing, "UnhealthyThresholdCount": Nothing }
 
 
 
 newtype ModifyTargetGroupOutput = ModifyTargetGroupOutput 
-  { "TargetGroups" :: NullOrUndefined (TargetGroups)
+  { "TargetGroups" :: Maybe (TargetGroups)
   }
 derive instance newtypeModifyTargetGroupOutput :: Newtype ModifyTargetGroupOutput _
 derive instance repGenericModifyTargetGroupOutput :: Generic ModifyTargetGroupOutput _
@@ -1891,12 +1890,12 @@ instance encodeModifyTargetGroupOutput :: Encode ModifyTargetGroupOutput where e
 
 -- | Constructs ModifyTargetGroupOutput from required parameters
 newModifyTargetGroupOutput :: ModifyTargetGroupOutput
-newModifyTargetGroupOutput  = ModifyTargetGroupOutput { "TargetGroups": (NullOrUndefined Nothing) }
+newModifyTargetGroupOutput  = ModifyTargetGroupOutput { "TargetGroups": Nothing }
 
 -- | Constructs ModifyTargetGroupOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyTargetGroupOutput' :: ( { "TargetGroups" :: NullOrUndefined (TargetGroups) } -> {"TargetGroups" :: NullOrUndefined (TargetGroups) } ) -> ModifyTargetGroupOutput
-newModifyTargetGroupOutput'  customize = (ModifyTargetGroupOutput <<< customize) { "TargetGroups": (NullOrUndefined Nothing) }
+newModifyTargetGroupOutput' :: ( { "TargetGroups" :: Maybe (TargetGroups) } -> {"TargetGroups" :: Maybe (TargetGroups) } ) -> ModifyTargetGroupOutput
+newModifyTargetGroupOutput'  customize = (ModifyTargetGroupOutput <<< customize) { "TargetGroups": Nothing }
 
 
 
@@ -2085,11 +2084,11 @@ instance encodeResourceInUseException :: Encode ResourceInUseException where enc
 
 -- | <p>Information about a rule.</p>
 newtype Rule = Rule 
-  { "RuleArn" :: NullOrUndefined (RuleArn)
-  , "Priority" :: NullOrUndefined (String)
-  , "Conditions" :: NullOrUndefined (RuleConditionList)
-  , "Actions" :: NullOrUndefined (Actions)
-  , "IsDefault" :: NullOrUndefined (IsDefault)
+  { "RuleArn" :: Maybe (RuleArn)
+  , "Priority" :: Maybe (String)
+  , "Conditions" :: Maybe (RuleConditionList)
+  , "Actions" :: Maybe (Actions)
+  , "IsDefault" :: Maybe (IsDefault)
   }
 derive instance newtypeRule :: Newtype Rule _
 derive instance repGenericRule :: Generic Rule _
@@ -2099,12 +2098,12 @@ instance encodeRule :: Encode Rule where encode = genericEncode options
 
 -- | Constructs Rule from required parameters
 newRule :: Rule
-newRule  = Rule { "Actions": (NullOrUndefined Nothing), "Conditions": (NullOrUndefined Nothing), "IsDefault": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "RuleArn": (NullOrUndefined Nothing) }
+newRule  = Rule { "Actions": Nothing, "Conditions": Nothing, "IsDefault": Nothing, "Priority": Nothing, "RuleArn": Nothing }
 
 -- | Constructs Rule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRule' :: ( { "RuleArn" :: NullOrUndefined (RuleArn) , "Priority" :: NullOrUndefined (String) , "Conditions" :: NullOrUndefined (RuleConditionList) , "Actions" :: NullOrUndefined (Actions) , "IsDefault" :: NullOrUndefined (IsDefault) } -> {"RuleArn" :: NullOrUndefined (RuleArn) , "Priority" :: NullOrUndefined (String) , "Conditions" :: NullOrUndefined (RuleConditionList) , "Actions" :: NullOrUndefined (Actions) , "IsDefault" :: NullOrUndefined (IsDefault) } ) -> Rule
-newRule'  customize = (Rule <<< customize) { "Actions": (NullOrUndefined Nothing), "Conditions": (NullOrUndefined Nothing), "IsDefault": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "RuleArn": (NullOrUndefined Nothing) }
+newRule' :: ( { "RuleArn" :: Maybe (RuleArn) , "Priority" :: Maybe (String) , "Conditions" :: Maybe (RuleConditionList) , "Actions" :: Maybe (Actions) , "IsDefault" :: Maybe (IsDefault) } -> {"RuleArn" :: Maybe (RuleArn) , "Priority" :: Maybe (String) , "Conditions" :: Maybe (RuleConditionList) , "Actions" :: Maybe (Actions) , "IsDefault" :: Maybe (IsDefault) } ) -> Rule
+newRule'  customize = (Rule <<< customize) { "Actions": Nothing, "Conditions": Nothing, "IsDefault": Nothing, "Priority": Nothing, "RuleArn": Nothing }
 
 
 
@@ -2128,8 +2127,8 @@ instance encodeRuleArns :: Encode RuleArns where encode = genericEncode options
 
 -- | <p>Information about a condition for a rule.</p>
 newtype RuleCondition = RuleCondition 
-  { "Field" :: NullOrUndefined (ConditionFieldName)
-  , "Values" :: NullOrUndefined (ListOfString)
+  { "Field" :: Maybe (ConditionFieldName)
+  , "Values" :: Maybe (ListOfString)
   }
 derive instance newtypeRuleCondition :: Newtype RuleCondition _
 derive instance repGenericRuleCondition :: Generic RuleCondition _
@@ -2139,12 +2138,12 @@ instance encodeRuleCondition :: Encode RuleCondition where encode = genericEncod
 
 -- | Constructs RuleCondition from required parameters
 newRuleCondition :: RuleCondition
-newRuleCondition  = RuleCondition { "Field": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newRuleCondition  = RuleCondition { "Field": Nothing, "Values": Nothing }
 
 -- | Constructs RuleCondition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRuleCondition' :: ( { "Field" :: NullOrUndefined (ConditionFieldName) , "Values" :: NullOrUndefined (ListOfString) } -> {"Field" :: NullOrUndefined (ConditionFieldName) , "Values" :: NullOrUndefined (ListOfString) } ) -> RuleCondition
-newRuleCondition'  customize = (RuleCondition <<< customize) { "Field": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newRuleCondition' :: ( { "Field" :: Maybe (ConditionFieldName) , "Values" :: Maybe (ListOfString) } -> {"Field" :: Maybe (ConditionFieldName) , "Values" :: Maybe (ListOfString) } ) -> RuleCondition
+newRuleCondition'  customize = (RuleCondition <<< customize) { "Field": Nothing, "Values": Nothing }
 
 
 
@@ -2187,8 +2186,8 @@ instance encodeRulePriorityList :: Encode RulePriorityList where encode = generi
 
 -- | <p>Information about the priorities for the rules for a listener.</p>
 newtype RulePriorityPair = RulePriorityPair 
-  { "RuleArn" :: NullOrUndefined (RuleArn)
-  , "Priority" :: NullOrUndefined (RulePriority)
+  { "RuleArn" :: Maybe (RuleArn)
+  , "Priority" :: Maybe (RulePriority)
   }
 derive instance newtypeRulePriorityPair :: Newtype RulePriorityPair _
 derive instance repGenericRulePriorityPair :: Generic RulePriorityPair _
@@ -2198,12 +2197,12 @@ instance encodeRulePriorityPair :: Encode RulePriorityPair where encode = generi
 
 -- | Constructs RulePriorityPair from required parameters
 newRulePriorityPair :: RulePriorityPair
-newRulePriorityPair  = RulePriorityPair { "Priority": (NullOrUndefined Nothing), "RuleArn": (NullOrUndefined Nothing) }
+newRulePriorityPair  = RulePriorityPair { "Priority": Nothing, "RuleArn": Nothing }
 
 -- | Constructs RulePriorityPair's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRulePriorityPair' :: ( { "RuleArn" :: NullOrUndefined (RuleArn) , "Priority" :: NullOrUndefined (RulePriority) } -> {"RuleArn" :: NullOrUndefined (RuleArn) , "Priority" :: NullOrUndefined (RulePriority) } ) -> RulePriorityPair
-newRulePriorityPair'  customize = (RulePriorityPair <<< customize) { "Priority": (NullOrUndefined Nothing), "RuleArn": (NullOrUndefined Nothing) }
+newRulePriorityPair' :: ( { "RuleArn" :: Maybe (RuleArn) , "Priority" :: Maybe (RulePriority) } -> {"RuleArn" :: Maybe (RuleArn) , "Priority" :: Maybe (RulePriority) } ) -> RulePriorityPair
+newRulePriorityPair'  customize = (RulePriorityPair <<< customize) { "Priority": Nothing, "RuleArn": Nothing }
 
 
 
@@ -2266,7 +2265,7 @@ newSetIpAddressTypeInput' _IpAddressType _LoadBalancerArn customize = (SetIpAddr
 
 
 newtype SetIpAddressTypeOutput = SetIpAddressTypeOutput 
-  { "IpAddressType" :: NullOrUndefined (IpAddressType)
+  { "IpAddressType" :: Maybe (IpAddressType)
   }
 derive instance newtypeSetIpAddressTypeOutput :: Newtype SetIpAddressTypeOutput _
 derive instance repGenericSetIpAddressTypeOutput :: Generic SetIpAddressTypeOutput _
@@ -2276,12 +2275,12 @@ instance encodeSetIpAddressTypeOutput :: Encode SetIpAddressTypeOutput where enc
 
 -- | Constructs SetIpAddressTypeOutput from required parameters
 newSetIpAddressTypeOutput :: SetIpAddressTypeOutput
-newSetIpAddressTypeOutput  = SetIpAddressTypeOutput { "IpAddressType": (NullOrUndefined Nothing) }
+newSetIpAddressTypeOutput  = SetIpAddressTypeOutput { "IpAddressType": Nothing }
 
 -- | Constructs SetIpAddressTypeOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetIpAddressTypeOutput' :: ( { "IpAddressType" :: NullOrUndefined (IpAddressType) } -> {"IpAddressType" :: NullOrUndefined (IpAddressType) } ) -> SetIpAddressTypeOutput
-newSetIpAddressTypeOutput'  customize = (SetIpAddressTypeOutput <<< customize) { "IpAddressType": (NullOrUndefined Nothing) }
+newSetIpAddressTypeOutput' :: ( { "IpAddressType" :: Maybe (IpAddressType) } -> {"IpAddressType" :: Maybe (IpAddressType) } ) -> SetIpAddressTypeOutput
+newSetIpAddressTypeOutput'  customize = (SetIpAddressTypeOutput <<< customize) { "IpAddressType": Nothing }
 
 
 
@@ -2306,7 +2305,7 @@ newSetRulePrioritiesInput' _RulePriorities customize = (SetRulePrioritiesInput <
 
 
 newtype SetRulePrioritiesOutput = SetRulePrioritiesOutput 
-  { "Rules" :: NullOrUndefined (Rules)
+  { "Rules" :: Maybe (Rules)
   }
 derive instance newtypeSetRulePrioritiesOutput :: Newtype SetRulePrioritiesOutput _
 derive instance repGenericSetRulePrioritiesOutput :: Generic SetRulePrioritiesOutput _
@@ -2316,12 +2315,12 @@ instance encodeSetRulePrioritiesOutput :: Encode SetRulePrioritiesOutput where e
 
 -- | Constructs SetRulePrioritiesOutput from required parameters
 newSetRulePrioritiesOutput :: SetRulePrioritiesOutput
-newSetRulePrioritiesOutput  = SetRulePrioritiesOutput { "Rules": (NullOrUndefined Nothing) }
+newSetRulePrioritiesOutput  = SetRulePrioritiesOutput { "Rules": Nothing }
 
 -- | Constructs SetRulePrioritiesOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetRulePrioritiesOutput' :: ( { "Rules" :: NullOrUndefined (Rules) } -> {"Rules" :: NullOrUndefined (Rules) } ) -> SetRulePrioritiesOutput
-newSetRulePrioritiesOutput'  customize = (SetRulePrioritiesOutput <<< customize) { "Rules": (NullOrUndefined Nothing) }
+newSetRulePrioritiesOutput' :: ( { "Rules" :: Maybe (Rules) } -> {"Rules" :: Maybe (Rules) } ) -> SetRulePrioritiesOutput
+newSetRulePrioritiesOutput'  customize = (SetRulePrioritiesOutput <<< customize) { "Rules": Nothing }
 
 
 
@@ -2347,7 +2346,7 @@ newSetSecurityGroupsInput' _LoadBalancerArn _SecurityGroups customize = (SetSecu
 
 
 newtype SetSecurityGroupsOutput = SetSecurityGroupsOutput 
-  { "SecurityGroupIds" :: NullOrUndefined (SecurityGroups)
+  { "SecurityGroupIds" :: Maybe (SecurityGroups)
   }
 derive instance newtypeSetSecurityGroupsOutput :: Newtype SetSecurityGroupsOutput _
 derive instance repGenericSetSecurityGroupsOutput :: Generic SetSecurityGroupsOutput _
@@ -2357,19 +2356,19 @@ instance encodeSetSecurityGroupsOutput :: Encode SetSecurityGroupsOutput where e
 
 -- | Constructs SetSecurityGroupsOutput from required parameters
 newSetSecurityGroupsOutput :: SetSecurityGroupsOutput
-newSetSecurityGroupsOutput  = SetSecurityGroupsOutput { "SecurityGroupIds": (NullOrUndefined Nothing) }
+newSetSecurityGroupsOutput  = SetSecurityGroupsOutput { "SecurityGroupIds": Nothing }
 
 -- | Constructs SetSecurityGroupsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetSecurityGroupsOutput' :: ( { "SecurityGroupIds" :: NullOrUndefined (SecurityGroups) } -> {"SecurityGroupIds" :: NullOrUndefined (SecurityGroups) } ) -> SetSecurityGroupsOutput
-newSetSecurityGroupsOutput'  customize = (SetSecurityGroupsOutput <<< customize) { "SecurityGroupIds": (NullOrUndefined Nothing) }
+newSetSecurityGroupsOutput' :: ( { "SecurityGroupIds" :: Maybe (SecurityGroups) } -> {"SecurityGroupIds" :: Maybe (SecurityGroups) } ) -> SetSecurityGroupsOutput
+newSetSecurityGroupsOutput'  customize = (SetSecurityGroupsOutput <<< customize) { "SecurityGroupIds": Nothing }
 
 
 
 newtype SetSubnetsInput = SetSubnetsInput 
   { "LoadBalancerArn" :: (LoadBalancerArn)
   , "Subnets" :: (Subnets)
-  , "SubnetMappings" :: NullOrUndefined (SubnetMappings)
+  , "SubnetMappings" :: Maybe (SubnetMappings)
   }
 derive instance newtypeSetSubnetsInput :: Newtype SetSubnetsInput _
 derive instance repGenericSetSubnetsInput :: Generic SetSubnetsInput _
@@ -2379,17 +2378,17 @@ instance encodeSetSubnetsInput :: Encode SetSubnetsInput where encode = genericE
 
 -- | Constructs SetSubnetsInput from required parameters
 newSetSubnetsInput :: LoadBalancerArn -> Subnets -> SetSubnetsInput
-newSetSubnetsInput _LoadBalancerArn _Subnets = SetSubnetsInput { "LoadBalancerArn": _LoadBalancerArn, "Subnets": _Subnets, "SubnetMappings": (NullOrUndefined Nothing) }
+newSetSubnetsInput _LoadBalancerArn _Subnets = SetSubnetsInput { "LoadBalancerArn": _LoadBalancerArn, "Subnets": _Subnets, "SubnetMappings": Nothing }
 
 -- | Constructs SetSubnetsInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetSubnetsInput' :: LoadBalancerArn -> Subnets -> ( { "LoadBalancerArn" :: (LoadBalancerArn) , "Subnets" :: (Subnets) , "SubnetMappings" :: NullOrUndefined (SubnetMappings) } -> {"LoadBalancerArn" :: (LoadBalancerArn) , "Subnets" :: (Subnets) , "SubnetMappings" :: NullOrUndefined (SubnetMappings) } ) -> SetSubnetsInput
-newSetSubnetsInput' _LoadBalancerArn _Subnets customize = (SetSubnetsInput <<< customize) { "LoadBalancerArn": _LoadBalancerArn, "Subnets": _Subnets, "SubnetMappings": (NullOrUndefined Nothing) }
+newSetSubnetsInput' :: LoadBalancerArn -> Subnets -> ( { "LoadBalancerArn" :: (LoadBalancerArn) , "Subnets" :: (Subnets) , "SubnetMappings" :: Maybe (SubnetMappings) } -> {"LoadBalancerArn" :: (LoadBalancerArn) , "Subnets" :: (Subnets) , "SubnetMappings" :: Maybe (SubnetMappings) } ) -> SetSubnetsInput
+newSetSubnetsInput' _LoadBalancerArn _Subnets customize = (SetSubnetsInput <<< customize) { "LoadBalancerArn": _LoadBalancerArn, "Subnets": _Subnets, "SubnetMappings": Nothing }
 
 
 
 newtype SetSubnetsOutput = SetSubnetsOutput 
-  { "AvailabilityZones" :: NullOrUndefined (AvailabilityZones)
+  { "AvailabilityZones" :: Maybe (AvailabilityZones)
   }
 derive instance newtypeSetSubnetsOutput :: Newtype SetSubnetsOutput _
 derive instance repGenericSetSubnetsOutput :: Generic SetSubnetsOutput _
@@ -2399,12 +2398,12 @@ instance encodeSetSubnetsOutput :: Encode SetSubnetsOutput where encode = generi
 
 -- | Constructs SetSubnetsOutput from required parameters
 newSetSubnetsOutput :: SetSubnetsOutput
-newSetSubnetsOutput  = SetSubnetsOutput { "AvailabilityZones": (NullOrUndefined Nothing) }
+newSetSubnetsOutput  = SetSubnetsOutput { "AvailabilityZones": Nothing }
 
 -- | Constructs SetSubnetsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSetSubnetsOutput' :: ( { "AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } -> {"AvailabilityZones" :: NullOrUndefined (AvailabilityZones) } ) -> SetSubnetsOutput
-newSetSubnetsOutput'  customize = (SetSubnetsOutput <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing) }
+newSetSubnetsOutput' :: ( { "AvailabilityZones" :: Maybe (AvailabilityZones) } -> {"AvailabilityZones" :: Maybe (AvailabilityZones) } ) -> SetSubnetsOutput
+newSetSubnetsOutput'  customize = (SetSubnetsOutput <<< customize) { "AvailabilityZones": Nothing }
 
 
 
@@ -2419,9 +2418,9 @@ instance encodeSslPolicies :: Encode SslPolicies where encode = genericEncode op
 
 -- | <p>Information about a policy used for SSL negotiation.</p>
 newtype SslPolicy = SslPolicy 
-  { "SslProtocols" :: NullOrUndefined (SslProtocols)
-  , "Ciphers" :: NullOrUndefined (Ciphers)
-  , "Name" :: NullOrUndefined (SslPolicyName)
+  { "SslProtocols" :: Maybe (SslProtocols)
+  , "Ciphers" :: Maybe (Ciphers)
+  , "Name" :: Maybe (SslPolicyName)
   }
 derive instance newtypeSslPolicy :: Newtype SslPolicy _
 derive instance repGenericSslPolicy :: Generic SslPolicy _
@@ -2431,12 +2430,12 @@ instance encodeSslPolicy :: Encode SslPolicy where encode = genericEncode option
 
 -- | Constructs SslPolicy from required parameters
 newSslPolicy :: SslPolicy
-newSslPolicy  = SslPolicy { "Ciphers": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SslProtocols": (NullOrUndefined Nothing) }
+newSslPolicy  = SslPolicy { "Ciphers": Nothing, "Name": Nothing, "SslProtocols": Nothing }
 
 -- | Constructs SslPolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSslPolicy' :: ( { "SslProtocols" :: NullOrUndefined (SslProtocols) , "Ciphers" :: NullOrUndefined (Ciphers) , "Name" :: NullOrUndefined (SslPolicyName) } -> {"SslProtocols" :: NullOrUndefined (SslProtocols) , "Ciphers" :: NullOrUndefined (Ciphers) , "Name" :: NullOrUndefined (SslPolicyName) } ) -> SslPolicy
-newSslPolicy'  customize = (SslPolicy <<< customize) { "Ciphers": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SslProtocols": (NullOrUndefined Nothing) }
+newSslPolicy' :: ( { "SslProtocols" :: Maybe (SslProtocols) , "Ciphers" :: Maybe (Ciphers) , "Name" :: Maybe (SslPolicyName) } -> {"SslProtocols" :: Maybe (SslProtocols) , "Ciphers" :: Maybe (Ciphers) , "Name" :: Maybe (SslPolicyName) } ) -> SslPolicy
+newSslPolicy'  customize = (SslPolicy <<< customize) { "Ciphers": Nothing, "Name": Nothing, "SslProtocols": Nothing }
 
 
 
@@ -2505,8 +2504,8 @@ instance encodeSubnetId :: Encode SubnetId where encode = genericEncode options
 
 -- | <p>Information about a subnet mapping.</p>
 newtype SubnetMapping = SubnetMapping 
-  { "SubnetId" :: NullOrUndefined (SubnetId)
-  , "AllocationId" :: NullOrUndefined (AllocationId)
+  { "SubnetId" :: Maybe (SubnetId)
+  , "AllocationId" :: Maybe (AllocationId)
   }
 derive instance newtypeSubnetMapping :: Newtype SubnetMapping _
 derive instance repGenericSubnetMapping :: Generic SubnetMapping _
@@ -2516,12 +2515,12 @@ instance encodeSubnetMapping :: Encode SubnetMapping where encode = genericEncod
 
 -- | Constructs SubnetMapping from required parameters
 newSubnetMapping :: SubnetMapping
-newSubnetMapping  = SubnetMapping { "AllocationId": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newSubnetMapping  = SubnetMapping { "AllocationId": Nothing, "SubnetId": Nothing }
 
 -- | Constructs SubnetMapping's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnetMapping' :: ( { "SubnetId" :: NullOrUndefined (SubnetId) , "AllocationId" :: NullOrUndefined (AllocationId) } -> {"SubnetId" :: NullOrUndefined (SubnetId) , "AllocationId" :: NullOrUndefined (AllocationId) } ) -> SubnetMapping
-newSubnetMapping'  customize = (SubnetMapping <<< customize) { "AllocationId": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newSubnetMapping' :: ( { "SubnetId" :: Maybe (SubnetId) , "AllocationId" :: Maybe (AllocationId) } -> {"SubnetId" :: Maybe (SubnetId) , "AllocationId" :: Maybe (AllocationId) } ) -> SubnetMapping
+newSubnetMapping'  customize = (SubnetMapping <<< customize) { "AllocationId": Nothing, "SubnetId": Nothing }
 
 
 
@@ -2556,7 +2555,7 @@ instance encodeSubnets :: Encode Subnets where encode = genericEncode options
 -- | <p>Information about a tag.</p>
 newtype Tag = Tag 
   { "Key" :: (TagKey)
-  , "Value" :: NullOrUndefined (TagValue)
+  , "Value" :: Maybe (TagValue)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -2566,19 +2565,19 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: TagKey -> Tag
-newTag _Key = Tag { "Key": _Key, "Value": (NullOrUndefined Nothing) }
+newTag _Key = Tag { "Key": _Key, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: TagKey -> ( { "Key" :: (TagKey) , "Value" :: NullOrUndefined (TagValue) } -> {"Key" :: (TagKey) , "Value" :: NullOrUndefined (TagValue) } ) -> Tag
-newTag' _Key customize = (Tag <<< customize) { "Key": _Key, "Value": (NullOrUndefined Nothing) }
+newTag' :: TagKey -> ( { "Key" :: (TagKey) , "Value" :: Maybe (TagValue) } -> {"Key" :: (TagKey) , "Value" :: Maybe (TagValue) } ) -> Tag
+newTag' _Key customize = (Tag <<< customize) { "Key": _Key, "Value": Nothing }
 
 
 
 -- | <p>The tags associated with a resource.</p>
 newtype TagDescription = TagDescription 
-  { "ResourceArn" :: NullOrUndefined (ResourceArn)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "ResourceArn" :: Maybe (ResourceArn)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeTagDescription :: Newtype TagDescription _
 derive instance repGenericTagDescription :: Generic TagDescription _
@@ -2588,12 +2587,12 @@ instance encodeTagDescription :: Encode TagDescription where encode = genericEnc
 
 -- | Constructs TagDescription from required parameters
 newTagDescription :: TagDescription
-newTagDescription  = TagDescription { "ResourceArn": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newTagDescription  = TagDescription { "ResourceArn": Nothing, "Tags": Nothing }
 
 -- | Constructs TagDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTagDescription' :: ( { "ResourceArn" :: NullOrUndefined (ResourceArn) , "Tags" :: NullOrUndefined (TagList) } -> {"ResourceArn" :: NullOrUndefined (ResourceArn) , "Tags" :: NullOrUndefined (TagList) } ) -> TagDescription
-newTagDescription'  customize = (TagDescription <<< customize) { "ResourceArn": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newTagDescription' :: ( { "ResourceArn" :: Maybe (ResourceArn) , "Tags" :: Maybe (TagList) } -> {"ResourceArn" :: Maybe (ResourceArn) , "Tags" :: Maybe (TagList) } ) -> TagDescription
+newTagDescription'  customize = (TagDescription <<< customize) { "ResourceArn": Nothing, "Tags": Nothing }
 
 
 
@@ -2645,8 +2644,8 @@ instance encodeTagValue :: Encode TagValue where encode = genericEncode options
 -- | <p>Information about a target.</p>
 newtype TargetDescription = TargetDescription 
   { "Id" :: (TargetId)
-  , "Port" :: NullOrUndefined (Port)
-  , "AvailabilityZone" :: NullOrUndefined (ZoneName)
+  , "Port" :: Maybe (Port)
+  , "AvailabilityZone" :: Maybe (ZoneName)
   }
 derive instance newtypeTargetDescription :: Newtype TargetDescription _
 derive instance repGenericTargetDescription :: Generic TargetDescription _
@@ -2656,12 +2655,12 @@ instance encodeTargetDescription :: Encode TargetDescription where encode = gene
 
 -- | Constructs TargetDescription from required parameters
 newTargetDescription :: TargetId -> TargetDescription
-newTargetDescription _Id = TargetDescription { "Id": _Id, "AvailabilityZone": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newTargetDescription _Id = TargetDescription { "Id": _Id, "AvailabilityZone": Nothing, "Port": Nothing }
 
 -- | Constructs TargetDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetDescription' :: TargetId -> ( { "Id" :: (TargetId) , "Port" :: NullOrUndefined (Port) , "AvailabilityZone" :: NullOrUndefined (ZoneName) } -> {"Id" :: (TargetId) , "Port" :: NullOrUndefined (Port) , "AvailabilityZone" :: NullOrUndefined (ZoneName) } ) -> TargetDescription
-newTargetDescription' _Id customize = (TargetDescription <<< customize) { "Id": _Id, "AvailabilityZone": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newTargetDescription' :: TargetId -> ( { "Id" :: (TargetId) , "Port" :: Maybe (Port) , "AvailabilityZone" :: Maybe (ZoneName) } -> {"Id" :: (TargetId) , "Port" :: Maybe (Port) , "AvailabilityZone" :: Maybe (ZoneName) } ) -> TargetDescription
+newTargetDescription' _Id customize = (TargetDescription <<< customize) { "Id": _Id, "AvailabilityZone": Nothing, "Port": Nothing }
 
 
 
@@ -2676,21 +2675,21 @@ instance encodeTargetDescriptions :: Encode TargetDescriptions where encode = ge
 
 -- | <p>Information about a target group.</p>
 newtype TargetGroup = TargetGroup 
-  { "TargetGroupArn" :: NullOrUndefined (TargetGroupArn)
-  , "TargetGroupName" :: NullOrUndefined (TargetGroupName)
-  , "Protocol" :: NullOrUndefined (ProtocolEnum)
-  , "Port" :: NullOrUndefined (Port)
-  , "VpcId" :: NullOrUndefined (VpcId)
-  , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum)
-  , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort)
-  , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds)
-  , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds)
-  , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount)
-  , "HealthCheckPath" :: NullOrUndefined (Path)
-  , "Matcher" :: NullOrUndefined (Matcher)
-  , "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns)
-  , "TargetType" :: NullOrUndefined (TargetTypeEnum)
+  { "TargetGroupArn" :: Maybe (TargetGroupArn)
+  , "TargetGroupName" :: Maybe (TargetGroupName)
+  , "Protocol" :: Maybe (ProtocolEnum)
+  , "Port" :: Maybe (Port)
+  , "VpcId" :: Maybe (VpcId)
+  , "HealthCheckProtocol" :: Maybe (ProtocolEnum)
+  , "HealthCheckPort" :: Maybe (HealthCheckPort)
+  , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds)
+  , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds)
+  , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount)
+  , "HealthCheckPath" :: Maybe (Path)
+  , "Matcher" :: Maybe (Matcher)
+  , "LoadBalancerArns" :: Maybe (LoadBalancerArns)
+  , "TargetType" :: Maybe (TargetTypeEnum)
   }
 derive instance newtypeTargetGroup :: Newtype TargetGroup _
 derive instance repGenericTargetGroup :: Generic TargetGroup _
@@ -2700,12 +2699,12 @@ instance encodeTargetGroup :: Encode TargetGroup where encode = genericEncode op
 
 -- | Constructs TargetGroup from required parameters
 newTargetGroup :: TargetGroup
-newTargetGroup  = TargetGroup { "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "LoadBalancerArns": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "TargetGroupArn": (NullOrUndefined Nothing), "TargetGroupName": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newTargetGroup  = TargetGroup { "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "LoadBalancerArns": Nothing, "Matcher": Nothing, "Port": Nothing, "Protocol": Nothing, "TargetGroupArn": Nothing, "TargetGroupName": Nothing, "TargetType": Nothing, "UnhealthyThresholdCount": Nothing, "VpcId": Nothing }
 
 -- | Constructs TargetGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetGroup' :: ( { "TargetGroupArn" :: NullOrUndefined (TargetGroupArn) , "TargetGroupName" :: NullOrUndefined (TargetGroupName) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "Port" :: NullOrUndefined (Port) , "VpcId" :: NullOrUndefined (VpcId) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "HealthCheckPath" :: NullOrUndefined (Path) , "Matcher" :: NullOrUndefined (Matcher) , "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns) , "TargetType" :: NullOrUndefined (TargetTypeEnum) } -> {"TargetGroupArn" :: NullOrUndefined (TargetGroupArn) , "TargetGroupName" :: NullOrUndefined (TargetGroupName) , "Protocol" :: NullOrUndefined (ProtocolEnum) , "Port" :: NullOrUndefined (Port) , "VpcId" :: NullOrUndefined (VpcId) , "HealthCheckProtocol" :: NullOrUndefined (ProtocolEnum) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "HealthCheckIntervalSeconds" :: NullOrUndefined (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: NullOrUndefined (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: NullOrUndefined (HealthCheckThresholdCount) , "HealthCheckPath" :: NullOrUndefined (Path) , "Matcher" :: NullOrUndefined (Matcher) , "LoadBalancerArns" :: NullOrUndefined (LoadBalancerArns) , "TargetType" :: NullOrUndefined (TargetTypeEnum) } ) -> TargetGroup
-newTargetGroup'  customize = (TargetGroup <<< customize) { "HealthCheckIntervalSeconds": (NullOrUndefined Nothing), "HealthCheckPath": (NullOrUndefined Nothing), "HealthCheckPort": (NullOrUndefined Nothing), "HealthCheckProtocol": (NullOrUndefined Nothing), "HealthCheckTimeoutSeconds": (NullOrUndefined Nothing), "HealthyThresholdCount": (NullOrUndefined Nothing), "LoadBalancerArns": (NullOrUndefined Nothing), "Matcher": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "TargetGroupArn": (NullOrUndefined Nothing), "TargetGroupName": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing), "UnhealthyThresholdCount": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newTargetGroup' :: ( { "TargetGroupArn" :: Maybe (TargetGroupArn) , "TargetGroupName" :: Maybe (TargetGroupName) , "Protocol" :: Maybe (ProtocolEnum) , "Port" :: Maybe (Port) , "VpcId" :: Maybe (VpcId) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "HealthCheckPath" :: Maybe (Path) , "Matcher" :: Maybe (Matcher) , "LoadBalancerArns" :: Maybe (LoadBalancerArns) , "TargetType" :: Maybe (TargetTypeEnum) } -> {"TargetGroupArn" :: Maybe (TargetGroupArn) , "TargetGroupName" :: Maybe (TargetGroupName) , "Protocol" :: Maybe (ProtocolEnum) , "Port" :: Maybe (Port) , "VpcId" :: Maybe (VpcId) , "HealthCheckProtocol" :: Maybe (ProtocolEnum) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "HealthCheckIntervalSeconds" :: Maybe (HealthCheckIntervalSeconds) , "HealthCheckTimeoutSeconds" :: Maybe (HealthCheckTimeoutSeconds) , "HealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "UnhealthyThresholdCount" :: Maybe (HealthCheckThresholdCount) , "HealthCheckPath" :: Maybe (Path) , "Matcher" :: Maybe (Matcher) , "LoadBalancerArns" :: Maybe (LoadBalancerArns) , "TargetType" :: Maybe (TargetTypeEnum) } ) -> TargetGroup
+newTargetGroup'  customize = (TargetGroup <<< customize) { "HealthCheckIntervalSeconds": Nothing, "HealthCheckPath": Nothing, "HealthCheckPort": Nothing, "HealthCheckProtocol": Nothing, "HealthCheckTimeoutSeconds": Nothing, "HealthyThresholdCount": Nothing, "LoadBalancerArns": Nothing, "Matcher": Nothing, "Port": Nothing, "Protocol": Nothing, "TargetGroupArn": Nothing, "TargetGroupName": Nothing, "TargetType": Nothing, "UnhealthyThresholdCount": Nothing, "VpcId": Nothing }
 
 
 
@@ -2739,8 +2738,8 @@ instance encodeTargetGroupAssociationLimitException :: Encode TargetGroupAssocia
 
 -- | <p>Information about a target group attribute.</p>
 newtype TargetGroupAttribute = TargetGroupAttribute 
-  { "Key" :: NullOrUndefined (TargetGroupAttributeKey)
-  , "Value" :: NullOrUndefined (TargetGroupAttributeValue)
+  { "Key" :: Maybe (TargetGroupAttributeKey)
+  , "Value" :: Maybe (TargetGroupAttributeValue)
   }
 derive instance newtypeTargetGroupAttribute :: Newtype TargetGroupAttribute _
 derive instance repGenericTargetGroupAttribute :: Generic TargetGroupAttribute _
@@ -2750,12 +2749,12 @@ instance encodeTargetGroupAttribute :: Encode TargetGroupAttribute where encode 
 
 -- | Constructs TargetGroupAttribute from required parameters
 newTargetGroupAttribute :: TargetGroupAttribute
-newTargetGroupAttribute  = TargetGroupAttribute { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTargetGroupAttribute  = TargetGroupAttribute { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs TargetGroupAttribute's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetGroupAttribute' :: ( { "Key" :: NullOrUndefined (TargetGroupAttributeKey) , "Value" :: NullOrUndefined (TargetGroupAttributeValue) } -> {"Key" :: NullOrUndefined (TargetGroupAttributeKey) , "Value" :: NullOrUndefined (TargetGroupAttributeValue) } ) -> TargetGroupAttribute
-newTargetGroupAttribute'  customize = (TargetGroupAttribute <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTargetGroupAttribute' :: ( { "Key" :: Maybe (TargetGroupAttributeKey) , "Value" :: Maybe (TargetGroupAttributeValue) } -> {"Key" :: Maybe (TargetGroupAttributeKey) , "Value" :: Maybe (TargetGroupAttributeValue) } ) -> TargetGroupAttribute
+newTargetGroupAttribute'  customize = (TargetGroupAttribute <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -2825,9 +2824,9 @@ instance encodeTargetGroups :: Encode TargetGroups where encode = genericEncode 
 
 -- | <p>Information about the current health of a target.</p>
 newtype TargetHealth = TargetHealth 
-  { "State" :: NullOrUndefined (TargetHealthStateEnum)
-  , "Reason" :: NullOrUndefined (TargetHealthReasonEnum)
-  , "Description" :: NullOrUndefined (Description)
+  { "State" :: Maybe (TargetHealthStateEnum)
+  , "Reason" :: Maybe (TargetHealthReasonEnum)
+  , "Description" :: Maybe (Description)
   }
 derive instance newtypeTargetHealth :: Newtype TargetHealth _
 derive instance repGenericTargetHealth :: Generic TargetHealth _
@@ -2837,20 +2836,20 @@ instance encodeTargetHealth :: Encode TargetHealth where encode = genericEncode 
 
 -- | Constructs TargetHealth from required parameters
 newTargetHealth :: TargetHealth
-newTargetHealth  = TargetHealth { "Description": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newTargetHealth  = TargetHealth { "Description": Nothing, "Reason": Nothing, "State": Nothing }
 
 -- | Constructs TargetHealth's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetHealth' :: ( { "State" :: NullOrUndefined (TargetHealthStateEnum) , "Reason" :: NullOrUndefined (TargetHealthReasonEnum) , "Description" :: NullOrUndefined (Description) } -> {"State" :: NullOrUndefined (TargetHealthStateEnum) , "Reason" :: NullOrUndefined (TargetHealthReasonEnum) , "Description" :: NullOrUndefined (Description) } ) -> TargetHealth
-newTargetHealth'  customize = (TargetHealth <<< customize) { "Description": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newTargetHealth' :: ( { "State" :: Maybe (TargetHealthStateEnum) , "Reason" :: Maybe (TargetHealthReasonEnum) , "Description" :: Maybe (Description) } -> {"State" :: Maybe (TargetHealthStateEnum) , "Reason" :: Maybe (TargetHealthReasonEnum) , "Description" :: Maybe (Description) } ) -> TargetHealth
+newTargetHealth'  customize = (TargetHealth <<< customize) { "Description": Nothing, "Reason": Nothing, "State": Nothing }
 
 
 
 -- | <p>Information about the health of a target.</p>
 newtype TargetHealthDescription = TargetHealthDescription 
-  { "Target" :: NullOrUndefined (TargetDescription)
-  , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort)
-  , "TargetHealth" :: NullOrUndefined (TargetHealth)
+  { "Target" :: Maybe (TargetDescription)
+  , "HealthCheckPort" :: Maybe (HealthCheckPort)
+  , "TargetHealth" :: Maybe (TargetHealth)
   }
 derive instance newtypeTargetHealthDescription :: Newtype TargetHealthDescription _
 derive instance repGenericTargetHealthDescription :: Generic TargetHealthDescription _
@@ -2860,12 +2859,12 @@ instance encodeTargetHealthDescription :: Encode TargetHealthDescription where e
 
 -- | Constructs TargetHealthDescription from required parameters
 newTargetHealthDescription :: TargetHealthDescription
-newTargetHealthDescription  = TargetHealthDescription { "HealthCheckPort": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetHealth": (NullOrUndefined Nothing) }
+newTargetHealthDescription  = TargetHealthDescription { "HealthCheckPort": Nothing, "Target": Nothing, "TargetHealth": Nothing }
 
 -- | Constructs TargetHealthDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetHealthDescription' :: ( { "Target" :: NullOrUndefined (TargetDescription) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "TargetHealth" :: NullOrUndefined (TargetHealth) } -> {"Target" :: NullOrUndefined (TargetDescription) , "HealthCheckPort" :: NullOrUndefined (HealthCheckPort) , "TargetHealth" :: NullOrUndefined (TargetHealth) } ) -> TargetHealthDescription
-newTargetHealthDescription'  customize = (TargetHealthDescription <<< customize) { "HealthCheckPort": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetHealth": (NullOrUndefined Nothing) }
+newTargetHealthDescription' :: ( { "Target" :: Maybe (TargetDescription) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "TargetHealth" :: Maybe (TargetHealth) } -> {"Target" :: Maybe (TargetDescription) , "HealthCheckPort" :: Maybe (HealthCheckPort) , "TargetHealth" :: Maybe (TargetHealth) } ) -> TargetHealthDescription
+newTargetHealthDescription'  customize = (TargetHealthDescription <<< customize) { "HealthCheckPort": Nothing, "Target": Nothing, "TargetHealth": Nothing }
 
 
 
